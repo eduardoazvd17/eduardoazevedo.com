@@ -20,23 +20,20 @@ class ProfileWidget extends StatelessWidget {
   }
 
   Widget _profilePicture(BuildContext context) {
-    return Container(
-      width: 160,
-      height: 160,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: Theme.of(context).primaryColor,
-      ),
+    return Card(
+      elevation: 8,
+      shape: const CircleBorder(),
       child: Padding(
-        padding: const EdgeInsets.all(1.5),
+        padding: const EdgeInsets.all(1),
         child: ClipOval(
           child: Image.asset(
             'assets/images/me.jpeg',
             fit: BoxFit.fitHeight,
+            height: 160,
           ),
-        ),
+        ).animate().flipH(),
       ),
-    ).animate().flipH();
+    );
   }
 
   Widget _profileData(BuildContext context) {
@@ -44,17 +41,22 @@ class ProfileWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'Eduardo Azevedo Regueira',
-            style: Theme.of(context).textTheme.titleLarge,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 5.0),
-            child: Text(
-              AppLocalizations.of(context)!.profileTitle,
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Eduardo Azevedo Regueira',
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 5.0),
+                child: Text(
+                  AppLocalizations.of(context)!.profileTitle,
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+              ),
+            ],
+          ).animate().fade().slideX(),
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -88,10 +90,10 @@ class ProfileWidget extends StatelessWidget {
                 ),
               ),
             ],
-          ),
+          ).animate().fade().slideY(),
         ],
       ),
-    ).animate().fade().slideX();
+    );
   }
 
   Future<void> _open(String url) async {
