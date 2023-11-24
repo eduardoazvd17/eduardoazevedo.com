@@ -57,8 +57,9 @@ class ProfileWidget extends StatelessWidget {
               ),
             ],
           ).animate().fade().slideX(),
-          Row(
-            mainAxisSize: MainAxisSize.min,
+          Wrap(
+            spacing: 15,
+            runSpacing: 15,
             children: [
               InkWell(
                 onTap: () => _open(
@@ -74,7 +75,6 @@ class ProfileWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(width: 15),
               InkWell(
                 onTap: () => _open(
                   'https://github.com/eduardoazvd17/',
