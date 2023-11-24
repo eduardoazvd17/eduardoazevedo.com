@@ -93,7 +93,7 @@ class ProfileWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(5),
               child: Padding(
                 padding: const EdgeInsets.all(2),
-                child: Image.network(
+                child: Image.asset(
                   'assets/icons/linkedin.png',
                   color: Colors.blueAccent,
                   width: 90,
@@ -107,7 +107,7 @@ class ProfileWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(5),
               child: Padding(
                 padding: const EdgeInsets.all(2),
-                child: Image.network(
+                child: Image.asset(
                   'assets/icons/github.png',
                   width: 90,
                   color: Colors.deepPurple,
