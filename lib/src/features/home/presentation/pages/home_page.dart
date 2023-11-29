@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import '../../../../core/widgets/responsive_builder.dart';
 import '../widgets/profile_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -11,14 +12,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        if (constraints.maxWidth >= 768) {
-          return _desktopScaffold(context);
-        } else {
-          return _mobileScaffold(context);
-        }
-      },
+    return ResponsiveBuilder(
+      desktopWidget: _desktopScaffold(context),
+      mobileWidget: _mobileScaffold(context),
     );
   }
 

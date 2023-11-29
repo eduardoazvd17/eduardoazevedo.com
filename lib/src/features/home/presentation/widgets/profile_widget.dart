@@ -3,6 +3,8 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
+import '../../../../core/widgets/responsive_builder.dart';
+
 class ProfileWidget extends StatelessWidget {
   const ProfileWidget({super.key});
 
@@ -12,32 +14,29 @@ class ProfileWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Expanded(
-          child: LayoutBuilder(builder: (context, constraints) {
-            if (constraints.maxWidth >= 768) {
-              return Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  _profilePicture(context),
-                  const SizedBox(width: 15),
-                  Flexible(child: _profileData(context)),
-                ],
-              );
-            } else {
-              return Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  _profilePicture(context),
-                  const SizedBox(height: 15),
-                  _profileData(
-                    context,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                  ),
-                ],
-              );
-            }
-          }),
+          child: ResponsiveBuilder(
+            desktopWidget: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                _profilePicture(context),
+                const SizedBox(width: 15),
+                Flexible(child: _profileData(context)),
+              ],
+            ),
+            mobileWidget: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                _profilePicture(context),
+                const SizedBox(height: 15),
+                _profileData(
+                  context,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                ),
+              ],
+            ),
+          ),
         ),
       ],
     );
