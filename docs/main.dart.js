@@ -55405,7 +55405,7 @@ dP(a,b){return new A.bf(A.at4(b),t.ax)},
 iO(a){return B.b.v(A.a(["en","pt"],t.s),a.gbu(a))},
 ig(a){return!1}}
 A.wR.prototype={
-gEM(){return"Software Engineer | Full Stack Mobile Developer | Flutter & C#"},
+gEM(){return"Software Engineer | Software Engineer | Full Stack Mobile Developer | Flutter & C# | Flutter & C#"},
 gC7(){return"This page is under development"}}
 A.wS.prototype={
 gEM(){return"Engenheiro de Software | Desenvolvedor Mobile Full Stack | Flutter & C#"},

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:welcome/widgets/profile_widget.dart';
+
+import '../widgets/profile_widget.dart';
 
 class HomePage extends StatelessWidget {
   static const String route = '/';

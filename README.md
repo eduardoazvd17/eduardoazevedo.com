@@ -1,6 +1,6 @@
 # welcome
 
-A new Flutter project.
+Software Engineer | Full Stack Mobile Developer | Flutter & C#
 
 ## Getting Started
 
