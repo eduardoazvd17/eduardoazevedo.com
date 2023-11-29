@@ -1,4 +1,4 @@
-import 'package:eduardoazevedo/features/home/data/enums/home_page_tabs.dart';
+import 'package:eduardoazevedo/src/features/home/data/enums/home_page_tabs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
