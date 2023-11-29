@@ -8,32 +8,39 @@ class ProfileWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
-      if (constraints.maxWidth >= 768) {
-        return Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            _profilePicture(context),
-            const SizedBox(width: 15),
-            Flexible(child: _profileData(context)),
-          ],
-        );
-      } else {
-        return Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            _profilePicture(context),
-            const SizedBox(height: 15),
-            _profileData(
-              context,
-              crossAxisAlignment: CrossAxisAlignment.center,
-            ),
-          ],
-        );
-      }
-    });
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Expanded(
+          child: LayoutBuilder(builder: (context, constraints) {
+            if (constraints.maxWidth >= 768) {
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  _profilePicture(context),
+                  const SizedBox(width: 15),
+                  Flexible(child: _profileData(context)),
+                ],
+              );
+            } else {
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  _profilePicture(context),
+                  const SizedBox(height: 15),
+                  _profileData(
+                    context,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                  ),
+                ],
+              );
+            }
+          }),
+        ),
+      ],
+    );
   }
 
   Widget _profilePicture(BuildContext context) {
