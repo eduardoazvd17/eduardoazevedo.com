@@ -24,8 +24,7 @@ class HomePage extends StatelessWidget {
 
   Widget _desktopScaffold(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      body: ListView(
         children: [
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 58),
@@ -35,11 +34,9 @@ class HomePage extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 58),
             child: _navigationBar(context),
           ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(58),
-              child: _pageContent(context),
-            ),
+          Padding(
+            padding: const EdgeInsets.all(58),
+            child: _pageContent(context),
           ),
         ],
       ),
@@ -49,23 +46,18 @@ class HomePage extends StatelessWidget {
   Widget _mobileScaffold(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: _bottomNavigationBar(context),
-      body: Padding(
+      body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 25),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 58),
-              child: ProfileWidget(),
-            ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 25),
-                child: _pageContent(context),
-              ),
-            ),
-          ],
-        ),
+        children: [
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 58),
+            child: ProfileWidget(),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 25),
+            child: _pageContent(context),
+          ),
+        ],
       ),
     );
   }
