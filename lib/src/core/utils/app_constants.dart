@@ -5,8 +5,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class AppConstants {
   static const double maxMobileWidth = 768;
 
-  static const Iterable<LocalizationsDelegate<dynamic>> localizationsDelegates =
-      [
+  static const Iterable<LocalizationsDelegate> localizationsDelegates = [
     AppLocalizations.delegate,
     GlobalMaterialLocalizations.delegate,
     GlobalWidgetsLocalizations.delegate,
