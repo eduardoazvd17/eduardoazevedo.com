@@ -4,6 +4,7 @@ import 'package:eduardoazevedo/src/features/home/data/enums/home_page_tabs.dart'
 import 'package:eduardoazevedo/src/features/home/presentation/controllers/home_controller.dart';
 import 'package:eduardoazevedo/src/features/my_projects/presentation/pages/my_projects_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -115,6 +116,11 @@ class HomePage extends StatelessWidget {
             return const ContactPage();
         }
       },
-    );
+    )
+        .animate(
+            onInit: (controller) =>
+                this.controller.pageAnimationController = controller)
+        .fade(duration: const Duration(milliseconds: 700))
+        .flipV(duration: const Duration(milliseconds: 350));
   }
 }
