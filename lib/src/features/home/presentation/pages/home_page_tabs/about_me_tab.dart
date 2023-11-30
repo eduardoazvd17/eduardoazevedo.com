@@ -2,9 +2,8 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:flutter/material.dart';
 
-class AboutMePage extends StatelessWidget {
-  static const String route = '/aboutMe';
-  const AboutMePage({super.key});
+class AboutMeTab extends StatelessWidget {
+  const AboutMeTab({super.key});
 
   @override
   Widget build(BuildContext context) {

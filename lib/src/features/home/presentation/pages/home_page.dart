@@ -1,9 +1,6 @@
 import 'package:eduardoazevedo/src/core/data/utils/app_constants.dart';
-import 'package:eduardoazevedo/src/features/about_me/presentation/pages/about_me_page.dart';
-import 'package:eduardoazevedo/src/features/contact/presentation/pages/contact_page.dart';
 import 'package:eduardoazevedo/src/features/home/data/enums/home_page_tabs.dart';
 import 'package:eduardoazevedo/src/features/home/presentation/controllers/home_controller.dart';
-import 'package:eduardoazevedo/src/features/my_projects/presentation/pages/my_projects_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -127,25 +124,12 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _pageContent(context) {
-    final Widget widget = Center(
+    return Center(
       child: ConstrainedBox(
         constraints: const BoxConstraints(maxWidth: AppConstants.maxPageWidth),
-        child: Observer(
-          builder: (context) {
-            switch (controller.currentPage) {
-              case HomePageTabs.aboutMe:
-                return const AboutMePage();
-              case HomePageTabs.myProjects:
-                return const MyProjectsPage();
-              case HomePageTabs.contact:
-                return const ContactPage();
-            }
-          },
-        ),
+        child: Observer(builder: (context) => controller.currentPage.tab),
       ),
-    );
-
-    return widget
+    )
         .animate(onInit: (controller) {
           this.controller.pageAnimationController = controller;
         })
