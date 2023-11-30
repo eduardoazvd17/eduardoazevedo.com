@@ -105,7 +105,7 @@ class HomePage extends StatelessWidget {
       );
 
   Widget _pageContent(context) {
-    return Observer(
+    final Widget widget = Observer(
       builder: (context) {
         switch (controller.currentPage) {
           case HomePageTabs.aboutMe:
@@ -116,10 +116,12 @@ class HomePage extends StatelessWidget {
             return const ContactPage();
         }
       },
-    )
-        .animate(
-            onInit: (controller) =>
-                this.controller.pageAnimationController = controller)
+    );
+
+    return widget
+        .animate(onInit: (controller) {
+          this.controller.pageAnimationController = controller;
+        })
         .fade(duration: const Duration(milliseconds: 700))
         .flipV(duration: const Duration(milliseconds: 350));
   }
