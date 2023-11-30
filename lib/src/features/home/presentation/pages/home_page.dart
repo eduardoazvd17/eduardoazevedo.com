@@ -10,7 +10,6 @@ import '../../../../core/presentation/widgets/responsive_builder.dart';
 import '../widgets/profile_widget.dart';
 
 class HomePage extends StatelessWidget {
-  static const String route = '/';
   final HomeController controller;
   const HomePage({super.key, required this.controller});
 
