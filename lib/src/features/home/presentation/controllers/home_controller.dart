@@ -6,13 +6,16 @@ part 'home_controller.g.dart';
 class HomeController = HomeControllerBase with _$HomeController;
 
 abstract class HomeControllerBase with Store {
-  AnimationController? pageAnimationController;
+  AnimationController? _pageAnimationController;
+  set pageAnimationController(AnimationController animationController) {
+    _pageAnimationController = animationController;
+  }
 
   @observable
   HomePageTabs _currentPage = HomePageTabs.values.first;
   HomePageTabs get currentPage => _currentPage;
   void changePage(HomePageTabs newPage) {
     _currentPage = newPage;
-    pageAnimationController?.forward(from: 0);
+    _pageAnimationController?.forward(from: 0);
   }
 }
