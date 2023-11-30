@@ -1,3 +1,5 @@
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import 'package:flutter/material.dart';
 
 class MyProjectsPage extends StatelessWidget {
@@ -6,9 +8,16 @@ class MyProjectsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('My projects'),
+        Padding(
+          padding: const EdgeInsets.only(bottom: 20),
+          child: Text(
+            AppLocalizations.of(context)!.myProjects,
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
+        ),
       ],
     );
   }

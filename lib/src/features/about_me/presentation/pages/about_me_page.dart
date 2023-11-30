@@ -11,11 +11,13 @@ class AboutMePage extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          AppLocalizations.of(context)!.aboutMe,
-          style: Theme.of(context).textTheme.titleMedium,
+        Padding(
+          padding: const EdgeInsets.only(bottom: 20),
+          child: Text(
+            AppLocalizations.of(context)!.aboutMe,
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
         ),
-        const SizedBox(height: 20),
         Text(AppLocalizations.of(context)!.apresentationText1),
         const SizedBox(height: 10),
         Text(AppLocalizations.of(context)!.apresentationText2),
