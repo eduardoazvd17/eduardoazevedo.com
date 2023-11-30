@@ -1,4 +1,4 @@
-import 'package:eduardoazevedo/src/core/utils/app_constants.dart';
+import 'package:eduardoazevedo/src/core/data/utils/app_constants.dart';
 import 'package:eduardoazevedo/src/features/about_me/presentation/pages/about_me_page.dart';
 import 'package:eduardoazevedo/src/features/contact/presentation/pages/contact_page.dart';
 import 'package:eduardoazevedo/src/features/home/data/enums/home_page_tabs.dart';
@@ -9,7 +9,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
-import '../../../../core/widgets/responsive_builder.dart';
+import '../../../../core/presentation/widgets/responsive_builder.dart';
 import '../widgets/profile_widget.dart';
 
 class HomePage extends StatelessWidget {

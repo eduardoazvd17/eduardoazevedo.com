@@ -1,14 +1,16 @@
+import 'package:eduardoazevedo/src/core/presentation/controllers/app_controller.dart';
 import 'package:eduardoazevedo/src/features/home/presentation/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 
-import 'src/core/utils/app_constants.dart';
-import 'src/core/utils/app_themes.dart';
+import 'src/core/data/utils/app_constants.dart';
+import 'src/core/data/utils/app_themes.dart';
 import 'src/features/home/presentation/pages/home_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  GetIt.I.registerSingleton(() => AppController());
   GetIt.I.registerLazySingleton(() => HomeController());
   runApp(const MyApp());
 }

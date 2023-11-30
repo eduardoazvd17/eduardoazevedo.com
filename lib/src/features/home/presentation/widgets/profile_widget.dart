@@ -3,7 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-import '../../../../core/widgets/responsive_builder.dart';
+import '../../../../core/presentation/widgets/responsive_builder.dart';
 
 class ProfileWidget extends StatelessWidget {
   const ProfileWidget({super.key});
