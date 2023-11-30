@@ -29,7 +29,7 @@ extension HomePageTabsExtension on HomePageTabs {
     };
   }
 
-  Widget get tab {
+  Widget get content {
     return switch (this) {
       HomePageTabs.aboutMe => const AboutMeTab(),
       HomePageTabs.myProjects => const MyProjectsTab(),

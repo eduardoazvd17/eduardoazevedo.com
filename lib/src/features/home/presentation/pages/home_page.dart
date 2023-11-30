@@ -127,7 +127,7 @@ class HomePage extends StatelessWidget {
     return Center(
       child: ConstrainedBox(
         constraints: const BoxConstraints(maxWidth: AppConstants.maxPageWidth),
-        child: Observer(builder: (context) => controller.currentPage.tab),
+        child: Observer(builder: (context) => controller.currentPage.content),
       ),
     )
         .animate(onInit: (controller) {
