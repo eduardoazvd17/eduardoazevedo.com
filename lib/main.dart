@@ -1,3 +1,4 @@
+import 'package:eduardoazevedo/src/features/home/presentation/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
 
 import 'src/core/utils/app_constants.dart';
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
       darkTheme: darkThemeData,
       initialRoute: HomePage.route,
       routes: {
-        HomePage.route: (_) => const HomePage(),
+        HomePage.route: (_) => HomePage(controller: HomeController()),
       },
     );
   }

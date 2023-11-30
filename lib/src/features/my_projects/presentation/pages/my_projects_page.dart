@@ -8,7 +8,7 @@ class MyProjectsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        Text('My projects page content...'),
+        Text('My projects'),
       ],
     );
   }

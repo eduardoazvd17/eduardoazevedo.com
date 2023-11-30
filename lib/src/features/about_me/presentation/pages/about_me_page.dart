@@ -8,7 +8,7 @@ class AboutMePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        Text('About me page content...'),
+        Text('About me'),
       ],
     );
   }

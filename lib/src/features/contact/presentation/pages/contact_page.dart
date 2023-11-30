@@ -8,7 +8,7 @@ class ContactPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        Text('Contact page content...'),
+        Text('Contact'),
       ],
     );
   }
