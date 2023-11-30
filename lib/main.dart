@@ -19,7 +19,6 @@ class MyApp extends StatelessWidget {
       supportedLocales: AppConstants.supportedLocales,
       theme: AppThemes.light,
       darkTheme: AppThemes.dark,
-      color: AppThemes.materialAppColor,
       initialRoute: HomePage.route,
       routes: {
         HomePage.route: (_) => HomePage(controller: HomeController()),
