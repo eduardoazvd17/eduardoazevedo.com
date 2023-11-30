@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
       body: ListView(
         children: [
           const Padding(
-            padding: EdgeInsets.symmetric(vertical: 60),
+            padding: EdgeInsets.symmetric(vertical: 30),
             child: ProfileWidget(),
           ),
           Padding(
@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
             child: _navigationBar(context, true),
           ),
           Padding(
-            padding: const EdgeInsets.all(60),
+            padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 30),
             child: _pageContent(context),
           ),
         ],
@@ -53,11 +53,11 @@ class HomePage extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 25),
         children: [
           const Padding(
-            padding: EdgeInsets.symmetric(vertical: 60),
+            padding: EdgeInsets.symmetric(vertical: 30),
             child: ProfileWidget(),
           ),
           Padding(
-            padding: const EdgeInsets.only(bottom: 25),
+            padding: const EdgeInsets.only(bottom: 30),
             child: _pageContent(context),
           ),
         ],
