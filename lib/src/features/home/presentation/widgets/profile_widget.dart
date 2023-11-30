@@ -54,7 +54,7 @@ class ProfileWidget extends StatelessWidget {
             fit: BoxFit.fitHeight,
             height: 160,
           ),
-        ).animate().flipH(),
+        ).animate().flipH(duration: const Duration(milliseconds: 350)),
       ),
     );
   }
@@ -87,7 +87,10 @@ class ProfileWidget extends StatelessWidget {
               ),
             ),
           ],
-        ).animate().fade().slideX(),
+        )
+            .animate()
+            .fade(duration: const Duration(milliseconds: 700))
+            .slideX(duration: const Duration(milliseconds: 350)),
         Wrap(
           spacing: 15,
           runSpacing: 15,
@@ -121,7 +124,10 @@ class ProfileWidget extends StatelessWidget {
               ),
             ),
           ],
-        ).animate().fade().slideY(),
+        )
+            .animate()
+            .fade(duration: const Duration(milliseconds: 700))
+            .slideY(duration: const Duration(milliseconds: 350)),
       ],
     );
   }
