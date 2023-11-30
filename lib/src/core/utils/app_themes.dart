@@ -4,8 +4,8 @@ class AppThemes {
   static const Color primaryColor = Colors.blue;
   static const Color lightBackgroundColor = Color.fromRGBO(236, 239, 241, 1);
   static const Color darkBackgroundColor = Colors.black;
-  static const Color darkShadowColor = Color.fromRGBO(97, 97, 97, 1);
   static const Color lightShadowColor = Colors.black;
+  static const Color darkShadowColor = Color.fromRGBO(97, 97, 97, 1);
 
   static CardTheme _cardTheme({required Brightness brightness}) {
     final bool isDark = brightness == Brightness.dark;
@@ -21,7 +21,7 @@ class AppThemes {
     return BottomNavigationBarThemeData(
       selectedItemColor: Colors.blue,
       backgroundColor: isDark ? darkBackgroundColor : lightBackgroundColor,
-      elevation: 24,
+      elevation: 0,
     );
   }
 

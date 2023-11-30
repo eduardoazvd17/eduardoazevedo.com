@@ -64,21 +64,30 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _bottomNavigationBar(BuildContext context) => Observer(
-        builder: (context) {
-          return BottomNavigationBar(
-            currentIndex: controller.currentPage.index,
-            onTap: (index) => controller.changePage(
-              HomePageTabs.values[index],
+  Widget _bottomNavigationBar(BuildContext context) => Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const Divider(height: 0),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 5),
+            child: Observer(
+              builder: (context) {
+                return BottomNavigationBar(
+                  currentIndex: controller.currentPage.index,
+                  onTap: (index) => controller.changePage(
+                    HomePageTabs.values[index],
+                  ),
+                  items: HomePageTabs.values.map((e) {
+                    return BottomNavigationBarItem(
+                      icon: Icon(e.icon),
+                      label: e.title(context),
+                    );
+                  }).toList(),
+                ).animate().fade();
+              },
             ),
-            items: HomePageTabs.values.map((e) {
-              return BottomNavigationBarItem(
-                icon: Icon(e.icon),
-                label: e.title(context),
-              );
-            }).toList(),
-          ).animate().fade();
-        },
+          ),
+        ],
       );
 
   Widget _navigationBar(BuildContext context) => Column(
