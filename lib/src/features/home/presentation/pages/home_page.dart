@@ -1,3 +1,4 @@
+import 'package:eduardoazevedo/src/core/utils/app_constants.dart';
 import 'package:eduardoazevedo/src/features/about_me/presentation/pages/about_me_page.dart';
 import 'package:eduardoazevedo/src/features/contact/presentation/pages/contact_page.dart';
 import 'package:eduardoazevedo/src/features/home/data/enums/home_page_tabs.dart';
@@ -127,17 +128,22 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _pageContent(context) {
-    final Widget widget = Observer(
-      builder: (context) {
-        switch (controller.currentPage) {
-          case HomePageTabs.aboutMe:
-            return const AboutMePage();
-          case HomePageTabs.myProjects:
-            return const MyProjectsPage();
-          case HomePageTabs.contact:
-            return const ContactPage();
-        }
-      },
+    final Widget widget = Center(
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: AppConstants.maxPageWidth),
+        child: Observer(
+          builder: (context) {
+            switch (controller.currentPage) {
+              case HomePageTabs.aboutMe:
+                return const AboutMePage();
+              case HomePageTabs.myProjects:
+                return const MyProjectsPage();
+              case HomePageTabs.contact:
+                return const ContactPage();
+            }
+          },
+        ),
+      ),
     );
 
     return widget

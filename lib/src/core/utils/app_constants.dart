@@ -3,6 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AppConstants {
+  static const double maxPageWidth = 900;
   static const double maxMobileWidth = 768;
 
   static const Iterable<LocalizationsDelegate> localizationsDelegates = [
