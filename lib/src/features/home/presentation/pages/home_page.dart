@@ -35,17 +35,7 @@ class HomePage extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 60),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const Divider(height: 0),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 5),
-                  child: _navigationBar(context),
-                ),
-                const Divider(height: 0),
-              ],
-            ),
+            child: _navigationBar(context, true),
           ),
           Padding(
             padding: const EdgeInsets.all(60),
@@ -58,13 +48,7 @@ class HomePage extends StatelessWidget {
 
   Widget _mobileScaffold(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const Divider(height: 0),
-          _navigationBar(context),
-        ],
-      ),
+      bottomNavigationBar: _navigationBar(context, false),
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 25),
         children: [
@@ -81,28 +65,66 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _navigationBar(BuildContext context) => Observer(
-        builder: (context) {
-          return GNav(
-            selectedIndex: controller.currentPage.index,
-            onTabChange: (index) => controller.changePage(
-              HomePageTabs.values[index],
-            ),
-            tabBorderRadius: 16,
-            color: Theme.of(context).iconTheme.color,
-            activeColor: Theme.of(context).primaryColor,
-            mainAxisAlignment: MainAxisAlignment.center,
-            tabs: HomePageTabs.values.map((e) {
-              return GButton(
-                gap: 10,
-                icon: e.icon,
-                text: e.title(context),
-                margin: const EdgeInsets.symmetric(horizontal: 10),
-              );
-            }).toList(),
-          );
-        },
-      );
+  Widget _navigationBar(BuildContext context, bool isDesktop) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        const Divider(height: 0),
+        Observer(
+          builder: (context) {
+            return GNav(
+              selectedIndex: controller.currentPage.index,
+              onTabChange: (index) => controller.changePage(
+                HomePageTabs.values[index],
+              ),
+              tabBorderRadius: 16,
+              color: Theme.of(context).iconTheme.color,
+              activeColor: Theme.of(context).primaryColor,
+              mainAxisAlignment: isDesktop
+                  ? MainAxisAlignment.spaceEvenly
+                  : MainAxisAlignment.center,
+              tabs: HomePageTabs.values.map((e) {
+                final bool isSelected = controller.currentPage == e;
+                return GButton(
+                  gap: 10,
+                  leading: isDesktop
+                      ? Row(
+                          children: [
+                            Icon(
+                              e.icon,
+                              color: isSelected
+                                  ? Theme.of(context).primaryColor
+                                  : null,
+                            ),
+                            const SizedBox(width: 10),
+                            Text(
+                              e.title(context),
+                              style: isSelected
+                                  ? TextStyle(
+                                      color: Theme.of(context).primaryColor,
+                                      fontWeight: FontWeight.bold,
+                                    )
+                                  : null,
+                            ),
+                          ],
+                        )
+                      : null,
+                  icon: e.icon,
+                  text: isDesktop ? '<' : e.title(context),
+                  textStyle: TextStyle(
+                    color: Theme.of(context).primaryColor,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  margin: const EdgeInsets.symmetric(horizontal: 10),
+                );
+              }).toList(),
+            );
+          },
+        ),
+        if (isDesktop) const Divider(height: 0),
+      ],
+    );
+  }
 
   Widget _pageContent(context) {
     final Widget widget = Observer(
