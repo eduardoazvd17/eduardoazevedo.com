@@ -5,18 +5,12 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "eduardoazevedo.com",
+            "name": "eduardoazevedo.com (debug)",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "eduardoazevedo.com (profile mode)",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "profile"
-        },
-        {
-            "name": "eduardoazevedo.com (release mode)",
+            "name": "eduardoazevedo.com (release)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
