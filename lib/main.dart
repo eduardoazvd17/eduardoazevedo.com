@@ -13,7 +13,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.blue,
           brightness: Brightness.light,
+          surfaceTint: Colors.white,
         ),
+        primaryColor: Colors.blue,
+        scaffoldBackgroundColor: Colors.blueGrey[50],
         useMaterial3: true,
       );
 
@@ -21,6 +24,12 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.blue,
           brightness: Brightness.dark,
+        ),
+        primaryColor: Colors.blue,
+        scaffoldBackgroundColor: Colors.black,
+        shadowColor: Colors.grey[700],
+        cardTheme: CardTheme(
+          shadowColor: Colors.grey[700],
         ),
         useMaterial3: true,
       );

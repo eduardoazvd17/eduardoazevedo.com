@@ -91,23 +91,48 @@ class HomePage extends StatelessWidget {
                 return Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: HomePageTabs.values.map((page) {
-                    return InkWell(
-                      onTap: () => controller.changePage(page),
-                      borderRadius: BorderRadius.circular(5),
+                    final bool isSelected = controller.currentPage == page;
+
+                    return DecoratedBox(
+                      decoration: BoxDecoration(
+                        border: isSelected
+                            ? BorderDirectional(
+                                bottom: BorderSide(
+                                  width: 1.5,
+                                  color: Theme.of(context).primaryColor,
+                                ),
+                              )
+                            : null,
+                      ),
                       child: Padding(
-                        padding: const EdgeInsets.all(5),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(page.icon),
-                            const SizedBox(width: 10),
-                            Text(
-                              page.title(context),
-                              style: controller.currentPage == page
-                                  ? const TextStyle(fontWeight: FontWeight.bold)
-                                  : null,
+                        padding: const EdgeInsets.only(bottom: 5.0),
+                        child: InkWell(
+                          onTap: () => controller.changePage(page),
+                          borderRadius: BorderRadius.circular(5),
+                          child: Padding(
+                            padding: const EdgeInsets.all(5),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(
+                                  page.icon,
+                                  color: isSelected
+                                      ? Theme.of(context).primaryColor
+                                      : null,
+                                ),
+                                const SizedBox(width: 10),
+                                Text(
+                                  page.title(context),
+                                  style: isSelected
+                                      ? TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Theme.of(context).primaryColor,
+                                        )
+                                      : null,
+                                ),
+                              ],
                             ),
-                          ],
+                          ),
                         ),
                       ),
                     );
