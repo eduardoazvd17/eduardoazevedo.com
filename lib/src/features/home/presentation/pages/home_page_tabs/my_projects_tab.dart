@@ -17,6 +17,7 @@ class MyProjectsTab extends StatelessWidget {
             style: Theme.of(context).textTheme.titleMedium,
           ),
         ),
+        Row(children: [Text(AppLocalizations.of(context)!.adviseMessage)])
       ],
     );
   }
