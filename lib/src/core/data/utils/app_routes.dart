@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 
@@ -10,7 +11,7 @@ class AppRoutes {
   static const String myProjects = "myProjects/";
   static const String contact = "contact/";
 
-  static get routerConfig {
+  static RouterConfig<Object> get routerConfig {
     return GoRouter(
       routes: [
         GoRoute(
