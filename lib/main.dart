@@ -1,12 +1,17 @@
 import 'package:eduardoazevedo/src/features/home/presentation/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 
 import 'src/core/utils/app_constants.dart';
 import 'src/core/utils/app_themes.dart';
 import 'src/features/home/presentation/pages/home_page.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  GetIt.I.registerLazySingleton(() => HomeController());
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -23,9 +28,11 @@ class MyApp extends StatelessWidget {
       routerConfig: GoRouter(
         routes: [
           GoRoute(
-            name: HomePage.route,
+            name: 'home',
             path: HomePage.route,
-            builder: (context, state) => HomePage(controller: HomeController()),
+            builder: (context, state) {
+              return HomePage(controller: GetIt.I.get<HomeController>());
+            },
           ),
         ],
       ),
