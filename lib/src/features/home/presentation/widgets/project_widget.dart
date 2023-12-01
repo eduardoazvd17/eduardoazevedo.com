@@ -23,6 +23,7 @@ class ProjectWidget extends StatelessWidget {
             flex: 4,
             child: _projectImage,
           ),
+          const SizedBox(width: 10),
           Flexible(
             flex: 6,
             child: Padding(
