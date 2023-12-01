@@ -14,10 +14,11 @@ abstract class HomeControllerBase with Store {
   @observable
   HomePageTabs _currentPage = HomePageTabs.values.first;
   HomePageTabs get currentPage => _currentPage;
-  void changePage(HomePageTabs newPage) {
+  Future<void> changePage(HomePageTabs newPage) async {
     if (_currentPage != newPage) {
+      await _pageAnimationController?.reverse();
       _currentPage = newPage;
-      _pageAnimationController?.forward(from: 0);
+      await _pageAnimationController?.forward(from: 0);
     }
   }
 }
