@@ -12,8 +12,8 @@ class MyProjectsTab extends StatelessWidget {
   Widget build(BuildContext context) {
     final projectsMock = [
       ProjectModel(
-        name: 'Projeto #01',
-        description: 'Lorem ipsum',
+        name: 'Testing title 1',
+        description: 'Testing description 2',
         images: [
           'assets/icons/flutter.png',
         ],
@@ -22,9 +22,8 @@ class MyProjectsTab extends StatelessWidget {
         },
       ),
       ProjectModel(
-        name: 'Meu Portifolio',
-        description:
-            'Meu portifolio que é exatamente este site que foi desenvolvido utilizando flutter web',
+        name: 'Testing title 2',
+        description: 'Testing description 2',
         images: [
           'assets/icons/flutter.png',
         ],
