@@ -1,6 +1,6 @@
 import 'package:eduardoazevedo/src/features/home/data/models/project_model.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import '../../data/enums/project_reference_type.dart';
@@ -19,9 +19,9 @@ class ProjectWidget extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Flexible(child: _projectImages),
+          Flexible(child: _projectImage),
           Flexible(
-            flex: 3,
+            flex: 2,
             child: Padding(
               padding: const EdgeInsets.all(10),
               child: _projectDetails(context),
@@ -32,17 +32,12 @@ class ProjectWidget extends StatelessWidget {
     );
   }
 
-  Widget get _projectImages => AspectRatio(
-        aspectRatio: 1,
-        child: Container(
-          decoration: BoxDecoration(
-            color: Colors.grey,
-            borderRadius: BorderRadius.circular(5),
-          ),
-        )
-            .animate(onPlay: (c) => c.repeat())
-            .shimmer(delay: const Duration(milliseconds: 750)),
-      );
+  Widget get _projectImage {
+    final Image imageWidget = project.imageUrl.startsWith('assets/')
+        ? Image.asset(project.imageUrl)
+        : Image.network(project.imageUrl);
+    return AspectRatio(aspectRatio: 16 / 9, child: imageWidget);
+  }
 
   Widget _projectDetails(BuildContext context) => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -114,4 +109,13 @@ class ProjectWidget extends StatelessWidget {
       ),
     );
   }
+}
+
+class AppScrollBehavior extends MaterialScrollBehavior {
+  @override
+  Set<PointerDeviceKind> get dragDevices => {
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse,
+        PointerDeviceKind.trackpad,
+      };
 }

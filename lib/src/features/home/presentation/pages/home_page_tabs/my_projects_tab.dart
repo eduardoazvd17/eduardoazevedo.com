@@ -14,9 +14,7 @@ class MyProjectsTab extends StatelessWidget {
       ProjectModel(
         name: 'Testing title 1',
         description: 'Testing description 2',
-        images: [
-          'assets/icons/flutter.png',
-        ],
+        imageUrl: 'assets/icons/linkedin.png',
         references: {
           ProjectReferenceType.preview: 'google.com',
         },
@@ -24,9 +22,7 @@ class MyProjectsTab extends StatelessWidget {
       ProjectModel(
         name: 'Testing title 2',
         description: 'Testing description 2',
-        images: [
-          'assets/icons/flutter.png',
-        ],
+        imageUrl: 'assets/icons/flutter.png',
         references: {
           ProjectReferenceType.preview: 'https://eduardoazevedo.com',
           ProjectReferenceType.repository:
