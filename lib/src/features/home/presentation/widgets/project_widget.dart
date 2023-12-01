@@ -1,10 +1,8 @@
 import 'package:eduardoazevedo/src/features/home/data/models/project_model.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-import '../../../../core/data/utils/app_themes.dart';
 import '../../data/enums/project_reference_type.dart';
 
 class ProjectWidget extends StatelessWidget {
@@ -82,51 +80,36 @@ class ProjectWidget extends StatelessWidget {
     return InkWell(
       onTap: () async {
         late final String url;
-        if (!referenceUrl.startsWith('http://') ||
+        if (!referenceUrl.startsWith('http://') &&
             !referenceUrl.startsWith('https://')) {
           url = 'https://$referenceUrl';
         } else {
           url = referenceUrl;
         }
+
         if (await canLaunchUrlString(url)) {
           await launchUrlString(url);
         }
       },
       borderRadius: BorderRadius.circular(5),
-      child: Padding(
-        padding: const EdgeInsets.all(2.5),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(reference.icon),
-            const SizedBox(width: 10),
-            Flexible(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    reference.title(context),
-                    style: const TextStyle(fontSize: 12),
-                  ),
-                  Text(
-                    referenceUrl
-                        .replaceFirst('http://', '')
-                        .replaceFirst('https://', '')
-                        .replaceFirst('www.', ''),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                      fontSize: 12,
-                      color: AppThemes.linkColor,
-                      decoration: TextDecoration.underline,
-                      decorationColor: AppThemes.linkColor,
-                    ),
-                  ),
-                ],
+      child: Tooltip(
+        message: referenceUrl,
+        child: Padding(
+          padding: const EdgeInsets.all(2.5),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(reference.icon),
+              const SizedBox(width: 10),
+              Flexible(
+                child: Text(
+                  reference.title(context),
+                  style: const TextStyle(fontSize: 12),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
