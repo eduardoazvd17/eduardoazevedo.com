@@ -50,7 +50,7 @@ class ProfileWidget extends StatelessWidget {
         padding: const EdgeInsets.all(1),
         child: ClipOval(
           child: Image.asset(
-            'assets/images/me.jpeg',
+            'assets/images/profile.jpeg',
             fit: BoxFit.fitHeight,
             height: 160,
           ),

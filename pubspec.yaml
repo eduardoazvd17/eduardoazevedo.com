@@ -39,6 +39,7 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
+    - assets/images/projects/
 
 flutter_native_splash:
   image: "assets/icons/flutter.png"

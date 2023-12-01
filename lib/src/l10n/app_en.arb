@@ -9,5 +9,7 @@
   "apresentationText3": "My knowledge covers a wide variety of areas related to software engineering, with emphasis on the Flutter framework.",
   "apresentationText4": "I am looking for exciting opportunities to apply my skills and knowledge to challenging projects. If you are looking for a software engineer ready to take on any challenge, I am available!",
   "preview": "Preview",
-  "repository": "Repository"
+  "repository": "Repository",
+  "myFinances": "My Finances",
+  "myFinancesDescription": "A finance control application that will allow you to control your monthly expenses, investments and save important notes. The project is still under development."
 }

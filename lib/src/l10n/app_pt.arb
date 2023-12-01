@@ -9,5 +9,7 @@
   "apresentationText3": "Meu conhecimento abrange uma ampla variedade de áreas relacionadas a engenharia de software, com destaque para o framework Flutter.",
   "apresentationText4": "Estou em busca de oportunidades estimulantes para aplicar minhas habilidades e conhecimentos em projetos desafiadores. Se você procura um engenheiro de software pronto para abraçar qualquer desafio, estou à disposição!",
   "preview": "Visualização",
-  "repository": "Repositório"
+  "repository": "Repositório",
+  "myFinances": "My Finances",
+  "myFinancesDescription": "Um aplicativo para controle de finanças no qual te permitirá controlar seus gastos mensais, investimentos e salvar anotações importantes. O projeto ainda está em desenvolvimento."
 }

@@ -10,23 +10,13 @@ class MyProjectsTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final projectsMock = [
+    final List<ProjectModel> myProjects = [
       ProjectModel(
-        name: 'Testing title 1',
-        description: 'Testing description 2',
-        imageUrl: 'assets/icons/linkedin.png',
+        name: AppLocalizations.of(context)!.myFinances,
+        description: AppLocalizations.of(context)!.myFinancesDescription,
+        imageUrl: 'assets/images/projects/my_finances.png',
         references: {
-          ProjectReferenceType.preview: 'google.com',
-        },
-      ),
-      ProjectModel(
-        name: 'Testing title 2',
-        description: 'Testing description 2',
-        imageUrl: 'assets/icons/flutter.png',
-        references: {
-          ProjectReferenceType.preview: 'https://eduardoazevedo.com',
-          ProjectReferenceType.repository:
-              'https://github.com/eduardoazvd17/eduardoazevedo.com',
+          ProjectReferenceType.preview: 'https://myfinancesbr.web.app/',
         },
       ),
     ];
@@ -43,7 +33,7 @@ class MyProjectsTab extends StatelessWidget {
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: projectsMock.map((e) {
+          children: myProjects.map((e) {
             return ProjectWidget(project: e);
           }).toList(),
         ),
