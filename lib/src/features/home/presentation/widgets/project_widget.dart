@@ -17,11 +17,14 @@ class ProjectWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 20),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Flexible(child: _projectImage),
           Flexible(
-            flex: 2,
+            flex: 4,
+            child: _projectImage,
+          ),
+          Flexible(
+            flex: 6,
             child: Padding(
               padding: const EdgeInsets.all(10),
               child: _projectDetails(context),
