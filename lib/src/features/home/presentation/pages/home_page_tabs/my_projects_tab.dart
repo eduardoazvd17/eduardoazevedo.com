@@ -19,6 +19,15 @@ class MyProjectsTab extends StatelessWidget {
           ProjectReferenceType.preview: 'https://myfinancesbr.web.app/',
         },
       ),
+      ProjectModel(
+        name: AppLocalizations.of(context)!.pokedex,
+        description: AppLocalizations.of(context)!.pokedexDescription,
+        imageUrl: 'assets/images/projects/pokedex.png',
+        references: {
+          ProjectReferenceType.repository:
+              'https://github.com/eduardoazvd17/pokedex',
+        },
+      ),
     ];
 
     return Column(

@@ -11,5 +11,7 @@
   "preview": "Visualização",
   "repository": "Repositório",
   "myFinances": "My Finances",
-  "myFinancesDescription": "Um aplicativo para controle de finanças no qual te permitirá controlar seus gastos mensais, investimentos e salvar anotações importantes. O projeto ainda está em desenvolvimento."
+  "myFinancesDescription": "Um aplicativo para controle de finanças no qual te permitirá controlar seus gastos mensais, investimentos e salvar anotações importantes. O projeto ainda está em desenvolvimento.",
+  "pokedex": "Pokedex",
+  "pokedexDescription": "Um app de Pokémon desenvolvido com flutter. Desafio proposto pela empresa Guarani Sistemas. A aplicação foi desenvolvida utilizando flutter e adotando padrões de código limpo, seguindo a arquitetura Clean com Modular para o gerenciamento de rotas e GetX para gerenciamento de estado e injeção de dependencias, obtendo dados da API \"pokeapi.com\" utlizando a biblioteca http."
 }
