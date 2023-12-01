@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppThemes {
   static const Color primaryColor = Colors.blue;
+  static const Color linkColor = Colors.blueGrey;
   static const Color lightBackgroundColor = Color.fromRGBO(236, 239, 241, 1);
   static const Color darkBackgroundColor = Colors.black;
   static const Color lightShadowColor = Colors.black;

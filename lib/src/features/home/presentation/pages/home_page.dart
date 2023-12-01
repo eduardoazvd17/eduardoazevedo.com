@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
   const HomePage({
     super.key,
     required this.controller,
-    this.initialTab = HomePageTabs.aboutMe,
+    this.initialTab = HomePageTabs.myProjects, //!TEMP
   });
 
   @override
