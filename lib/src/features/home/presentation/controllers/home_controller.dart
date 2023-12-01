@@ -15,7 +15,9 @@ abstract class HomeControllerBase with Store {
   HomePageTabs _currentPage = HomePageTabs.values.first;
   HomePageTabs get currentPage => _currentPage;
   void changePage(HomePageTabs newPage) {
-    _currentPage = newPage;
-    _pageAnimationController?.forward(from: 0);
+    if (_currentPage != newPage) {
+      _currentPage = newPage;
+      _pageAnimationController?.forward(from: 0);
+    }
   }
 }
