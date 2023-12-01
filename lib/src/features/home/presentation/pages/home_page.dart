@@ -11,10 +11,19 @@ import '../widgets/profile_widget.dart';
 
 class HomePage extends StatelessWidget {
   final HomeController controller;
-  const HomePage({super.key, required this.controller});
+  final HomePageTabs initialTab;
+  const HomePage({
+    super.key,
+    required this.controller,
+    this.initialTab = HomePageTabs.aboutMe,
+  });
 
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      controller.changePage(initialTab);
+    });
+
     return ResponsiveBuilder(
       desktopWidget: _desktopScaffold(context),
       mobileWidget: _mobileScaffold(context),
