@@ -51,6 +51,27 @@ List<ProjectModel> _getProjects(BuildContext context) {
       },
     ),
     ProjectModel(
+      name: AppLocalizations.of(context)!.credentialsManager,
+      description: AppLocalizations.of(context)!.credentialsManagerDescription,
+      imageUrl: 'assets/images/projects/pub_dev.png',
+      references: {
+        ProjectReferenceType.preview:
+            "https://pub.dev/packages/credentials_manager",
+        ProjectReferenceType.repository:
+            'https://github.com/eduardoazvd17/credentials_manager',
+      },
+    ),
+    ProjectModel(
+      name: AppLocalizations.of(context)!.simpleOverlay,
+      description: AppLocalizations.of(context)!.simpleOverlayDescription,
+      imageUrl: 'assets/images/projects/pub_dev.png',
+      references: {
+        ProjectReferenceType.preview: "https://pub.dev/packages/simple_overlay",
+        ProjectReferenceType.repository:
+            'https://github.com/eduardoazvd17/simple_overlay',
+      },
+    ),
+    ProjectModel(
       name: AppLocalizations.of(context)!.pokedex,
       description: AppLocalizations.of(context)!.pokedexDescription,
       imageUrl: 'assets/images/projects/pokedex.png',

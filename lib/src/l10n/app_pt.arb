@@ -15,5 +15,9 @@
   "pokedex": "Pokedex",
   "pokedexDescription": "Um app de Pokémon desenvolvido com flutter. Desafio proposto pela empresa Guarani Sistemas. A aplicação foi desenvolvida utilizando flutter e adotando padrões de código limpo, seguindo a arquitetura Clean com Modular para o gerenciamento de rotas e GetX para gerenciamento de estado e injeção de dependencias, obtendo dados da API \"pokeapi.com\" utlizando a biblioteca http.",
   "gitf": "GitF",
-  "gitfDescription": "Um gerenciador de repositórios Git para iniciantes. Esse projeto foi criado apenas para testar o desenvolvimento de apps desktop com o Flutter."
+  "gitfDescription": "Um gerenciador de repositórios Git para iniciantes. Esse projeto foi criado apenas para testar o desenvolvimento de apps desktop com o Flutter.",
+  "credentialsManager": "credentials_manager",
+  "credentialsManagerDescription": "Uma biblioteca para gerenciar de forma fácil as credenciais do seu app Flutter localmente, utilizando autenticação biométrica. Ela foi criada com o intuito de agilizar a solução de um problema, no qual eu precisava armazenar credenciais de forma segura em um dispositivo, permitindo que o usuário fizesse login com essas credenciais utilizando a biometria.",
+  "simpleOverlay": "simple_overlay",
+  "simpleOverlayDescription": "Uma biblioteca simples e prática para criar sobreposições de forma fácil no seu app Flutter. Com ele, você pode sobrepor um widget personalizado a qualquer outro widget. O foco deste pacote é agilizar a criação e gerenciamento do ciclo de vida de um Overlay."
 }
