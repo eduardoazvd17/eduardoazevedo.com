@@ -10,26 +10,6 @@ class MyProjectsTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<ProjectModel> myProjects = [
-      ProjectModel(
-        name: AppLocalizations.of(context)!.myFinances,
-        description: AppLocalizations.of(context)!.myFinancesDescription,
-        imageUrl: 'assets/images/projects/my_finances.png',
-        references: {
-          ProjectReferenceType.preview: 'https://myfinancesbr.web.app/',
-        },
-      ),
-      ProjectModel(
-        name: AppLocalizations.of(context)!.pokedex,
-        description: AppLocalizations.of(context)!.pokedexDescription,
-        imageUrl: 'assets/images/projects/pokedex.png',
-        references: {
-          ProjectReferenceType.repository:
-              'https://github.com/eduardoazvd17/pokedex',
-        },
-      ),
-    ];
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -42,11 +22,42 @@ class MyProjectsTab extends StatelessWidget {
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: myProjects.map((e) {
+          children: _getProjects(context).map((e) {
             return ProjectWidget(project: e);
           }).toList(),
         ),
       ],
     );
   }
+}
+
+List<ProjectModel> _getProjects(BuildContext context) {
+  return [
+    ProjectModel(
+      name: AppLocalizations.of(context)!.myFinances,
+      description: AppLocalizations.of(context)!.myFinancesDescription,
+      imageUrl: 'assets/images/projects/my_finances.png',
+      references: {
+        ProjectReferenceType.preview: 'https://myfinancesbr.web.app/',
+      },
+    ),
+    ProjectModel(
+      name: AppLocalizations.of(context)!.gitf,
+      description: AppLocalizations.of(context)!.gitfDescription,
+      imageUrl: 'assets/images/projects/gitf.png',
+      references: {
+        ProjectReferenceType.repository:
+            'https://github.com/eduardoazvd17/gitf',
+      },
+    ),
+    ProjectModel(
+      name: AppLocalizations.of(context)!.pokedex,
+      description: AppLocalizations.of(context)!.pokedexDescription,
+      imageUrl: 'assets/images/projects/pokedex.png',
+      references: {
+        ProjectReferenceType.repository:
+            'https://github.com/eduardoazvd17/pokedex',
+      },
+    ),
+  ];
 }

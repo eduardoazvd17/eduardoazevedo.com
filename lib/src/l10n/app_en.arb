@@ -13,5 +13,7 @@
   "myFinances": "My Finances",
   "myFinancesDescription": "A finance control application that will allow you to control your monthly expenses, investments and save important notes. The project is still under development.",
   "pokedex": "Pokedex",
-  "pokedexDescription": "A Pokémon app developed with flutter. Challenge proposed by the company Guarani Sistemas. The application was developed using flutter and adopting clean code standards, following the Clean architecture with Modular for route management and GetX for state management and dependency injection, obtaining data from the \"pokeapi.com\" API using the http library."
+  "pokedexDescription": "A Pokémon app developed with flutter. Challenge proposed by the company Guarani Sistemas. The application was developed using flutter and adopting clean code standards, following the Clean architecture with Modular for route management and GetX for state management and dependency injection, obtaining data from the \"pokeapi.com\" API using the http library.",
+  "gitf": "GitF",
+  "gitfDescription": "A Git repository manager for beginners. This project was created just to test the development of desktop apps with Flutter."
 }
