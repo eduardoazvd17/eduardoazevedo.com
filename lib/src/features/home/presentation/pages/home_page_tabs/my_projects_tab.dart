@@ -46,6 +46,8 @@ List<ProjectModel> _getProjects(BuildContext context) {
       description: AppLocalizations.of(context)!.gitfDescription,
       imageUrl: 'assets/images/projects/gitf.png',
       references: {
+        ProjectReferenceType.download:
+            "https://github.com/eduardoazvd17/gitf/releases",
         ProjectReferenceType.repository:
             'https://github.com/eduardoazvd17/gitf',
       },

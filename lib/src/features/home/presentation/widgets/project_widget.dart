@@ -40,7 +40,10 @@ class ProjectWidget extends StatelessWidget {
     final Image imageWidget = project.imageUrl.startsWith('assets/')
         ? Image.asset(project.imageUrl)
         : Image.network(project.imageUrl);
-    return AspectRatio(aspectRatio: 16 / 9, child: imageWidget);
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      child: AspectRatio(aspectRatio: 16 / 9, child: imageWidget),
+    );
   }
 
   Widget _projectDetails(BuildContext context) => Column(
