@@ -17,8 +17,23 @@ class ContactTab extends StatelessWidget {
             style: Theme.of(context).textTheme.titleMedium,
           ),
         ),
-        Row(children: [Text(AppLocalizations.of(context)!.adviseMessage)])
+        Row(children: [Text(AppLocalizations.of(context)!.contactDescription)]),
+        _emailForm(context),
       ],
+    );
+  }
+
+  Widget _emailForm(BuildContext context) {
+    return ConstrainedBox(
+      constraints: const BoxConstraints(maxWidth: 600),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          TextField(),
+          TextField(),
+          TextField(),
+        ],
+      ),
     );
   }
 }
