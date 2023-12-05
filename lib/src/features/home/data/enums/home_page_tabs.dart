@@ -1,4 +1,4 @@
-import 'package:eduardoazevedo/src/features/home/presentation/controllers/contact_tab_controller.dart';
+import 'package:eduardoazevedo/src/features/home/presentation/controllers/email_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -36,7 +36,7 @@ extension HomePageTabsExtension on HomePageTabs {
       HomePageTabs.aboutMe => const AboutMeTab(),
       HomePageTabs.myProjects => const MyProjectsTab(),
       HomePageTabs.contact => ContactTab(
-          controller: GetIt.I.get<ContactTabController>(),
+          emailController: GetIt.I.get<EmailController>(),
         ),
     };
   }

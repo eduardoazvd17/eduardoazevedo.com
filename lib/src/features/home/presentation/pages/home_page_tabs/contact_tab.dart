@@ -1,4 +1,4 @@
-import 'package:eduardoazevedo/src/features/home/presentation/controllers/contact_tab_controller.dart';
+import 'package:eduardoazevedo/src/features/home/presentation/controllers/email_controller.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:flutter/material.dart';
@@ -7,10 +7,10 @@ import 'package:url_launcher/url_launcher.dart';
 import '../../../../../core/data/utils/app_themes.dart';
 
 class ContactTab extends StatelessWidget {
-  final ContactTabController controller;
+  final EmailController emailController;
   const ContactTab({
     super.key,
-    required this.controller,
+    required this.emailController,
   });
 
   @override
@@ -75,11 +75,11 @@ class ContactTab extends StatelessWidget {
         children: [
           _formTextField(
             label: AppLocalizations.of(context)!.subject,
-            controller: controller.subjectTextController,
+            controller: emailController.subjectTextController,
           ),
           _formTextField(
             label: AppLocalizations.of(context)!.message,
-            controller: controller.messageTextController,
+            controller: emailController.messageTextController,
             isTextArea: true,
           ),
           const SizedBox(height: 5),
@@ -90,7 +90,7 @@ class ContactTab extends StatelessWidget {
                   icon: Icons.close,
                   text: AppLocalizations.of(context)!.clearFields,
                   color: AppThemes.errorColor,
-                  onTap: controller.clearContactFields,
+                  onTap: emailController.clearContactFields,
                 ),
               ),
               Expanded(
@@ -98,7 +98,7 @@ class ContactTab extends StatelessWidget {
                   icon: Icons.send,
                   text: AppLocalizations.of(context)!.send,
                   color: AppThemes.accentColor,
-                  onTap: controller.sendEmail,
+                  onTap: emailController.sendEmail,
                 ),
               ),
             ],

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:url_launcher/url_launcher.dart';
-part 'contact_tab_controller.g.dart';
+part 'email_controller.g.dart';
 
-class ContactTabController = ContactTabControllerBase
-    with _$ContactTabController;
+class EmailController = EmailControllerBase with _$EmailController;
 
-abstract class ContactTabControllerBase with Store {
+abstract class EmailControllerBase with Store {
   final TextEditingController subjectTextController = TextEditingController();
   final TextEditingController messageTextController = TextEditingController();
 
