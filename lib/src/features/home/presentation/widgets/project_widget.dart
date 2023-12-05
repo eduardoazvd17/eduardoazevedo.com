@@ -3,6 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
+import '../../../../core/data/utils/app_themes.dart';
 import '../../data/enums/project_reference_type.dart';
 
 class ProjectWidget extends StatelessWidget {
@@ -57,7 +58,7 @@ class ProjectWidget extends StatelessWidget {
             padding: const EdgeInsets.only(top: 5, bottom: 20),
             child: Text(
               project.description,
-              style: const TextStyle(color: Colors.grey),
+              style: const TextStyle(color: AppThemes.commonColor),
             ),
           ),
           Wrap(
@@ -93,7 +94,7 @@ class ProjectWidget extends StatelessWidget {
           await launchUrlString(url);
         }
       },
-      borderRadius: BorderRadius.circular(5),
+      borderRadius: AppThemes.circular5,
       child: Tooltip(
         message: referenceUrl,
         child: Padding(
