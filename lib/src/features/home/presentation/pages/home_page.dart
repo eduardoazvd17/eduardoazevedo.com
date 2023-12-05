@@ -1,4 +1,5 @@
 import 'package:eduardoazevedo/src/core/data/utils/app_constants.dart';
+import 'package:eduardoazevedo/src/core/presentation/controllers/app_controller.dart';
 import 'package:eduardoazevedo/src/features/home/data/enums/home_page_tabs.dart';
 import 'package:eduardoazevedo/src/features/home/presentation/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
@@ -10,12 +11,14 @@ import '../../../../core/presentation/widgets/responsive_builder.dart';
 import '../widgets/profile_widget.dart';
 
 class HomePage extends StatelessWidget {
+  final AppController appController;
   final HomeController controller;
   final HomePageTabs initialTab;
   const HomePage({
     super.key,
+    required this.appController,
     required this.controller,
-    this.initialTab = HomePageTabs.contact, //TODO: CHANGE TO ABOUT ME
+    this.initialTab = HomePageTabs.aboutMe,
   });
 
   @override

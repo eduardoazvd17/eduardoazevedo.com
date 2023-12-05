@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../features/home/presentation/controllers/home_controller.dart';
 import '../../../features/home/presentation/pages/home_page.dart';
+import '../../presentation/controllers/app_controller.dart';
 
 class AppRoutes {
   static const String home = "/";
@@ -19,6 +20,7 @@ class AppRoutes {
           path: home,
           builder: (context, state) {
             return HomePage(
+              appController: GetIt.I.get<AppController>(),
               controller: GetIt.I.get<HomeController>(),
             );
           },
