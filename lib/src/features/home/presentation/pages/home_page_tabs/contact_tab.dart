@@ -26,7 +26,7 @@ class ContactTab extends StatelessWidget {
   Widget _emailForm(BuildContext context) {
     return ConstrainedBox(
       constraints: const BoxConstraints(maxWidth: 600),
-      child: Column(
+      child: const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           TextField(),
