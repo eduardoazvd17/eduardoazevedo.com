@@ -1,3 +1,4 @@
+import 'package:eduardoazevedo/src/features/home/presentation/controllers/home_controller.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:flutter/material.dart';
@@ -6,7 +7,11 @@ import 'package:url_launcher/url_launcher_string.dart';
 import '../../../../../core/data/utils/app_themes.dart';
 
 class ContactTab extends StatelessWidget {
-  const ContactTab({super.key});
+  final HomeController controller;
+  const ContactTab({
+    super.key,
+    required this.controller,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -63,28 +68,42 @@ class ContactTab extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _textField(
-            icon: Icons.person,
-            label: 'Nome',
-            controller: TextEditingController(),
+          _formTextField(
+            label: AppLocalizations.of(context)!.subject,
+            controller: controller.subjectTextController,
           ),
-          _textField(
-            icon: Icons.mail,
-            label: 'E-mail',
-            controller: TextEditingController(),
-          ),
-          _textField(
-            //icon: Icons.message,
-            label: 'Mensagem',
-            controller: TextEditingController(),
+          _formTextField(
+            label: AppLocalizations.of(context)!.message,
+            controller: controller.messageTextController,
             isTextArea: true,
+          ),
+          const SizedBox(height: 5),
+          Row(
+            children: [
+              Expanded(
+                child: _formButton(
+                  icon: Icons.close,
+                  text: AppLocalizations.of(context)!.clearFields,
+                  color: AppThemes.errorColor,
+                  onTap: controller.clearContactFields,
+                ),
+              ),
+              Expanded(
+                child: _formButton(
+                  icon: Icons.send,
+                  text: AppLocalizations.of(context)!.send,
+                  color: AppThemes.accentColor,
+                  onTap: controller.sendEmail,
+                ),
+              ),
+            ],
           ),
         ],
       ),
     );
   }
 
-  Widget _textField({
+  Widget _formTextField({
     IconData? icon,
     required String label,
     required TextEditingController controller,
@@ -107,6 +126,29 @@ class ContactTab extends StatelessWidget {
               label: Text(label),
             ),
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget _formButton({
+    required IconData icon,
+    required String text,
+    required Color color,
+    required void Function() onTap,
+  }) {
+    return InkWell(
+      onTap: onTap,
+      borderRadius: AppThemes.circular5,
+      child: Padding(
+        padding: const EdgeInsets.all(10),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(icon, color: color),
+            const SizedBox(width: 30),
+            Text(text, style: TextStyle(color: color)),
+          ],
         ),
       ),
     );

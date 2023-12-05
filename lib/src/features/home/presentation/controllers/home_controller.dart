@@ -21,4 +21,18 @@ abstract class HomeControllerBase with Store {
       await _pageAnimationController?.forward(from: 0);
     }
   }
+
+  final TextEditingController subjectTextController = TextEditingController();
+  final TextEditingController messageTextController = TextEditingController();
+  void clearContactFields() {
+    subjectTextController.clear();
+    messageTextController.clear();
+  }
+
+  Future<bool> sendEmail() async {
+    final subject = subjectTextController.text.trim();
+    final message = messageTextController.text.trim();
+    print(subject + "\n" + message);
+    return true;
+  }
 }

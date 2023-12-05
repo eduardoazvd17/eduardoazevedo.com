@@ -4,6 +4,7 @@ class AppThemes {
   static const Color primaryColor = Colors.blue;
   static const Color accentColor = Colors.blueGrey;
   static const Color commonColor = Colors.grey;
+  static const Color errorColor = Colors.red;
   static const Color lightBackgroundColor = Color.fromRGBO(236, 239, 241, 1);
   static const Color darkBackgroundColor = Colors.black;
   static const Color lightShadowColor = Colors.black;

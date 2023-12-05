@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:get_it/get_it.dart';
 
+import '../../presentation/controllers/home_controller.dart';
 import '../../presentation/pages/home_page_tabs/about_me_tab.dart';
 import '../../presentation/pages/home_page_tabs/contact_tab.dart';
 import '../../presentation/pages/home_page_tabs/my_projects_tab.dart';
@@ -33,7 +35,9 @@ extension HomePageTabsExtension on HomePageTabs {
     return switch (this) {
       HomePageTabs.aboutMe => const AboutMeTab(),
       HomePageTabs.myProjects => const MyProjectsTab(),
-      HomePageTabs.contact => const ContactTab(),
+      HomePageTabs.contact => ContactTab(
+          controller: GetIt.I.get<HomeController>(),
+        ),
     };
   }
 }
