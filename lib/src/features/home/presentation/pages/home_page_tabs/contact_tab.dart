@@ -1,13 +1,13 @@
-import 'package:eduardoazevedo/src/features/home/presentation/controllers/home_controller.dart';
+import 'package:eduardoazevedo/src/features/home/presentation/controllers/contact_tab_controller.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher_string.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../../core/data/utils/app_themes.dart';
 
 class ContactTab extends StatelessWidget {
-  final HomeController controller;
+  final ContactTabController controller;
   const ContactTab({
     super.key,
     required this.controller,
@@ -35,9 +35,14 @@ class ContactTab extends StatelessWidget {
               InkWell(
                 onTap: () async {
                   try {
-                    const String url = '';
-                    if (await canLaunchUrlString(url)) {
-                      launchUrlString(url);
+                    Uri uri = Uri.parse('whatsapp://send?phone=+5521988542950');
+                    if (await canLaunchUrl(uri)) {
+                      await launchUrl(uri);
+                    } else {
+                      uri = Uri.parse('https://wa.me/+5521988542950');
+                      if (await canLaunchUrl(uri)) {
+                        await launchUrl(uri);
+                      }
                     }
                   } catch (_) {}
                 },

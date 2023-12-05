@@ -1,5 +1,6 @@
 import 'package:eduardoazevedo/src/core/data/utils/app_routes.dart';
 import 'package:eduardoazevedo/src/core/presentation/controllers/app_controller.dart';
+import 'package:eduardoazevedo/src/features/home/presentation/controllers/contact_tab_controller.dart';
 import 'package:eduardoazevedo/src/features/home/presentation/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
@@ -11,6 +12,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   GetIt.I.registerSingleton(() => AppController());
   GetIt.I.registerLazySingleton(() => HomeController());
+  GetIt.I.registerLazySingleton(() => ContactTabController());
   runApp(const MyApp());
 }
 

@@ -1,9 +1,9 @@
+import 'package:eduardoazevedo/src/features/home/presentation/controllers/contact_tab_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get_it/get_it.dart';
 
-import '../../presentation/controllers/home_controller.dart';
 import '../../presentation/pages/home_page_tabs/about_me_tab.dart';
 import '../../presentation/pages/home_page_tabs/contact_tab.dart';
 import '../../presentation/pages/home_page_tabs/my_projects_tab.dart';
@@ -36,7 +36,7 @@ extension HomePageTabsExtension on HomePageTabs {
       HomePageTabs.aboutMe => const AboutMeTab(),
       HomePageTabs.myProjects => const MyProjectsTab(),
       HomePageTabs.contact => ContactTab(
-          controller: GetIt.I.get<HomeController>(),
+          controller: GetIt.I.get<ContactTabController>(),
         ),
     };
   }
