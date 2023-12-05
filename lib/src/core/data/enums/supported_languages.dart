@@ -14,7 +14,7 @@ extension SupportedLanguagesExtension on SupportedLanguages {
     };
   }
 
-  Locale get themeMode {
+  Locale get locale {
     return switch (this) {
       SupportedLanguages.english => const Locale('en'),
       SupportedLanguages.portuguese => const Locale('pt'),
