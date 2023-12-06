@@ -30,6 +30,7 @@ abstract class EmailControllerBase with Store {
 
     if (await canLaunchUrl(uri)) {
       await launchUrl(uri);
+      clearContactFields();
       return true;
     } else {
       return false;
