@@ -13,8 +13,14 @@ extension SupportedThemesExtension on SupportedThemes {
   Icon get icon {
     return switch (this) {
       SupportedThemes.system => const Icon(CupertinoIcons.settings),
-      SupportedThemes.light => const Icon(CupertinoIcons.sun_max),
-      SupportedThemes.dark => const Icon(CupertinoIcons.moon),
+      SupportedThemes.light => const Icon(
+          CupertinoIcons.sun_max,
+          color: Colors.orange,
+        ),
+      SupportedThemes.dark => Icon(
+          CupertinoIcons.moon,
+          color: Colors.purple[200],
+        ),
     };
   }
 

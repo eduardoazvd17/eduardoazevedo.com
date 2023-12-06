@@ -1,5 +1,5 @@
 import 'package:eduardoazevedo/src/core/data/utils/app_constants.dart';
-import 'package:eduardoazevedo/src/core/presentation/widgets/settings_dialog.dart';
+import 'package:eduardoazevedo/src/core/presentation/widgets/change_language_dialog.dart';
 import 'package:eduardoazevedo/src/features/home/data/enums/home_page_tabs.dart';
 import 'package:eduardoazevedo/src/features/home/presentation/controllers/home_controller.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -10,16 +10,15 @@ import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
+import '../../../../core/presentation/widgets/change_theme_dialog.dart';
 import '../../../../core/presentation/widgets/responsive_builder.dart';
 import '../widgets/profile_widget.dart';
 
 class HomePage extends StatelessWidget {
   final HomeController controller;
-  final HomePageTabs initialTab;
   const HomePage({
     super.key,
     required this.controller,
-    this.initialTab = HomePageTabs.aboutMe,
   });
 
   @override
@@ -29,7 +28,6 @@ class HomePage extends StatelessWidget {
     );
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      controller.changePage(initialTab);
       scrollController.addListener(() {
         controller.scrollPosition = scrollController.offset;
       });
@@ -187,12 +185,22 @@ class HomePage extends StatelessWidget {
       ),
       children: [
         FloatingActionButton.small(
-          tooltip: AppLocalizations.of(context)!.settings,
-          child: const Icon(CupertinoIcons.settings),
+          tooltip: AppLocalizations.of(context)!.changeTheme,
+          child: const Icon(Icons.light),
           onPressed: () {
             showDialog(
               context: context,
-              builder: (context) => SettingsDialog(),
+              builder: (context) => ChangeThemeDialog(),
+            );
+          },
+        ),
+        FloatingActionButton.small(
+          tooltip: AppLocalizations.of(context)!.changeLanguage,
+          child: const Icon(CupertinoIcons.globe),
+          onPressed: () {
+            showDialog(
+              context: context,
+              builder: (context) => ChangeLanguageDialog(),
             );
           },
         ),

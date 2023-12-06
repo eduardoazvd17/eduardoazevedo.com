@@ -10,8 +10,14 @@ enum SupportedLanguages {
 extension SupportedLanguagesExtension on SupportedLanguages {
   Widget get icon {
     return switch (this) {
-      SupportedLanguages.english => const Text('EN'),
-      SupportedLanguages.portuguese => const Text('PT'),
+      SupportedLanguages.english => Image.asset(
+          'assets/icons/languages/en.png',
+          width: 24,
+        ),
+      SupportedLanguages.portuguese => Image.asset(
+          'assets/icons/languages/pt.png',
+          width: 24,
+        ),
     };
   }
 
