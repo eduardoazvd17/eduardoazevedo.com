@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../data/enums/supported_themes.dart';
+import '../../data/utils/app_themes.dart';
 
 class ChangeThemeDialog extends StatelessWidget {
   late final AppController controller;
@@ -13,13 +14,14 @@ class ChangeThemeDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      contentPadding: const EdgeInsets.all(16),
       title: Text(AppLocalizations.of(context)!.changeTheme),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: SupportedThemes.values.map((theme) {
           final bool isSelected = theme == controller.selectedTheme;
-
           return InkWell(
+            borderRadius: AppThemes.circular5,
             onTap: () {
               if (isSelected) {
                 Navigator.of(context).pop();
@@ -40,6 +42,12 @@ class ChangeThemeDialog extends StatelessWidget {
           );
         }).toList(),
       ),
+      actions: [
+        TextButton(
+          onPressed: Navigator.of(context).pop,
+          child: Text(AppLocalizations.of(context)!.close),
+        ),
+      ],
     );
   }
 }

@@ -175,6 +175,7 @@ class HomePage extends StatelessWidget {
     ScrollController scrollController,
   ) {
     return ExpandableFab(
+      duration: const Duration(milliseconds: 300),
       openButtonBuilder: RotateFloatingActionButtonBuilder(
         fabSize: ExpandableFabSize.regular,
         child: const Icon(Icons.menu),

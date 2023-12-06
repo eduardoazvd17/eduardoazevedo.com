@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../data/enums/supported_languages.dart';
+import '../../data/utils/app_themes.dart';
 
 class ChangeLanguageDialog extends StatelessWidget {
   late final AppController controller;
@@ -13,13 +14,14 @@ class ChangeLanguageDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      contentPadding: const EdgeInsets.all(16),
       title: Text(AppLocalizations.of(context)!.changeLanguage),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: SupportedLanguages.values.map((language) {
           final bool isSelected = language == controller.selectedLanguage;
-
           return InkWell(
+            borderRadius: AppThemes.circular5,
             onTap: () {
               if (isSelected) {
                 Navigator.of(context).pop();
@@ -40,6 +42,12 @@ class ChangeLanguageDialog extends StatelessWidget {
           );
         }).toList(),
       ),
+      actions: [
+        TextButton(
+          onPressed: Navigator.of(context).pop,
+          child: Text(AppLocalizations.of(context)!.close),
+        ),
+      ],
     );
   }
 }
