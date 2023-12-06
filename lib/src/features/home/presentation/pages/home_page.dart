@@ -137,7 +137,7 @@ class HomePage extends StatelessWidget {
                 },
               ),
             ),
-            if (isDesktop) _themeAndLanguageSelectorWidget(context),
+            if (isDesktop) _themeAndLanguageSelectionWidget(context),
           ],
         ),
         if (isDesktop) const Divider(height: 0),
@@ -159,7 +159,7 @@ class HomePage extends StatelessWidget {
         .flipV(duration: const Duration(milliseconds: 350));
   }
 
-  Widget _themeAndLanguageSelectorWidget(BuildContext context) {
+  Widget _themeAndLanguageSelectionWidget(BuildContext context) {
     return Observer(
       builder: (_) {
         return Row(
