@@ -19,8 +19,13 @@ abstract class AppControllerBase with Store {
   SupportedLanguages? _selectedLanguage;
   SupportedLanguages? get selectedLanguage => _selectedLanguage;
   void changeLanguage(SupportedLanguages? language) {
-    _selectedLanguage = language;
-    _storage.saveLanguage(language);
+    if (language == SupportedLanguages.system) {
+      _selectedLanguage = null;
+      _storage.saveLanguage(null);
+    } else {
+      _selectedLanguage = language;
+      _storage.saveLanguage(language);
+    }
   }
 
   @observable
