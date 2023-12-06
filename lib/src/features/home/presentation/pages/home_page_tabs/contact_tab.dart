@@ -27,11 +27,10 @@ class ContactTab extends StatelessWidget {
         ),
         Text(AppLocalizations.of(context)!.contactDescription),
         Padding(
-          padding: const EdgeInsets.only(top: 20),
+          padding: const EdgeInsets.symmetric(vertical: 5),
           child: Row(
             children: [
               Text(AppLocalizations.of(context)!.contactBy),
-              const SizedBox(width: 10),
               InkWell(
                 onTap: () async {
                   try {
@@ -59,7 +58,7 @@ class ContactTab extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 20),
+          padding: const EdgeInsets.only(top: 0),
           child: Text(AppLocalizations.of(context)!.sendMeEmail),
         ),
         _emailForm(context),
