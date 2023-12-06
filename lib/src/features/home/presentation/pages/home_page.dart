@@ -1,46 +1,55 @@
-import 'package:eduardoazevedo/src/core/data/enums/supported_languages.dart';
-import 'package:eduardoazevedo/src/core/data/enums/supported_themes.dart';
 import 'package:eduardoazevedo/src/core/data/utils/app_constants.dart';
-import 'package:eduardoazevedo/src/core/data/utils/app_themes.dart';
-import 'package:eduardoazevedo/src/core/presentation/controllers/app_controller.dart';
+import 'package:eduardoazevedo/src/core/presentation/widgets/settings_dialog.dart';
 import 'package:eduardoazevedo/src/features/home/data/enums/home_page_tabs.dart';
 import 'package:eduardoazevedo/src/features/home/presentation/controllers/home_controller.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../../core/presentation/widgets/responsive_builder.dart';
 import '../widgets/profile_widget.dart';
 
 class HomePage extends StatelessWidget {
-  final AppController appController;
   final HomeController controller;
   final HomePageTabs initialTab;
   const HomePage({
     super.key,
-    required this.appController,
     required this.controller,
     this.initialTab = HomePageTabs.aboutMe,
   });
 
   @override
   Widget build(BuildContext context) {
+    final ScrollController scrollController = ScrollController(
+      initialScrollOffset: controller.scrollPosition,
+    );
+
     WidgetsBinding.instance.addPostFrameCallback((_) {
       controller.changePage(initialTab);
+      scrollController.addListener(() {
+        controller.scrollPosition = scrollController.offset;
+      });
     });
 
     return ResponsiveBuilder(
-      desktopWidget: _desktopScaffold(context),
-      mobileWidget: _mobileScaffold(context),
+      desktopWidget: _desktopScaffold(context, scrollController),
+      mobileWidget: _mobileScaffold(context, scrollController),
     );
   }
 
-  Widget _desktopScaffold(BuildContext context) {
+  Widget _desktopScaffold(
+    BuildContext context,
+    ScrollController scrollController,
+  ) {
     return Scaffold(
+      floatingActionButtonLocation: ExpandableFab.location,
+      floatingActionButton: _expandableFab(context, scrollController),
       body: ListView(
+        controller: scrollController,
         children: [
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 30),
@@ -59,10 +68,16 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _mobileScaffold(BuildContext context) {
+  Widget _mobileScaffold(
+    BuildContext context,
+    ScrollController scrollController,
+  ) {
     return Scaffold(
+      floatingActionButtonLocation: ExpandableFab.location,
+      floatingActionButton: _expandableFab(context, scrollController),
       bottomNavigationBar: _navigationBar(context, false),
       body: ListView(
+        controller: scrollController,
         padding: const EdgeInsets.symmetric(horizontal: 25),
         children: [
           const Padding(
@@ -140,60 +155,63 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _pageContent(context) {
-    return Center(
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(maxWidth: AppConstants.maxPageWidth),
-        child: Observer(builder: (context) => controller.currentPage.content),
-      ),
-    )
-        .animate(onInit: (controller) {
-          this.controller.pageAnimationController = controller;
-        })
-        .fade(duration: const Duration(milliseconds: 700))
-        .flipV(duration: const Duration(milliseconds: 350));
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 50),
+      child: Center(
+        child: ConstrainedBox(
+          constraints:
+              const BoxConstraints(maxWidth: AppConstants.maxPageWidth),
+          child: Observer(builder: (context) => controller.currentPage.content),
+        ),
+      )
+          .animate(onInit: (controller) {
+            this.controller.pageAnimationController = controller;
+          })
+          .fade(duration: const Duration(milliseconds: 700))
+          .flipV(duration: const Duration(milliseconds: 350)),
+    );
   }
 
-  Widget _themeAndLanguageSelectionWidget(BuildContext context) {
-    return Observer(
-      builder: (_) {
-        return Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(AppLocalizations.of(context)!.theme),
-                const SizedBox(width: 10),
-                DropdownButton<SupportedThemes>(
-                  borderRadius: AppThemes.circular5,
-                  value: appController.selectedTheme,
-                  onChanged: appController.changeTheme,
-                  items: SupportedThemes.values.map((e) {
-                    return DropdownMenuItem(value: e, child: e.icon);
-                  }).toList(),
-                ),
-              ],
-            ),
-            const SizedBox(width: 20),
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(AppLocalizations.of(context)!.language),
-                const SizedBox(width: 10),
-                DropdownButton<SupportedLanguages?>(
-                  borderRadius: AppThemes.circular5,
-                  value: appController.selectedLanguage,
-                  hint: const Text('...'),
-                  items: SupportedLanguages.values.map((e) {
-                    return DropdownMenuItem(value: e, child: e.icon);
-                  }).toList(),
-                  onChanged: appController.changeLanguage,
-                ),
-              ],
-            ),
-          ],
-        );
-      },
+  Widget _expandableFab(
+    BuildContext context,
+    ScrollController scrollController,
+  ) {
+    return ExpandableFab(
+      openButtonBuilder: RotateFloatingActionButtonBuilder(
+        fabSize: ExpandableFabSize.regular,
+        child: const Icon(Icons.menu),
+      ),
+      closeButtonBuilder: DefaultFloatingActionButtonBuilder(
+        fabSize: ExpandableFabSize.regular,
+        child: const Icon(Icons.close),
+      ),
+      children: [
+        FloatingActionButton.small(
+          tooltip: AppLocalizations.of(context)!.settings,
+          child: const Icon(CupertinoIcons.settings),
+          onPressed: () {
+            showDialog(
+              context: context,
+              builder: (context) => SettingsDialog(),
+            );
+          },
+        ),
+        FloatingActionButton.small(
+          tooltip: AppLocalizations.of(context)!.backToTop,
+          child: const Icon(Icons.arrow_upward),
+          onPressed: () {
+            if (scrollController.hasClients) {
+              scrollController.animateTo(
+                0,
+                duration: const Duration(milliseconds: 300),
+                curve: Curves.ease,
+              );
+            } else {
+              controller.scrollPosition = 0;
+            }
+          },
+        ),
+      ],
     );
   }
 }

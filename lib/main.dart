@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
           theme: AppThemes.light,
           darkTheme: AppThemes.dark,
           routerConfig: AppRoutes.routerConfig,
-          themeMode: appController.selectedTheme?.themeMode,
+          themeMode: appController.selectedTheme.themeMode,
           locale: appController.selectedLanguage?.locale,
         );
       },

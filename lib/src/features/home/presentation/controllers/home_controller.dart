@@ -6,6 +6,9 @@ part 'home_controller.g.dart';
 class HomeController = HomeControllerBase with _$HomeController;
 
 abstract class HomeControllerBase with Store {
+  @observable
+  double scrollPosition = 0.0;
+
   AnimationController? _pageAnimationController;
   set pageAnimationController(AnimationController animationController) {
     _pageAnimationController = animationController;
