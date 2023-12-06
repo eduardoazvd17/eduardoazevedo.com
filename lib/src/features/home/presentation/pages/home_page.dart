@@ -5,6 +5,7 @@ import 'package:eduardoazevedo/src/core/data/utils/app_themes.dart';
 import 'package:eduardoazevedo/src/core/presentation/controllers/app_controller.dart';
 import 'package:eduardoazevedo/src/features/home/data/enums/home_page_tabs.dart';
 import 'package:eduardoazevedo/src/features/home/presentation/controllers/home_controller.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -82,64 +83,56 @@ class HomePage extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         const Divider(height: 0),
-        Row(
-          children: [
-            Expanded(
-              child: Observer(
-                builder: (context) {
-                  return GNav(
-                    selectedIndex: controller.currentPage.index,
-                    onTabChange: (index) => controller.changePage(
-                      HomePageTabs.values[index],
-                    ),
-                    tabBorderRadius: 16,
-                    color: Theme.of(context).iconTheme.color,
-                    activeColor: Theme.of(context).primaryColor,
-                    mainAxisAlignment: isDesktop
-                        ? MainAxisAlignment.spaceEvenly
-                        : MainAxisAlignment.center,
-                    tabs: HomePageTabs.values.map((e) {
-                      final bool isSelected = controller.currentPage == e;
-                      return GButton(
-                        gap: 10,
-                        leading: isDesktop
-                            ? Row(
-                                children: [
-                                  Icon(
-                                    e.icon,
-                                    color: isSelected
-                                        ? Theme.of(context).primaryColor
-                                        : null,
-                                  ),
-                                  const SizedBox(width: 10),
-                                  Text(
-                                    e.title(context),
-                                    style: isSelected
-                                        ? TextStyle(
-                                            color:
-                                                Theme.of(context).primaryColor,
-                                            fontWeight: FontWeight.bold,
-                                          )
-                                        : null,
-                                  ),
-                                ],
-                              )
-                            : null,
-                        icon: e.icon,
-                        text: isDesktop ? '<' : e.title(context),
-                        textStyle: TextStyle(
-                          color: Theme.of(context).primaryColor,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        margin: const EdgeInsets.symmetric(horizontal: 10),
-                      );
-                    }).toList(),
-                  );
-                },
+        Observer(
+          builder: (context) {
+            return GNav(
+              selectedIndex: controller.currentPage.index,
+              onTabChange: (index) => controller.changePage(
+                HomePageTabs.values[index],
               ),
-            ),
-            if (isDesktop) _themeAndLanguageSelectionWidget(context),
-          ],
+              tabBorderRadius: 16,
+              color: Theme.of(context).iconTheme.color,
+              activeColor: Theme.of(context).primaryColor,
+              mainAxisAlignment: isDesktop
+                  ? MainAxisAlignment.spaceEvenly
+                  : MainAxisAlignment.center,
+              tabs: HomePageTabs.values.map((e) {
+                final bool isSelected = controller.currentPage == e;
+                return GButton(
+                  gap: 10,
+                  leading: isDesktop
+                      ? Row(
+                          children: [
+                            Icon(
+                              e.icon,
+                              color: isSelected
+                                  ? Theme.of(context).primaryColor
+                                  : null,
+                            ),
+                            const SizedBox(width: 10),
+                            Text(
+                              e.title(context),
+                              style: isSelected
+                                  ? TextStyle(
+                                      color: Theme.of(context).primaryColor,
+                                      fontWeight: FontWeight.bold,
+                                    )
+                                  : null,
+                            ),
+                          ],
+                        )
+                      : null,
+                  icon: e.icon,
+                  text: isDesktop ? '<' : e.title(context),
+                  textStyle: TextStyle(
+                    color: Theme.of(context).primaryColor,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  margin: const EdgeInsets.symmetric(horizontal: 10),
+                );
+              }).toList(),
+            );
+          },
         ),
         if (isDesktop) const Divider(height: 0),
       ],
