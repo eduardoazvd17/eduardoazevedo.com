@@ -1,6 +1,7 @@
 import 'package:eduardoazevedo/src/core/data/enums/supported_languages.dart';
 import 'package:eduardoazevedo/src/core/data/enums/supported_themes.dart';
 import 'package:eduardoazevedo/src/core/data/utils/app_constants.dart';
+import 'package:eduardoazevedo/src/core/data/utils/app_themes.dart';
 import 'package:eduardoazevedo/src/core/presentation/controllers/app_controller.dart';
 import 'package:eduardoazevedo/src/features/home/data/enums/home_page_tabs.dart';
 import 'package:eduardoazevedo/src/features/home/presentation/controllers/home_controller.dart';
@@ -171,6 +172,7 @@ class HomePage extends StatelessWidget {
                 Text(AppLocalizations.of(context)!.theme),
                 const SizedBox(width: 10),
                 DropdownButton<SupportedThemes>(
+                  borderRadius: AppThemes.circular5,
                   value: appController.selectedTheme,
                   onChanged: appController.changeTheme,
                   items: SupportedThemes.values.map((e) {
@@ -186,6 +188,7 @@ class HomePage extends StatelessWidget {
                 Text(AppLocalizations.of(context)!.language),
                 const SizedBox(width: 10),
                 DropdownButton<SupportedLanguages?>(
+                  borderRadius: AppThemes.circular5,
                   value: appController.selectedLanguage,
                   hint: const Text('...'),
                   items: SupportedLanguages.values.map((e) {
