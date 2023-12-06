@@ -23,6 +23,7 @@ dependencies:
   go_router: ^12.1.1
   get_it: ^7.6.4
   flutter_expandable_fab: ^2.0.0
+  shared_preferences: ^2.2.2
 
 dev_dependencies:
   flutter_test:

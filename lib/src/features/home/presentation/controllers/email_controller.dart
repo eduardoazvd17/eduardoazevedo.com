@@ -22,10 +22,7 @@ abstract class EmailControllerBase with Store {
     final Uri uri = Uri(
       scheme: 'mailto',
       path: 'eduardoazvd17@gmail.com',
-      queryParameters: {
-        'subject': subject,
-        'body': body,
-      },
+      query: 'subject=$subject&body=$body',
     );
 
     if (await canLaunchUrl(uri)) {
