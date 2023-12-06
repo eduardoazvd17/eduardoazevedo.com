@@ -8,12 +8,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
 
+import 'src/core/data/services/storage_service.dart';
 import 'src/core/data/utils/app_constants.dart';
 import 'src/core/data/utils/app_themes.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  GetIt.I.registerLazySingleton(() => AppController());
+  GetIt.I.registerLazySingleton(() => StorageService());
+  GetIt.I.registerLazySingleton(() => AppController()..init());
   GetIt.I.registerLazySingleton(() => HomeController());
   GetIt.I.registerLazySingleton(() => EmailController());
   runApp(const MyApp());
