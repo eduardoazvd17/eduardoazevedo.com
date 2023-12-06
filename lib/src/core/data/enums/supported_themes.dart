@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:flutter/material.dart';
@@ -9,6 +10,14 @@ enum SupportedThemes {
 }
 
 extension SupportedThemesExtension on SupportedThemes {
+  Icon get icon {
+    return switch (this) {
+      SupportedThemes.system => const Icon(CupertinoIcons.settings),
+      SupportedThemes.light => const Icon(CupertinoIcons.sun_max),
+      SupportedThemes.dark => const Icon(CupertinoIcons.moon),
+    };
+  }
+
   String title(BuildContext context) {
     return switch (this) {
       SupportedThemes.system => AppLocalizations.of(context)!.system,

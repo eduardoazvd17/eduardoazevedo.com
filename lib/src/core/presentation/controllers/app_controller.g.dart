@@ -29,13 +29,13 @@ mixin _$AppController on AppControllerBase, Store {
       Atom(name: 'AppControllerBase._selectedTheme', context: context);
 
   @override
-  SupportedThemes? get _selectedTheme {
+  SupportedThemes get _selectedTheme {
     _$_selectedThemeAtom.reportRead();
     return super._selectedTheme;
   }
 
   @override
-  set _selectedTheme(SupportedThemes? value) {
+  set _selectedTheme(SupportedThemes value) {
     _$_selectedThemeAtom.reportWrite(value, super._selectedTheme, () {
       super._selectedTheme = value;
     });

@@ -15,9 +15,11 @@ abstract class AppControllerBase with Store {
   }
 
   @observable
-  SupportedThemes? _selectedTheme;
-  SupportedThemes? get selectedTheme => _selectedTheme;
+  SupportedThemes _selectedTheme = SupportedThemes.system;
+  SupportedThemes get selectedTheme => _selectedTheme;
   void changeTheme(SupportedThemes? theme) {
-    _selectedTheme = theme;
+    if (theme != null) {
+      _selectedTheme = theme;
+    }
   }
 }
