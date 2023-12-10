@@ -58,7 +58,7 @@ class ContactTab extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 0),
+          padding: const EdgeInsets.only(bottom: 5),
           child: Text(AppLocalizations.of(context)!.sendMeEmail),
         ),
         _emailForm(context),
