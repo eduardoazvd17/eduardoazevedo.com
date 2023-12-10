@@ -24,7 +24,9 @@
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="welcome">
+  <meta name="apple-mobile-web-app-title" content="Eduardo Azevedo">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ECEFF1">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
@@ -35,13 +37,18 @@
 
   <script>
     // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = "1260765731";
+    const serviceWorkerVersion = "1920933873";
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
 </head>
 
 <body>
+  <script>
+    function setMetaThemeColor(color) {
+      document.querySelector('meta[name="theme-color"]').setAttribute("content", color);
+    }
+  </script>
   <script>
     window.addEventListener('load', function (ev) {
       // Download main.dart.js
