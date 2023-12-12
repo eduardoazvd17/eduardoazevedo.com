@@ -1,3 +1,4 @@
+import 'package:eduardoazevedo/src/core/presentation/widgets/responsive_builder.dart';
 import 'package:eduardoazevedo/src/features/home/data/models/project_model.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,45 @@ class ProjectWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return ResponsiveBuilder(
+      mobileWidget: _mobileWidget(context),
+      desktopWidget: _desktopWidget(context),
+    );
+  }
+
+  Widget _mobileWidget(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 20),
+      child: Column(
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Flexible(
+                flex: 4,
+                child: _projectImage,
+              ),
+              const SizedBox(width: 10),
+              Flexible(
+                flex: 6,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [_projectName],
+                ),
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: _projectDetails(context),
+          ),
+          const Divider(),
+        ],
+      ),
+    );
+  }
+
+  Widget _desktopWidget(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 20),
       child: Row(
@@ -29,7 +69,13 @@ class ProjectWidget extends StatelessWidget {
             flex: 6,
             child: Padding(
               padding: const EdgeInsets.all(10),
-              child: _projectDetails(context),
+              child: Column(
+                children: [
+                  _projectName,
+                  const Divider(),
+                  _projectDetails(context),
+                ],
+              ),
             ),
           ),
         ],
@@ -47,13 +93,16 @@ class ProjectWidget extends StatelessWidget {
     );
   }
 
+  Widget get _projectName {
+    return Text(
+      project.name,
+      style: const TextStyle(fontWeight: FontWeight.bold),
+    );
+  }
+
   Widget _projectDetails(BuildContext context) => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            project.name,
-            style: const TextStyle(fontWeight: FontWeight.bold),
-          ),
           Padding(
             padding: const EdgeInsets.only(top: 5, bottom: 20),
             child: Text(
