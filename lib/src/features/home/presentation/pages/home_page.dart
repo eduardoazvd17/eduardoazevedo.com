@@ -46,22 +46,25 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       floatingActionButtonLocation: ExpandableFab.location,
       floatingActionButton: _expandableFab(context, scrollController),
-      body: ListView(
-        controller: scrollController,
-        children: [
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 30),
-            child: ProfileWidget(),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 60),
-            child: _navigationBar(context, true),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 30),
-            child: _pageContent(context),
-          ),
-        ],
+      body: SafeArea(
+        top: false,
+        child: ListView(
+          controller: scrollController,
+          children: [
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 30),
+              child: ProfileWidget(),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 60),
+              child: _navigationBar(context, true),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 30),
+              child: _pageContent(context),
+            ),
+          ],
+        ),
       ),
     );
   }
