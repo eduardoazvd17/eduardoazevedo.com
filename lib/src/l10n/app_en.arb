@@ -41,5 +41,7 @@
   "flutterBook": "FlutterBook",
   "flutterBookDescription": "Blogging application. Challenge proposed by the company TalkProcess. The application was developed using flutter and adopting clean code standards, following the MVC (Model View Controller) architecture with GetX for state control and dependency injection, obtaining data from a RESTful API using the Dio library, and using Mockito for automated testing.",
   "notesApp": "NotesApp",
-  "notesAppDescription": "A notes app developed with Flutter. Challenge proposed by the company Target Sistemas. The application was developed using Flutter and adopting clean code standards, following the Clean architecture with MobX for state management, native Flutter route management and Shared Preferences for local data persistence."
+  "notesAppDescription": "A notes app developed with Flutter. Challenge proposed by the company Target Sistemas. The application was developed using Flutter and adopting clean code standards, following the Clean architecture with MobX for state management, native Flutter route management and Shared Preferences for local data persistence.",
+  "moviesChallenge": "Movies Challenge",
+  "moviesChallengeDescription": "Movies info application using rest api, a challenge proposed by Cubos. The project was developed using modular with mobx and obtaining data from the TMDB api."
 }

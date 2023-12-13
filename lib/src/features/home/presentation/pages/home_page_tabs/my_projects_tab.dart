@@ -100,5 +100,14 @@ List<ProjectModel> _getProjects(BuildContext context) {
             'https://github.com/eduardoazvd17/notes_app',
       },
     ),
+    ProjectModel(
+      name: AppLocalizations.of(context)!.moviesChallenge,
+      description: AppLocalizations.of(context)!.moviesChallengeDescription,
+      imageUrl: 'assets/images/projects/movies_challenge.png',
+      references: {
+        ProjectReferenceType.repository:
+            'https://github.com/eduardoazvd17/movies_challenge',
+      },
+    ),
   ];
 }

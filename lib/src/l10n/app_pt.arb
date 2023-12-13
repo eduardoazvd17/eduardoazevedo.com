@@ -41,5 +41,7 @@
   "flutterBook": "FlutterBook",
   "flutterBookDescription": "Aplicativo de blog. Desafio proposto pela empresa TalkProcess. A aplicação foi desenvolvida utilizando flutter e adotando padrões de código limpo, seguindo a arquitetura MVC (Model View Controller) com GetX para controle de estados e injeção de dependências, obtendo dados de uma API RESTful utilizando a biblioteca Dio, e utilizando Mockito para testes automatizados.",
   "notesApp": "NotesApp",
-  "notesAppDescription": "Um app de notas desenvolvido com Flutter. Desafio proposto pela empresa Target Sistemas. A aplicação foi desenvolvida utilizando Flutter e adotando padrões de código limpo, seguindo a arquitetura Clean com MobX para o gerenciamento de estado, geranciamento de rotas nativo do Flutter e Shared Preferences para a persistência de dados local."
+  "notesAppDescription": "Um app de notas desenvolvido com Flutter. Desafio proposto pela empresa Target Sistemas. A aplicação foi desenvolvida utilizando Flutter e adotando padrões de código limpo, seguindo a arquitetura Clean com MobX para o gerenciamento de estado, geranciamento de rotas nativo do Flutter e Shared Preferences para a persistência de dados local.",
+  "moviesChallenge": "Movies Challenge",
+  "moviesChallengeDescription": "Aplicativo de informações de filmes utilizando rest api, desafio proposto pela Cubos. O projeto foi desenvolvido utilizando modular com mobx e obtendo dados da api TMDB."
 }
