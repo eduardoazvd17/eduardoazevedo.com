@@ -37,5 +37,7 @@
   "credentialsManager": "credentials_manager",
   "credentialsManagerDescription": "Uma biblioteca para gerenciar de forma fácil as credenciais do seu app Flutter localmente, utilizando autenticação biométrica. Ela foi criada com o intuito de agilizar a solução de um problema, no qual eu precisava armazenar credenciais de forma segura em um dispositivo, permitindo que o usuário fizesse login com essas credenciais utilizando a biometria.",
   "simpleOverlay": "simple_overlay",
-  "simpleOverlayDescription": "Uma biblioteca simples e prática para criar sobreposições de forma fácil no seu app Flutter. Com ele, você pode sobrepor um widget personalizado a qualquer outro widget. O foco deste pacote é agilizar a criação e gerenciamento do ciclo de vida de um Overlay."
+  "simpleOverlayDescription": "Uma biblioteca simples e prática para criar sobreposições de forma fácil no seu app Flutter. Com ele, você pode sobrepor um widget personalizado a qualquer outro widget. O foco deste pacote é agilizar a criação e gerenciamento do ciclo de vida de um Overlay.",
+  "flutterBook": "FlutterBook",
+  "flutterBookDescription": "Aplicativo de blog. Desafio proposto pela empresa TalkProcess. A aplicação foi desenvolvida utilizando flutter e adotando padrões de código limpo, seguindo a arquitetura MVC (Model View Controller) com GetX para controle de estados e injeção de dependências, obtendo dados de uma API RESTful utilizando a biblioteca Dio, e utilizando Mockito para testes automatizados."
 }

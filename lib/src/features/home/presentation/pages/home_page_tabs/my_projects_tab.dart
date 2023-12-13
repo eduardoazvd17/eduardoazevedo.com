@@ -82,5 +82,14 @@ List<ProjectModel> _getProjects(BuildContext context) {
             'https://github.com/eduardoazvd17/pokedex',
       },
     ),
+    ProjectModel(
+      name: AppLocalizations.of(context)!.flutterBook,
+      description: AppLocalizations.of(context)!.flutterBookDescription,
+      imageUrl: 'assets/images/projects/flutter_book.png',
+      references: {
+        ProjectReferenceType.repository:
+            'https://github.com/eduardoazvd17/flutter_book',
+      },
+    ),
   ];
 }
