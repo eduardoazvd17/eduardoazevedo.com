@@ -91,5 +91,14 @@ List<ProjectModel> _getProjects(BuildContext context) {
             'https://github.com/eduardoazvd17/flutter_book',
       },
     ),
+    ProjectModel(
+      name: AppLocalizations.of(context)!.notesApp,
+      description: AppLocalizations.of(context)!.notesAppDescription,
+      imageUrl: 'assets/images/projects/notes_app.png',
+      references: {
+        ProjectReferenceType.repository:
+            'https://github.com/eduardoazvd17/notes_app',
+      },
+    ),
   ];
 }

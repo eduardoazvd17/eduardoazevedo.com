@@ -39,5 +39,7 @@
   "simpleOverlay": "simple_overlay",
   "simpleOverlayDescription": "A simple and practical library to easily create overlays in your Flutter app. With it, you can overlay a custom widget on any other widget. The focus of this package is to speed up the creation and management of the widget lifecycle an Overlay.",
   "flutterBook": "FlutterBook",
-  "flutterBookDescription": "Blogging application. Challenge proposed by the company TalkProcess. The application was developed using flutter and adopting clean code standards, following the MVC (Model View Controller) architecture with GetX for state control and dependency injection, obtaining data from a RESTful API using the Dio library, and using Mockito for automated testing."
+  "flutterBookDescription": "Blogging application. Challenge proposed by the company TalkProcess. The application was developed using flutter and adopting clean code standards, following the MVC (Model View Controller) architecture with GetX for state control and dependency injection, obtaining data from a RESTful API using the Dio library, and using Mockito for automated testing.",
+  "notesApp": "NotesApp",
+  "notesAppDescription": "A notes app developed with Flutter. Challenge proposed by the company Target Sistemas. The application was developed using Flutter and adopting clean code standards, following the Clean architecture with MobX for state management, native Flutter route management and Shared Preferences for local data persistence."
 }
