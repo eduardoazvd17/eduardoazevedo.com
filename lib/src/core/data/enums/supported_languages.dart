@@ -5,6 +5,7 @@ enum SupportedLanguages {
   system,
   english,
   portuguese,
+  spanish,
 }
 
 extension SupportedLanguagesExtension on SupportedLanguages {
@@ -19,6 +20,10 @@ extension SupportedLanguagesExtension on SupportedLanguages {
           'assets/icons/languages/pt.png',
           width: 24,
         ),
+      SupportedLanguages.spanish => Image.asset(
+          'assets/icons/languages/es.png',
+          width: 24,
+        ),
     };
   }
 
@@ -27,6 +32,7 @@ extension SupportedLanguagesExtension on SupportedLanguages {
       SupportedLanguages.system => AppLocalizations.of(context)!.system,
       SupportedLanguages.english => AppLocalizations.of(context)!.english,
       SupportedLanguages.portuguese => AppLocalizations.of(context)!.portuguese,
+      SupportedLanguages.spanish => AppLocalizations.of(context)!.spanish,
     };
   }
 
@@ -35,6 +41,7 @@ extension SupportedLanguagesExtension on SupportedLanguages {
       SupportedLanguages.system => null,
       SupportedLanguages.english => const Locale('en'),
       SupportedLanguages.portuguese => const Locale('pt'),
+      SupportedLanguages.spanish => const Locale('es'),
     };
   }
 }

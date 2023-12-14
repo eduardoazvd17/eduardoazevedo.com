@@ -16,5 +16,6 @@ class AppConstants {
   static const Iterable<Locale> supportedLocales = [
     Locale('en'),
     Locale('pt'),
+    Locale('es'),
   ];
 }
