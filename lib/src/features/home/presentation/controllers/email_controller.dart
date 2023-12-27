@@ -17,7 +17,7 @@ abstract class EmailControllerBase with Store {
   Future<bool> sendEmail() async {
     final String subject = subjectTextController.text.trim();
     final String body = messageTextController.text.trim();
-    if (subject.isEmpty && body.isEmpty) return false;
+    if (subject.isEmpty || body.isEmpty) return false;
 
     final Uri uri = Uri(
       scheme: 'mailto',
