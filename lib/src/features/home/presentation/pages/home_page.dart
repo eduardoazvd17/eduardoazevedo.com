@@ -163,20 +163,17 @@ class HomePage extends StatelessWidget {
 
   Widget _pageContent(context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 50),
-      child: Center(
-        child: ConstrainedBox(
-          constraints:
-              const BoxConstraints(maxWidth: AppConstants.maxPageWidth),
-          child: Observer(builder: (context) => controller.currentPage.content),
-        ),
-      )
-          .animate(onInit: (controller) {
-            this.controller.pageAnimationController = controller;
-          })
-          .fade(duration: const Duration(milliseconds: 700))
-          .flipV(duration: const Duration(milliseconds: 350)),
-    );
+        padding: const EdgeInsets.only(bottom: 50),
+        child: Center(
+          child: ConstrainedBox(
+            constraints:
+                const BoxConstraints(maxWidth: AppConstants.maxPageWidth),
+            child:
+                Observer(builder: (context) => controller.currentPage.content),
+          ),
+        ).animate(onInit: (controller) {
+          this.controller.pageAnimationController = controller;
+        }).fade(duration: const Duration(milliseconds: 500)));
   }
 
   Widget _expandableFab(
