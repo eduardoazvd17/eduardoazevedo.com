@@ -47,23 +47,25 @@ class HomePage extends StatelessWidget {
       floatingActionButtonLocation: ExpandableFab.location,
       floatingActionButton: _expandableFab(context, scrollController),
       body: SafeArea(
-        top: false,
-        child: ListView(
+        child: SingleChildScrollView(
           controller: scrollController,
-          children: [
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 30),
-              child: ProfileWidget(),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 60),
-              child: _navigationBar(context, true),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 30),
-              child: _pageContent(context),
-            ),
-          ],
+          child: Column(
+            children: [
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 30),
+                child: ProfileWidget(),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 60),
+                child: _navigationBar(context, true),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 60, vertical: 30),
+                child: _pageContent(context),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -77,19 +79,23 @@ class HomePage extends StatelessWidget {
       floatingActionButtonLocation: ExpandableFab.location,
       floatingActionButton: _expandableFab(context, scrollController),
       bottomNavigationBar: _navigationBar(context, false),
-      body: ListView(
-        controller: scrollController,
-        padding: const EdgeInsets.symmetric(horizontal: 25),
-        children: [
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 30),
-            child: ProfileWidget(),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          controller: scrollController,
+          padding: const EdgeInsets.symmetric(horizontal: 25),
+          child: Column(
+            children: [
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 30),
+                child: ProfileWidget(),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 30),
+                child: _pageContent(context),
+              ),
+            ],
           ),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 30),
-            child: _pageContent(context),
-          ),
-        ],
+        ),
       ),
     );
   }
