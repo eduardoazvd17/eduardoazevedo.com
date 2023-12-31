@@ -47,7 +47,7 @@ class HomePage extends StatelessWidget {
       floatingActionButtonLocation: ExpandableFab.location,
       floatingActionButton: _expandableFab(context, scrollController),
       body: SafeArea(
-        child: SingleChildScrollView(
+        child: _scrollableView(
           controller: scrollController,
           child: Column(
             children: [
@@ -80,7 +80,7 @@ class HomePage extends StatelessWidget {
       floatingActionButton: _expandableFab(context, scrollController),
       bottomNavigationBar: _navigationBar(context, false),
       body: SafeArea(
-        child: SingleChildScrollView(
+        child: _scrollableView(
           controller: scrollController,
           padding: const EdgeInsets.symmetric(horizontal: 25),
           child: Column(
@@ -227,6 +227,23 @@ class HomePage extends StatelessWidget {
           },
         ),
       ],
+    );
+  }
+
+  _scrollableView({
+    required ScrollController controller,
+    EdgeInsets? padding,
+    required Column child,
+  }) {
+    return Scrollbar(
+      controller: controller,
+      thickness: 2.5,
+      thumbVisibility: true,
+      child: SingleChildScrollView(
+        controller: controller,
+        padding: padding,
+        child: child,
+      ),
     );
   }
 }
