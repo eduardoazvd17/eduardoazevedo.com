@@ -1,3 +1,3 @@
 # Eduardo Azevedo
 
-Software Engineer | Full Stack Mobile Developer | Flutter & C#
+Flutter | Dart | C# | Mobile Developer
