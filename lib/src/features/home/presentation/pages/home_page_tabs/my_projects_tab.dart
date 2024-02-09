@@ -34,6 +34,15 @@ class MyProjectsTab extends StatelessWidget {
 List<ProjectModel> _getProjects(BuildContext context) {
   return [
     ProjectModel(
+      name: AppLocalizations.of(context)!.audioTexter,
+      description: AppLocalizations.of(context)!.audioTexterDescription,
+      imageUrl: 'assets/images/projects/audiotexter.png',
+      references: {
+        ProjectReferenceType.repository:
+            'https://github.com/eduardoazvd17/audiotexter',
+      },
+    ),
+    ProjectModel(
       name: AppLocalizations.of(context)!.myFinances,
       description: AppLocalizations.of(context)!.myFinancesDescription,
       imageUrl: 'assets/images/projects/my_finances.png',

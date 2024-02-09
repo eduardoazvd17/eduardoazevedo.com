@@ -27,6 +27,8 @@
   "preview": "Preview",
   "repository": "Repository",
   "download": "Download",
+  "audioTexter": "AudioTexter",
+  "audioTexterDescription": "AudioTexter is an application developed in Flutter that allows you to record audio and transcribe it into text.",
   "myFinances": "My Finances",
   "myFinancesDescription": "A finance control application that will allow you to control your monthly expenses, investments and save important notes. The project is still under development.",
   "pokedex": "Pokedex",
