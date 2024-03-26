@@ -36,7 +36,7 @@ List<ProjectModel> _getProjects(BuildContext context) {
     ProjectModel(
       name: AppLocalizations.of(context)!.investmentManager,
       description: AppLocalizations.of(context)!.investmentManagerDescription,
-      imageUrl: 'assets/images/projects/investment_manager.png',
+      imageUrl: 'assets/images/projects/investment_manager.jpeg',
       references: {},
     ),
     ProjectModel(
