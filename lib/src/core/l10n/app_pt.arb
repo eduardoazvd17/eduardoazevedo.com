@@ -45,6 +45,6 @@
   "notesAppDescription": "Um app de notas desenvolvido com Flutter. Desafio proposto pela empresa Target Sistemas. A aplicação foi desenvolvida utilizando Flutter e adotando padrões de código limpo, seguindo a arquitetura Clean com MobX para o gerenciamento de estado, geranciamento de rotas nativo do Flutter e Shared Preferences para a persistência de dados local.",
   "moviesChallenge": "Movies Challenge",
   "moviesChallengeDescription": "Aplicativo de informações de filmes utilizando rest api, desafio proposto pela Cubos. O projeto foi desenvolvido utilizando modular com mobx e obtendo dados da api TMDB.",
-  "investmentManager": "Gerenciador de Investimentos",
-  "investmentManagerDescription": "Um app para controlar seus investimentos e ter um panorama completo contendo todos os valores necessários para o controle de compra, venda, lucro, preço médio e preço de compra e venda. Além de gerar relatórios para facilitar a visualização pelo computador. (Em desenvolvimento)"
+  "investHelper": "InvestHelper",
+  "investHelperDescription": "Um app para controlar seus investimentos e ter um panorama completo contendo todos os valores necessários para o controle de compra, venda, lucro, preço médio e preço de compra e venda. Além de gerar relatórios para facilitar a visualização pelo computador. (Em desenvolvimento)"
 }

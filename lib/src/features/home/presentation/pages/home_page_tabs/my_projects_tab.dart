@@ -34,9 +34,9 @@ class MyProjectsTab extends StatelessWidget {
 List<ProjectModel> _getProjects(BuildContext context) {
   return [
     ProjectModel(
-      name: AppLocalizations.of(context)!.investmentManager,
-      description: AppLocalizations.of(context)!.investmentManagerDescription,
-      imageUrl: 'assets/images/projects/investment_manager.jpeg',
+      name: AppLocalizations.of(context)!.investHelper,
+      description: AppLocalizations.of(context)!.investHelperDescription,
+      imageUrl: 'assets/images/projects/investhelper.jpeg',
       references: {},
     ),
     ProjectModel(
