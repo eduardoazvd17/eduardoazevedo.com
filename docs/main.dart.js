@@ -45301,7 +45301,7 @@ return A.M($async$$0,r)},
 $S:20}
 A.N2.prototype={
 K(a){var s=null,r="assets/images/projects/pub_dev.png",q=t.A,p=t.HU,o=t.N,n=t.Z1
-return A.d0(A.a([new A.b3(B.ep,A.bX(A.aR(a,B.y,q).gz8(),s,s,s,A.a2(a).p3.w,s,s),s),A.d0(A.a7(new A.a6(A.a([new A.et(A.aR(a,B.y,q).gGO(),A.aR(a,B.y,q).gGP(),"assets/images/projects/investment_manager.jpeg",A.w(p,o)),new A.et(A.aR(a,B.y,q).gET(),A.aR(a,B.y,q).gEU(),"assets/images/projects/audiotexter.png",A.aw([B.cM,"https://github.com/eduardoazvd17/audiotexter"],p,o)),new A.et(A.aR(a,B.y,q).gHe(),A.aR(a,B.y,q).gHf(),"assets/images/projects/my_finances.png",A.aw([B.lF,"https://myfinancesbr.web.app/"],p,o)),new A.et(A.aR(a,B.y,q).gAu(),A.aR(a,B.y,q).gAv(),"assets/images/projects/gitf.png",A.aw([B.a0k,"https://github.com/eduardoazvd17/gitf/releases",B.cM,"https://github.com/eduardoazvd17/gitf"],p,o)),new A.et(A.aR(a,B.y,q).gFn(),A.aR(a,B.y,q).gFo(),r,A.aw([B.lF,"https://pub.dev/packages/credentials_manager",B.cM,"https://github.com/eduardoazvd17/credentials_manager"],p,o)),new A.et(A.aR(a,B.y,q).gAX(),A.aR(a,B.y,q).gAY(),r,A.aw([B.lF,"https://pub.dev/packages/simple_overlay",B.cM,"https://github.com/eduardoazvd17/simple_overlay"],p,o)),new A.et(A.aR(a,B.y,q).gHC(),A.aR(a,B.y,q).gHD(),"assets/images/projects/pokedex.png",A.aw([B.cM,"https://github.com/eduardoazvd17/pokedex"],p,o)),new A.et(A.aR(a,B.y,q).gGj(),A.aR(a,B.y,q).gGk(),"assets/images/projects/flutter_book.png",A.aw([B.cM,"https://github.com/eduardoazvd17/flutter_book"],p,o)),new A.et(A.aR(a,B.y,q).gHg(),A.aR(a,B.y,q).gHh(),"assets/images/projects/notes_app.png",A.aw([B.cM,"https://github.com/eduardoazvd17/notes_app"],p,o)),new A.et(A.aR(a,B.y,q).gHb(),A.aR(a,B.y,q).gHc(),"assets/images/projects/movies_challenge.png",A.aw([B.cM,"https://github.com/eduardoazvd17/movies_challenge"],p,o))],t.gd),new A.aa5(),n),!0,n.i("aG.E")),B.c5,B.T,B.Q)],t.p),B.c5,B.T,B.Q)}}
+return A.d0(A.a([new A.b3(B.ep,A.bX(A.aR(a,B.y,q).gz8(),s,s,s,A.a2(a).p3.w,s,s),s),A.d0(A.a7(new A.a6(A.a([new A.et(A.aR(a,B.y,q).gGO(),A.aR(a,B.y,q).gGP(),"assets/images/projects/investhelper.jpeg",A.w(p,o)),new A.et(A.aR(a,B.y,q).gET(),A.aR(a,B.y,q).gEU(),"assets/images/projects/audiotexter.png",A.aw([B.cM,"https://github.com/eduardoazvd17/audiotexter"],p,o)),new A.et(A.aR(a,B.y,q).gHe(),A.aR(a,B.y,q).gHf(),"assets/images/projects/my_finances.png",A.aw([B.lF,"https://myfinancesbr.web.app/"],p,o)),new A.et(A.aR(a,B.y,q).gAu(),A.aR(a,B.y,q).gAv(),"assets/images/projects/gitf.png",A.aw([B.a0k,"https://github.com/eduardoazvd17/gitf/releases",B.cM,"https://github.com/eduardoazvd17/gitf"],p,o)),new A.et(A.aR(a,B.y,q).gFn(),A.aR(a,B.y,q).gFo(),r,A.aw([B.lF,"https://pub.dev/packages/credentials_manager",B.cM,"https://github.com/eduardoazvd17/credentials_manager"],p,o)),new A.et(A.aR(a,B.y,q).gAX(),A.aR(a,B.y,q).gAY(),r,A.aw([B.lF,"https://pub.dev/packages/simple_overlay",B.cM,"https://github.com/eduardoazvd17/simple_overlay"],p,o)),new A.et(A.aR(a,B.y,q).gHC(),A.aR(a,B.y,q).gHD(),"assets/images/projects/pokedex.png",A.aw([B.cM,"https://github.com/eduardoazvd17/pokedex"],p,o)),new A.et(A.aR(a,B.y,q).gGj(),A.aR(a,B.y,q).gGk(),"assets/images/projects/flutter_book.png",A.aw([B.cM,"https://github.com/eduardoazvd17/flutter_book"],p,o)),new A.et(A.aR(a,B.y,q).gHg(),A.aR(a,B.y,q).gHh(),"assets/images/projects/notes_app.png",A.aw([B.cM,"https://github.com/eduardoazvd17/notes_app"],p,o)),new A.et(A.aR(a,B.y,q).gHb(),A.aR(a,B.y,q).gHc(),"assets/images/projects/movies_challenge.png",A.aw([B.cM,"https://github.com/eduardoazvd17/movies_challenge"],p,o))],t.gd),new A.aa5(),n),!0,n.i("aG.E")),B.c5,B.T,B.Q)],t.p),B.c5,B.T,B.Q)}}
 A.aa5.prototype={
 $1(a){return new A.p3(a,null)},
 $S:315}
@@ -82241,7 +82241,7 @@ gHg(){return"NotesApp"},
 gHh(){return"A notes app developed with Flutter. Challenge proposed by the company Target Sistemas. The application was developed using Flutter and adopting clean code standards, following the Clean architecture with MobX for state management, native Flutter route management and Shared Preferences for local data persistence."},
 gHb(){return"Movies Challenge"},
 gHc(){return"Movies info application using rest api, a challenge proposed by Cubos. The project was developed using modular with mobx and obtaining data from the TMDB api."},
-gGO(){return"Investment Manager"},
+gGO(){return"InvestHelper"},
 gGP(){return"An app to control your investments and have a complete overview containing all the values needed to control purchases, sales, profits, average prices and purchase and sale prices. In addition to generating reports for easier viewing on the computer. (Under development)"}}
 A.FU.prototype={
 gHJ(){return"Flutter | Dart | C# | Desarrollador Mobile"},
@@ -82287,7 +82287,7 @@ gHg(){return"NotesApp"},
 gHh(){return"Una aplicaci\xf3n de notas desarrollada con Flutter. Desaf\xedo propuesto por la empresa Target Sistemas. La aplicaci\xf3n fue desarrollada utilizando Flutter y adoptando patrones de c\xf3digo limpio, siguiendo la arquitectura Clean con MobX para la gesti\xf3n de estado, gesti\xf3n de rutas nativas de Flutter y Shared Preferences para la persistencia de datos local."},
 gHb(){return"Movies Challenge"},
 gHc(){return"Aplicaci\xf3n de informaci\xf3n de pel\xedculas utilizando rest api, desaf\xedo propuesto por Cubos. El proyecto fue desarrollado utilizando modular con mobx y obteniendo datos de la api TMDB."},
-gGO(){return"Gestor de Inversiones"},
+gGO(){return"InvestHelper"},
 gGP(){return"Una app para controlar tus inversiones y tener un panorama completo que contiene todos los valores necesarios para controlar compras, ventas, ganancias, precios promedio y precios de compra y venta. Adem\xe1s de generar informes para una mejor visualizaci\xf3n en la computadora. (En desarrollo)"}}
 A.FV.prototype={
 gHJ(){return"Flutter | Dart | C# | Desenvolvedor Mobile"},
@@ -82333,7 +82333,7 @@ gHg(){return"NotesApp"},
 gHh(){return"Um app de notas desenvolvido com Flutter. Desafio proposto pela empresa Target Sistemas. A aplica\xe7\xe3o foi desenvolvida utilizando Flutter e adotando padr\xf5es de c\xf3digo limpo, seguindo a arquitetura Clean com MobX para o gerenciamento de estado, geranciamento de rotas nativo do Flutter e Shared Preferences para a persist\xeancia de dados local."},
 gHb(){return"Movies Challenge"},
 gHc(){return"Aplicativo de informa\xe7\xf5es de filmes utilizando rest api, desafio proposto pela Cubos. O projeto foi desenvolvido utilizando modular com mobx e obtendo dados da api TMDB."},
-gGO(){return"Gerenciador de Investimentos"},
+gGO(){return"InvestHelper"},
 gGP(){return"Um app para controlar seus investimentos e ter um panorama completo contendo todos os valores necess\xe1rios para o controle de compra, venda, lucro, pre\xe7o m\xe9dio e pre\xe7o de compra e venda. Al\xe9m de gerar relat\xf3rios para facilitar a visualiza\xe7\xe3o pelo computador. (Em desenvolvimento)"}}
 A.Kd.prototype={$ia_:1}
 A.Uy.prototype={
