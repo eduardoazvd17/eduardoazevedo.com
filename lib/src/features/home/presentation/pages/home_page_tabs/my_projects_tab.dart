@@ -57,6 +57,14 @@ List<ProjectModel> _getProjects(BuildContext context) {
       },
     ),
     ProjectModel(
+      name: AppLocalizations.of(context)!.nutriUtils,
+      description: AppLocalizations.of(context)!.nutriUtilsDescription,
+      imageUrl: 'assets/images/projects/nutriutils.png',
+      references: {
+        ProjectReferenceType.preview: 'https://nutriutils.eduardoazevedo.com/',
+      },
+    ),
+    ProjectModel(
       name: AppLocalizations.of(context)!.gitf,
       description: AppLocalizations.of(context)!.gitfDescription,
       imageUrl: 'assets/images/projects/gitf.png',

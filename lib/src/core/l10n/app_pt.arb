@@ -46,5 +46,7 @@
   "moviesChallenge": "Movies Challenge",
   "moviesChallengeDescription": "Aplicativo de informações de filmes utilizando rest api, desafio proposto pela Cubos. O projeto foi desenvolvido utilizando modular com mobx e obtendo dados da api TMDB.",
   "investHelper": "InvestHelper",
-  "investHelperDescription": "Um app para controlar seus investimentos e ter um panorama completo contendo todos os valores necessários para o controle de compra, venda, lucro, preço médio e preço de compra e venda. Além de gerar relatórios para facilitar a visualização pelo computador. (Em desenvolvimento)"
+  "investHelperDescription": "Um app para controlar seus investimentos e ter um panorama completo contendo todos os valores necessários para o controle de compra, venda, lucro, preço médio e preço de compra e venda. Além de gerar relatórios para facilitar a visualização pelo computador. (Em desenvolvimento)",
+  "nutriUtils": "NutriUtils",
+  "nutriUtilsDescription": "NutriUtils é a ferramenta essencial para nutricionistas criarem dietas personalizadas e gerenciarem seus pacientes de forma eficiente. Simplifica o planejamento alimentar e o acompanhamento do progresso dos pacientes."
 }
