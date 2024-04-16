@@ -3,9 +3,9 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
-const RESOURCES = {"version.json": "a92bc5c101ced9e93b916d67eefd44db",
-"index.html": "1902970650f5ab3b667e431ebeaf02e5",
-"/": "1902970650f5ab3b667e431ebeaf02e5",
+const RESOURCES = {"version.json": "cbc9b751fbb885570e45a57afa1e5149",
+"index.html": "08b6a4f7af3223abc9cca494f6a335b9",
+"/": "08b6a4f7af3223abc9cca494f6a335b9",
 "main.dart.js": "304fa2d5dabdf4ae16ac93ba7c55377a",
 "flutter.js": "c71a09214cb6f5f8996a531350400a9a",
 "favicon.png": "7e6663123a9ea804e75a340ff4c0f1c1",
@@ -23,7 +23,7 @@ const RESOURCES = {"version.json": "a92bc5c101ced9e93b916d67eefd44db",
 "assets/AssetManifest.bin": "c4ca8e0c7062ec181ac6dccb3f58e125",
 "assets/fonts/MaterialIcons-Regular.otf": "d10d6393db5cf9b35e6b91aa99522b61",
 "assets/assets/images/projects/movies_challenge.png": "d90790b3519079f9fa606c7c84c000c8",
-"assets/assets/images/projects/investhelper.jpeg": "fa0b235b61bea083a44b6f797bbb47f5",
+"assets/assets/images/projects/investhelper.jpeg": "f19df56fa1f38a8ac3195b71f6202f3c",
 "assets/assets/images/projects/nutriutils.png": "ede9c3b43d50e0ad8e848e4551b452c6",
 "assets/assets/images/projects/my_finances.png": "260bc3fbc60a85d720e0c32ac6a0960c",
 "assets/assets/images/projects/flutter_book.png": "69fa8c2846ed913bdc7b69cbcc314446",
