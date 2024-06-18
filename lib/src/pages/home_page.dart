@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   void initState() {
     _pageAnimationController = AnimationController(vsync: this);
     _scrollController = ScrollController(
-      initialScrollOffset: widget.appController.scrollPosition,
+      initialScrollOffset: widget.appController.homePageScrollPosition,
     );
     _scrollController.addListener(_scrollListener);
     super.initState();
@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   }
 
   void _scrollListener() {
-    widget.appController.scrollPosition = _scrollController.offset;
+    widget.appController.homePageScrollPosition = _scrollController.offset;
   }
 
   Future<void> _changePage(HomePageTabs newPage) async {
@@ -68,7 +68,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         curve: Curves.ease,
       );
     } else {
-      widget.appController.scrollPosition = 0;
+      widget.appController.homePageScrollPosition = 0;
     }
   }
 

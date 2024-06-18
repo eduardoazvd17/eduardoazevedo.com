@@ -44,5 +44,5 @@ abstract class AppControllerBase with Store {
   }
 
   @observable
-  double scrollPosition = 0.0;
+  double homePageScrollPosition = 0.0;
 }

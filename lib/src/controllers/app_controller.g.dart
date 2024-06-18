@@ -45,22 +45,22 @@ mixin _$AppController on AppControllerBase, Store {
       Atom(name: 'AppControllerBase.scrollPosition', context: context);
 
   @override
-  double get scrollPosition {
+  double get homePageScrollPosition {
     _$scrollPositionAtom.reportRead();
-    return super.scrollPosition;
+    return super.homePageScrollPosition;
   }
 
   @override
-  set scrollPosition(double value) {
-    _$scrollPositionAtom.reportWrite(value, super.scrollPosition, () {
-      super.scrollPosition = value;
+  set homePageScrollPosition(double value) {
+    _$scrollPositionAtom.reportWrite(value, super.homePageScrollPosition, () {
+      super.homePageScrollPosition = value;
     });
   }
 
   @override
   String toString() {
     return '''
-scrollPosition: ${scrollPosition}
+scrollPosition: ${homePageScrollPosition}
     ''';
   }
 }
