@@ -90,16 +90,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           child: Column(
             children: [
               const Padding(
-                padding: EdgeInsets.symmetric(vertical: 30),
+                padding: EdgeInsets.symmetric(vertical: 35),
                 child: ProfileWidget(),
               ),
+              _navigationBar(context, true),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 60),
-                child: _navigationBar(context, true),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 60, vertical: 30),
+                padding: const EdgeInsets.symmetric(vertical: 35),
                 child: _pageContent(context),
               ),
             ],
@@ -121,11 +117,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           child: Column(
             children: [
               const Padding(
-                padding: EdgeInsets.symmetric(vertical: 30),
+                padding: EdgeInsets.symmetric(vertical: 35),
                 child: ProfileWidget(),
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 30),
+                padding: const EdgeInsets.only(bottom: 35),
                 child: _pageContent(context),
               ),
             ],
@@ -262,12 +258,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   _scrollableView({
     required ScrollController controller,
     EdgeInsets? padding,
-    required Column child,
+    required Widget child,
   }) {
     return Scrollbar(
-      controller: controller,
-      thickness: 2.5,
+      thickness: 4,
       thumbVisibility: true,
+      controller: controller,
       child: SingleChildScrollView(
         controller: controller,
         padding: padding,

@@ -17,7 +17,7 @@ class MyProjectsTab extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 20),
           child: Text(
             AppLocalizations.of(context)!.myProjects,
-            style: Theme.of(context).textTheme.titleMedium,
+            style: Theme.of(context).textTheme.titleLarge,
           ),
         ),
         Column(

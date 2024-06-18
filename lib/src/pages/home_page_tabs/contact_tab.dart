@@ -58,7 +58,7 @@ class _ContactTabState extends State<ContactTab> {
           padding: const EdgeInsets.only(bottom: 20),
           child: Text(
             AppLocalizations.of(context)!.contact,
-            style: Theme.of(context).textTheme.titleMedium,
+            style: Theme.of(context).textTheme.titleLarge,
           ),
         ),
         Text(AppLocalizations.of(context)!.contactDescription),

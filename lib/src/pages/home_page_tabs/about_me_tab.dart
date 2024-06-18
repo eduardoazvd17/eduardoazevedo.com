@@ -14,7 +14,7 @@ class AboutMeTab extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 20),
           child: Text(
             AppLocalizations.of(context)!.aboutMe,
-            style: Theme.of(context).textTheme.titleMedium,
+            style: Theme.of(context).textTheme.titleLarge,
           ),
         ),
         Text(AppLocalizations.of(context)!.presentationText),
