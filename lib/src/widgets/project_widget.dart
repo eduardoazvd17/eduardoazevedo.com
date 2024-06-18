@@ -142,7 +142,7 @@ class ProjectWidget extends StatelessWidget {
           await launchUrlString(url);
         }
       },
-      borderRadius: BorderRadius.circular(15),
+      borderRadius: BorderRadius.circular(5),
       child: Tooltip(
         message: referenceUrl,
         child: Padding(

@@ -18,17 +18,11 @@ class ChangeLanguageDialog extends StatelessWidget {
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: SupportedLanguages.values.map((language) {
-          final bool isSelected = language == controller.selectedLanguage ||
-              (language == SupportedLanguages.system &&
-                  controller.selectedLanguage == null);
           return InkWell(
-            borderRadius: BorderRadius.circular(15),
+            borderRadius: BorderRadius.circular(5),
             onTap: () {
-              if (isSelected) {
-                Navigator.of(context).pop();
-              } else {
-                controller.changeLanguage(language);
-              }
+              controller.changeLanguage(language);
+              Navigator.of(context).pop();
             },
             child: Padding(
               padding: const EdgeInsets.all(16),

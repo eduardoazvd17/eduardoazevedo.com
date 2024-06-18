@@ -81,7 +81,7 @@ class _ContactTabState extends State<ContactTab> {
                     }
                   } catch (_) {}
                 },
-                borderRadius: BorderRadius.circular(15),
+                borderRadius: BorderRadius.circular(5),
                 child: Padding(
                   padding: const EdgeInsets.all(2.5),
                   child: Image.asset(
@@ -157,7 +157,9 @@ class _ContactTabState extends State<ContactTab> {
         decoration: InputDecoration(
           prefixIcon: icon != null ? Icon(icon) : null,
           label: Text(label),
-          border: const OutlineInputBorder(),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
         ),
       ),
     );
@@ -171,7 +173,7 @@ class _ContactTabState extends State<ContactTab> {
   }) {
     return InkWell(
       onTap: onTap,
-      borderRadius: BorderRadius.circular(15),
+      borderRadius: BorderRadius.circular(5),
       child: Padding(
         padding: const EdgeInsets.all(10),
         child: Row(

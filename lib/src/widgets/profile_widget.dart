@@ -99,7 +99,7 @@ class ProfileWidget extends StatelessWidget {
               onTap: () => _open(
                 'https://www.linkedin.com/in/eduardoazvd17/',
               ),
-              borderRadius: BorderRadius.circular(15),
+              borderRadius: BorderRadius.circular(5),
               child: Padding(
                 padding: const EdgeInsets.all(2.5),
                 child: Image.asset(
@@ -113,7 +113,7 @@ class ProfileWidget extends StatelessWidget {
               onTap: () => _open(
                 'https://github.com/eduardoazvd17/',
               ),
-              borderRadius: BorderRadius.circular(15),
+              borderRadius: BorderRadius.circular(5),
               child: Padding(
                 padding: const EdgeInsets.all(2.5),
                 child: Image.asset(

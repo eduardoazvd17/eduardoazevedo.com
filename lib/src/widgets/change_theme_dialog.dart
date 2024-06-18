@@ -18,15 +18,11 @@ class ChangeThemeDialog extends StatelessWidget {
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: SupportedThemes.values.map((theme) {
-          final bool isSelected = theme == controller.selectedTheme;
           return InkWell(
-            borderRadius: BorderRadius.circular(15),
+            borderRadius: BorderRadius.circular(5),
             onTap: () {
-              if (isSelected) {
-                Navigator.of(context).pop();
-              } else {
-                controller.changeTheme(theme);
-              }
+              controller.changeTheme(theme);
+              Navigator.of(context).pop();
             },
             child: Padding(
               padding: const EdgeInsets.all(16),
