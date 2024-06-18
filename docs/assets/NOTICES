@@ -8339,7 +8339,6 @@ SOFTWARE.
 --------------------------------------------------------------------------------
 flutter_lints
 flutter_shaders
-go_router
 path_provider_linux
 path_provider_platform_interface
 path_provider_windows
