@@ -3,8 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-import '../../../../core/data/utils/app_themes.dart';
-import '../../../../core/presentation/widgets/responsive_builder.dart';
+import 'responsive_builder.dart';
 
 class ProfileWidget extends StatelessWidget {
   const ProfileWidget({super.key});
@@ -100,7 +99,7 @@ class ProfileWidget extends StatelessWidget {
               onTap: () => _open(
                 'https://www.linkedin.com/in/eduardoazvd17/',
               ),
-              borderRadius: AppThemes.circular5,
+              borderRadius: BorderRadius.circular(15),
               child: Padding(
                 padding: const EdgeInsets.all(2.5),
                 child: Image.asset(
@@ -114,7 +113,7 @@ class ProfileWidget extends StatelessWidget {
               onTap: () => _open(
                 'https://github.com/eduardoazvd17/',
               ),
-              borderRadius: AppThemes.circular5,
+              borderRadius: BorderRadius.circular(15),
               child: Padding(
                 padding: const EdgeInsets.all(2.5),
                 child: Image.asset(

@@ -1,7 +1,7 @@
-import 'package:eduardoazevedo/src/core/data/utils/app_constants.dart';
-import 'package:eduardoazevedo/src/core/presentation/widgets/change_language_dialog.dart';
-import 'package:eduardoazevedo/src/features/home/data/enums/home_page_tabs.dart';
-import 'package:eduardoazevedo/src/features/home/presentation/controllers/home_controller.dart';
+import 'package:eduardoazevedo/src/utils/app_constants.dart';
+import 'package:eduardoazevedo/src/controllers/app_controller.dart';
+import 'package:eduardoazevedo/src/widgets/change_language_dialog.dart';
+import 'package:eduardoazevedo/src/enums/home_page_tabs.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -10,45 +10,83 @@ import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
-import '../../../../core/presentation/widgets/change_theme_dialog.dart';
-import '../../../../core/presentation/widgets/responsive_builder.dart';
+import '../widgets/change_theme_dialog.dart';
+import '../widgets/responsive_builder.dart';
 import '../widgets/profile_widget.dart';
+import 'home_page_tabs/about_me_tab.dart';
+import 'home_page_tabs/contact_tab.dart';
+import 'home_page_tabs/my_projects_tab.dart';
 
-class HomePage extends StatelessWidget {
-  final HomeController controller;
-  const HomePage({
-    super.key,
-    required this.controller,
-  });
+class HomePage extends StatefulWidget {
+  final AppController appController;
+  const HomePage({super.key, required this.appController});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
+  late final AnimationController _pageAnimationController;
+  late final ScrollController _scrollController;
+  HomePageTabs _currentPage = HomePageTabs.values.first;
+
+  @override
+  void initState() {
+    _pageAnimationController = AnimationController(vsync: this);
+    _scrollController = ScrollController(
+      initialScrollOffset: widget.appController.scrollPosition,
+    );
+    _scrollController.addListener(_scrollListener);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _scrollController.removeListener(_scrollListener);
+    _scrollController.dispose();
+    _pageAnimationController.dispose();
+    super.dispose();
+  }
+
+  void _scrollListener() {
+    widget.appController.scrollPosition = _scrollController.offset;
+  }
+
+  Future<void> _changePage(HomePageTabs newPage) async {
+    if (_currentPage != newPage) {
+      await _pageAnimationController.reverse();
+      setState(() => _currentPage = newPage);
+      await _pageAnimationController.forward(from: 0);
+    }
+  }
+
+  void _backToTop() {
+    if (_scrollController.hasClients) {
+      _scrollController.animateTo(
+        0,
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.ease,
+      );
+    } else {
+      widget.appController.scrollPosition = 0;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    final ScrollController scrollController = ScrollController(
-      initialScrollOffset: controller.scrollPosition,
-    );
-
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      scrollController.addListener(() {
-        controller.scrollPosition = scrollController.offset;
-      });
-    });
-
     return ResponsiveBuilder(
-      desktopWidget: _desktopScaffold(context, scrollController),
-      mobileWidget: _mobileScaffold(context, scrollController),
+      desktopWidget: _desktopScaffold,
+      mobileWidget: _mobileScaffold,
     );
   }
 
-  Widget _desktopScaffold(
-    BuildContext context,
-    ScrollController scrollController,
-  ) {
+  Widget get _desktopScaffold {
     return Scaffold(
       floatingActionButtonLocation: ExpandableFab.location,
-      floatingActionButton: _expandableFab(context, scrollController),
+      floatingActionButton: _expandableFab(context, _scrollController),
       body: SafeArea(
         child: _scrollableView(
-          controller: scrollController,
+          controller: _scrollController,
           child: Column(
             children: [
               const Padding(
@@ -71,17 +109,14 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _mobileScaffold(
-    BuildContext context,
-    ScrollController scrollController,
-  ) {
+  Widget get _mobileScaffold {
     return Scaffold(
       floatingActionButtonLocation: ExpandableFab.location,
-      floatingActionButton: _expandableFab(context, scrollController),
+      floatingActionButton: _expandableFab(context, _scrollController),
       bottomNavigationBar: _navigationBar(context, false),
       body: SafeArea(
         child: _scrollableView(
-          controller: scrollController,
+          controller: _scrollController,
           padding: const EdgeInsets.symmetric(horizontal: 25),
           child: Column(
             children: [
@@ -108,8 +143,8 @@ class HomePage extends StatelessWidget {
         Observer(
           builder: (context) {
             return GNav(
-              selectedIndex: controller.currentPage.index,
-              onTabChange: (index) => controller.changePage(
+              selectedIndex: _currentPage.index,
+              onTabChange: (index) => _changePage(
                 HomePageTabs.values[index],
               ),
               tabBorderRadius: 16,
@@ -119,7 +154,7 @@ class HomePage extends StatelessWidget {
                   ? MainAxisAlignment.spaceEvenly
                   : MainAxisAlignment.center,
               tabs: HomePageTabs.values.map((e) {
-                final bool isSelected = controller.currentPage == e;
+                final bool isSelected = _currentPage == e;
                 return GButton(
                   gap: 10,
                   leading: isDesktop
@@ -163,17 +198,25 @@ class HomePage extends StatelessWidget {
 
   Widget _pageContent(context) {
     return Padding(
-        padding: const EdgeInsets.only(bottom: 50),
-        child: Center(
-          child: ConstrainedBox(
-            constraints:
-                const BoxConstraints(maxWidth: AppConstants.maxPageWidth),
-            child:
-                Observer(builder: (context) => controller.currentPage.content),
+      padding: const EdgeInsets.only(bottom: 50),
+      child: Center(
+        child: ConstrainedBox(
+          constraints:
+              const BoxConstraints(maxWidth: AppConstants.maxPageWidth),
+          child: Observer(
+            builder: (context) {
+              return switch (_currentPage) {
+                HomePageTabs.aboutMe => const AboutMeTab(),
+                HomePageTabs.myProjects => const MyProjectsTab(),
+                HomePageTabs.contact => const ContactTab(),
+              };
+            },
           ),
-        ).animate(onInit: (controller) {
-          this.controller.pageAnimationController = controller;
-        }).fade(duration: const Duration(milliseconds: 500)));
+        ),
+      )
+          .animate(controller: _pageAnimationController)
+          .fade(duration: const Duration(milliseconds: 300)),
+    );
   }
 
   Widget _expandableFab(
@@ -192,39 +235,25 @@ class HomePage extends StatelessWidget {
       ),
       children: [
         FloatingActionButton.small(
+          onPressed: () => showDialog(
+            context: context,
+            builder: (context) => ChangeThemeDialog(),
+          ),
           tooltip: AppLocalizations.of(context)!.changeTheme,
           child: const Icon(Icons.light),
-          onPressed: () {
-            showDialog(
-              context: context,
-              builder: (context) => ChangeThemeDialog(),
-            );
-          },
         ),
         FloatingActionButton.small(
+          onPressed: () => showDialog(
+            context: context,
+            builder: (context) => ChangeLanguageDialog(),
+          ),
           tooltip: AppLocalizations.of(context)!.changeLanguage,
           child: const Icon(CupertinoIcons.globe),
-          onPressed: () {
-            showDialog(
-              context: context,
-              builder: (context) => ChangeLanguageDialog(),
-            );
-          },
         ),
         FloatingActionButton.small(
+          onPressed: _backToTop,
           tooltip: AppLocalizations.of(context)!.backToTop,
           child: const Icon(Icons.arrow_upward),
-          onPressed: () {
-            if (scrollController.hasClients) {
-              scrollController.animateTo(
-                0,
-                duration: const Duration(milliseconds: 300),
-                curve: Curves.ease,
-              );
-            } else {
-              controller.scrollPosition = 0;
-            }
-          },
         ),
       ],
     );

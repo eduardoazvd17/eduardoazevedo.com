@@ -41,10 +41,26 @@ mixin _$AppController on AppControllerBase, Store {
     });
   }
 
+  late final _$scrollPositionAtom =
+      Atom(name: 'AppControllerBase.scrollPosition', context: context);
+
+  @override
+  double get scrollPosition {
+    _$scrollPositionAtom.reportRead();
+    return super.scrollPosition;
+  }
+
+  @override
+  set scrollPosition(double value) {
+    _$scrollPositionAtom.reportWrite(value, super.scrollPosition, () {
+      super.scrollPosition = value;
+    });
+  }
+
   @override
   String toString() {
     return '''
-
+scrollPosition: ${scrollPosition}
     ''';
   }
 }

@@ -1,41 +1,42 @@
-import 'package:eduardoazevedo/src/core/presentation/controllers/app_controller.dart';
+import 'package:eduardoazevedo/src/controllers/app_controller.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
-import '../../data/enums/supported_themes.dart';
-import '../../data/utils/app_themes.dart';
+import '../enums/supported_languages.dart';
 
-class ChangeThemeDialog extends StatelessWidget {
+class ChangeLanguageDialog extends StatelessWidget {
   late final AppController controller;
-  ChangeThemeDialog({super.key}) : controller = GetIt.I.get<AppController>();
+  ChangeLanguageDialog({super.key}) : controller = GetIt.I.get<AppController>();
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
       contentPadding: const EdgeInsets.all(16),
-      title: Text(AppLocalizations.of(context)!.changeTheme),
+      title: Text(AppLocalizations.of(context)!.changeLanguage),
       content: Column(
         mainAxisSize: MainAxisSize.min,
-        children: SupportedThemes.values.map((theme) {
-          final bool isSelected = theme == controller.selectedTheme;
+        children: SupportedLanguages.values.map((language) {
+          final bool isSelected = language == controller.selectedLanguage ||
+              (language == SupportedLanguages.system &&
+                  controller.selectedLanguage == null);
           return InkWell(
-            borderRadius: AppThemes.circular5,
+            borderRadius: BorderRadius.circular(15),
             onTap: () {
               if (isSelected) {
                 Navigator.of(context).pop();
               } else {
-                controller.changeTheme(theme);
+                controller.changeLanguage(language);
               }
             },
             child: Padding(
               padding: const EdgeInsets.all(16),
               child: Row(
                 children: [
-                  theme.icon,
+                  language.icon,
                   const SizedBox(width: 16),
-                  Text(theme.title(context)),
+                  Text(language.title(context)),
                 ],
               ),
             ),

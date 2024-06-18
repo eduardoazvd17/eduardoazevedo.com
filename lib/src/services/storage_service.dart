@@ -1,5 +1,5 @@
-import 'package:eduardoazevedo/src/core/data/enums/supported_languages.dart';
-import 'package:eduardoazevedo/src/core/data/enums/supported_themes.dart';
+import 'package:eduardoazevedo/src/enums/supported_languages.dart';
+import 'package:eduardoazevedo/src/enums/supported_themes.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class StorageService {

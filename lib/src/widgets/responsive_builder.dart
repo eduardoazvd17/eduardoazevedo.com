@@ -1,4 +1,4 @@
-import 'package:eduardoazevedo/src/core/data/utils/app_constants.dart';
+import 'package:eduardoazevedo/src/utils/app_constants.dart';
 import 'package:flutter/material.dart';
 
 class ResponsiveBuilder extends StatelessWidget {

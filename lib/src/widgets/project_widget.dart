@@ -1,11 +1,10 @@
-import 'package:eduardoazevedo/src/core/presentation/widgets/responsive_builder.dart';
-import 'package:eduardoazevedo/src/features/home/data/models/project_model.dart';
+import 'package:eduardoazevedo/src/widgets/responsive_builder.dart';
+import 'package:eduardoazevedo/src/models/project_model.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-import '../../../../core/data/utils/app_themes.dart';
-import '../../data/enums/project_reference_type.dart';
+import '../enums/project_reference_type.dart';
 
 class ProjectWidget extends StatelessWidget {
   final ProjectModel project;
@@ -107,7 +106,7 @@ class ProjectWidget extends StatelessWidget {
             padding: const EdgeInsets.only(top: 5, bottom: 20),
             child: Text(
               project.description,
-              style: const TextStyle(color: AppThemes.commonColor),
+              style: const TextStyle(color: Colors.grey),
             ),
           ),
           Wrap(
@@ -143,7 +142,7 @@ class ProjectWidget extends StatelessWidget {
           await launchUrlString(url);
         }
       },
-      borderRadius: AppThemes.circular5,
+      borderRadius: BorderRadius.circular(15),
       child: Tooltip(
         message: referenceUrl,
         child: Padding(

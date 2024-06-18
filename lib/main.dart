@@ -1,45 +1,42 @@
-import 'package:eduardoazevedo/src/core/data/enums/supported_languages.dart';
-import 'package:eduardoazevedo/src/core/data/enums/supported_themes.dart';
-import 'package:eduardoazevedo/src/core/data/utils/app_routes.dart';
-import 'package:eduardoazevedo/src/core/presentation/controllers/app_controller.dart';
-import 'package:eduardoazevedo/src/features/home/presentation/controllers/email_controller.dart';
-import 'package:eduardoazevedo/src/features/home/presentation/controllers/home_controller.dart';
+import 'package:eduardoazevedo/src/enums/supported_languages.dart';
+import 'package:eduardoazevedo/src/enums/supported_themes.dart';
+import 'package:eduardoazevedo/src/controllers/app_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
 
-import 'src/core/data/services/storage_service.dart';
-import 'src/core/data/utils/app_constants.dart';
-import 'src/core/data/utils/app_themes.dart';
+import 'src/services/storage_service.dart';
+import 'src/utils/app_constants.dart';
+import 'src/utils/app_theme.dart';
+import 'src/pages/home_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   GetIt.I.registerLazySingleton(() => StorageService());
-  GetIt.I.registerLazySingleton(() => AppController()..init());
-  GetIt.I.registerLazySingleton(() => HomeController());
-  GetIt.I.registerLazySingleton(() => EmailController());
-  runApp(const MyApp());
+  final appController = GetIt.I.registerSingleton(
+    AppController(storage: GetIt.I.get<StorageService>()),
+  );
+  runApp(MyApp(appController: appController));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final AppController appController;
+  const MyApp({super.key, required this.appController});
 
   @override
   Widget build(BuildContext context) {
     return Observer(
       builder: (_) {
-        final appController = GetIt.I.get<AppController>();
-
-        return MaterialApp.router(
+        return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Eduardo Azevedo',
           localizationsDelegates: AppConstants.localizationsDelegates,
           supportedLocales: AppConstants.supportedLocales,
-          theme: AppThemes.light,
-          darkTheme: AppThemes.dark,
-          routerConfig: AppRoutes.routerConfig,
-          themeMode: appController.selectedTheme.themeMode,
           locale: appController.selectedLanguage?.locale,
+          theme: AppTheme.lightTheme,
+          darkTheme: AppTheme.darkTheme,
+          themeMode: appController.selectedTheme.themeMode,
+          home: HomePage(appController: appController),
         );
       },
     );

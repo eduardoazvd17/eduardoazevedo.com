@@ -1,16 +1,21 @@
-import 'package:eduardoazevedo/src/core/data/services/storage_service.dart';
-import 'package:get_it/get_it.dart';
+import 'package:eduardoazevedo/src/services/storage_service.dart';
 import 'package:mobx/mobx.dart';
 
-import '../../data/enums/supported_languages.dart';
-import '../../data/enums/supported_themes.dart';
+import '../enums/supported_languages.dart';
+import '../enums/supported_themes.dart';
 part 'app_controller.g.dart';
 
 class AppController = AppControllerBase with _$AppController;
 
 abstract class AppControllerBase with Store {
-  final StorageService _storage = GetIt.I.get<StorageService>();
-  Future<void> init() async {
+  final StorageService _storage;
+  AppControllerBase({
+    required StorageService storage,
+  }) : _storage = storage {
+    onInit();
+  }
+
+  Future<void> onInit() async {
     _selectedLanguage = await _storage.loadLanguage();
     _selectedTheme = await _storage.loadTheme();
   }
@@ -37,4 +42,7 @@ abstract class AppControllerBase with Store {
       _storage.saveTheme(theme);
     }
   }
+
+  @observable
+  double scrollPosition = 0.0;
 }

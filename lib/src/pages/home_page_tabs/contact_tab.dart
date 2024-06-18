@@ -1,17 +1,53 @@
-import 'package:eduardoazevedo/src/features/home/presentation/controllers/email_controller.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../../../core/data/utils/app_themes.dart';
+class ContactTab extends StatefulWidget {
+  const ContactTab({super.key});
 
-class ContactTab extends StatelessWidget {
-  final EmailController emailController;
-  const ContactTab({
-    super.key,
-    required this.emailController,
-  });
+  @override
+  State<ContactTab> createState() => _ContactTabState();
+}
+
+class _ContactTabState extends State<ContactTab> {
+  late final TextEditingController _subjectTextController;
+  late final TextEditingController _messageTextController;
+
+  @override
+  void initState() {
+    _subjectTextController = TextEditingController();
+    _messageTextController = TextEditingController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _subjectTextController.dispose();
+    _messageTextController.dispose();
+    super.dispose();
+  }
+
+  void _clearFields() {
+    _subjectTextController.clear();
+    _messageTextController.clear();
+  }
+
+  Future<void> _sendEmail() async {
+    final String subject = _subjectTextController.text.trim();
+    final String body = _messageTextController.text.trim();
+    if (subject.isEmpty || body.isEmpty) return;
+
+    final Uri uri = Uri(
+      scheme: 'mailto',
+      path: 'eduardoazvd17@gmail.com',
+      query: 'subject=$subject&body=$body',
+    );
+
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +81,7 @@ class ContactTab extends StatelessWidget {
                     }
                   } catch (_) {}
                 },
-                borderRadius: AppThemes.circular5,
+                borderRadius: BorderRadius.circular(15),
                 child: Padding(
                   padding: const EdgeInsets.all(2.5),
                   child: Image.asset(
@@ -74,11 +110,11 @@ class ContactTab extends StatelessWidget {
         children: [
           _formTextField(
             label: AppLocalizations.of(context)!.subject,
-            controller: emailController.subjectTextController,
+            controller: _subjectTextController,
           ),
           _formTextField(
             label: AppLocalizations.of(context)!.message,
-            controller: emailController.messageTextController,
+            controller: _messageTextController,
             isTextArea: true,
           ),
           const SizedBox(height: 5),
@@ -88,16 +124,16 @@ class ContactTab extends StatelessWidget {
                 child: _formButton(
                   icon: Icons.close,
                   text: AppLocalizations.of(context)!.clearFields,
-                  color: AppThemes.errorColor,
-                  onTap: emailController.clearContactFields,
+                  color: Theme.of(context).colorScheme.error,
+                  onTap: _clearFields,
                 ),
               ),
               Expanded(
                 child: _formButton(
                   icon: Icons.send,
                   text: AppLocalizations.of(context)!.send,
-                  color: AppThemes.accentColor,
-                  onTap: emailController.sendEmail,
+                  color: Theme.of(context).colorScheme.secondary,
+                  onTap: _sendEmail,
                 ),
               ),
             ],
@@ -135,7 +171,7 @@ class ContactTab extends StatelessWidget {
   }) {
     return InkWell(
       onTap: onTap,
-      borderRadius: AppThemes.circular5,
+      borderRadius: BorderRadius.circular(15),
       child: Padding(
         padding: const EdgeInsets.all(10),
         child: Row(

@@ -1,6 +1,6 @@
-import 'package:eduardoazevedo/src/features/home/data/enums/project_reference_type.dart';
-import 'package:eduardoazevedo/src/features/home/data/models/project_model.dart';
-import 'package:eduardoazevedo/src/features/home/presentation/widgets/project_widget.dart';
+import 'package:eduardoazevedo/src/enums/project_reference_type.dart';
+import 'package:eduardoazevedo/src/models/project_model.dart';
+import 'package:eduardoazevedo/src/widgets/project_widget.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:flutter/material.dart';
