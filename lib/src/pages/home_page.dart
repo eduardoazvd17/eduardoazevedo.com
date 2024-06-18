@@ -95,7 +95,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               ),
               _navigationBar(context, true),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 35),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 35, horizontal: 35),
                 child: _pageContent(context),
               ),
             ],

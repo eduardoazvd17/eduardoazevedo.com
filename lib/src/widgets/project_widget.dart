@@ -38,7 +38,9 @@ class ProjectWidget extends StatelessWidget {
                 flex: 6,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [_projectName],
+                  children: [
+                    _projectName(context),
+                  ],
                 ),
               ),
             ],
@@ -55,28 +57,33 @@ class ProjectWidget extends StatelessWidget {
 
   Widget _desktopWidget(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 20),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
+      padding: const EdgeInsets.only(bottom: 10),
+      child: Column(
         children: [
-          Flexible(
-            flex: 4,
-            child: _projectImage,
-          ),
-          const SizedBox(width: 10),
-          Flexible(
-            flex: 6,
-            child: Padding(
-              padding: const EdgeInsets.all(10),
-              child: Column(
-                children: [
-                  _projectName,
-                  const Divider(),
-                  _projectDetails(context),
-                ],
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Flexible(
+                flex: 4,
+                child: _projectImage,
               ),
-            ),
+              const SizedBox(width: 10),
+              Flexible(
+                flex: 6,
+                child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      _projectName(context),
+                      _projectDetails(context),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
+          const Divider(height: 50),
         ],
       ),
     );
@@ -92,10 +99,10 @@ class ProjectWidget extends StatelessWidget {
     );
   }
 
-  Widget get _projectName {
+  Widget _projectName(BuildContext context) {
     return Text(
       project.name,
-      style: const TextStyle(fontWeight: FontWeight.bold),
+      style: Theme.of(context).textTheme.titleMedium,
     );
   }
 
