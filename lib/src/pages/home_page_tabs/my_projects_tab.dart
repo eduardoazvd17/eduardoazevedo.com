@@ -37,7 +37,9 @@ List<ProjectModel> _getProjects(BuildContext context) {
       name: AppLocalizations.of(context)!.investHelper,
       description: AppLocalizations.of(context)!.investHelperDescription,
       imageUrl: 'assets/images/projects/investhelper.png',
-      references: {},
+      references: {
+        ProjectReferenceType.preview: 'https://investhelper-2024.web.app',
+      },
     ),
     ProjectModel(
       name: AppLocalizations.of(context)!.audioTexter,
