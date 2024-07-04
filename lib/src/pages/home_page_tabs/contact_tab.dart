@@ -72,7 +72,7 @@ class _ContactTabState extends State<ContactTab> {
               child: Row(
                 children: [
                   Text(AppLocalizations.of(context)!.contactBy),
-                  Expanded(
+                  Flexible(
                     child: Padding(
                       padding: const EdgeInsets.only(left: 10),
                       child: InkWell(
