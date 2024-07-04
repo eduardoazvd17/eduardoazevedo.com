@@ -72,29 +72,31 @@ class _ContactTabState extends State<ContactTab> {
               child: Row(
                 children: [
                   Text(AppLocalizations.of(context)!.contactBy),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10),
-                    child: InkWell(
-                      onTap: () async {
-                        try {
-                          Uri uri =
-                              Uri.parse('whatsapp://send?phone=+5521988542950');
-                          if (await canLaunchUrl(uri)) {
-                            await launchUrl(uri);
-                          } else {
-                            uri = Uri.parse('https://wa.me/+5521988542950');
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 10),
+                      child: InkWell(
+                        onTap: () async {
+                          try {
+                            Uri uri = Uri.parse(
+                                'whatsapp://send?phone=+5521988542950');
                             if (await canLaunchUrl(uri)) {
                               await launchUrl(uri);
+                            } else {
+                              uri = Uri.parse('https://wa.me/+5521988542950');
+                              if (await canLaunchUrl(uri)) {
+                                await launchUrl(uri);
+                              }
                             }
-                          }
-                        } catch (_) {}
-                      },
-                      borderRadius: BorderRadius.circular(5),
-                      child: Padding(
-                        padding: const EdgeInsets.all(2.5),
-                        child: Image.asset(
-                          'assets/icons/whatsapp.png',
-                          width: 100,
+                          } catch (_) {}
+                        },
+                        borderRadius: BorderRadius.circular(5),
+                        child: Padding(
+                          padding: const EdgeInsets.all(2.5),
+                          child: Image.asset(
+                            'assets/icons/whatsapp.png',
+                            width: 100,
+                          ),
                         ),
                       ),
                     ),
@@ -109,15 +111,17 @@ class _ContactTabState extends State<ContactTab> {
             padding: const EdgeInsets.all(20),
             child: Row(
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
-                      child: Text(AppLocalizations.of(context)!.sendMeEmail),
-                    ),
-                    _emailForm(context),
-                  ],
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 10),
+                        child: Text(AppLocalizations.of(context)!.sendMeEmail),
+                      ),
+                      _emailForm(context),
+                    ],
+                  ),
                 ),
               ],
             ),
