@@ -58,46 +58,71 @@ class _ContactTabState extends State<ContactTab> {
           padding: const EdgeInsets.only(bottom: 20),
           child: Text(
             AppLocalizations.of(context)!.contact,
-            style: Theme.of(context).textTheme.titleLarge,
+            style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
           ),
         ),
         Text(AppLocalizations.of(context)!.contactDescription),
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5),
-          child: Row(
-            children: [
-              Text(AppLocalizations.of(context)!.contactBy),
-              InkWell(
-                onTap: () async {
-                  try {
-                    Uri uri = Uri.parse('whatsapp://send?phone=+5521988542950');
-                    if (await canLaunchUrl(uri)) {
-                      await launchUrl(uri);
-                    } else {
-                      uri = Uri.parse('https://wa.me/+5521988542950');
-                      if (await canLaunchUrl(uri)) {
-                        await launchUrl(uri);
-                      }
-                    }
-                  } catch (_) {}
-                },
-                borderRadius: BorderRadius.circular(5),
-                child: Padding(
-                  padding: const EdgeInsets.all(2.5),
-                  child: Image.asset(
-                    'assets/icons/whatsapp.png',
-                    width: 100,
+          padding: const EdgeInsets.symmetric(vertical: 20),
+          child: Card(
+            child: Padding(
+              padding: const EdgeInsets.all(20),
+              child: Row(
+                children: [
+                  Text(AppLocalizations.of(context)!.contactBy),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: InkWell(
+                      onTap: () async {
+                        try {
+                          Uri uri =
+                              Uri.parse('whatsapp://send?phone=+5521988542950');
+                          if (await canLaunchUrl(uri)) {
+                            await launchUrl(uri);
+                          } else {
+                            uri = Uri.parse('https://wa.me/+5521988542950');
+                            if (await canLaunchUrl(uri)) {
+                              await launchUrl(uri);
+                            }
+                          }
+                        } catch (_) {}
+                      },
+                      borderRadius: BorderRadius.circular(5),
+                      child: Padding(
+                        padding: const EdgeInsets.all(2.5),
+                        child: Image.asset(
+                          'assets/icons/whatsapp.png',
+                          width: 100,
+                        ),
+                      ),
+                    ),
                   ),
-                ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 5),
-          child: Text(AppLocalizations.of(context)!.sendMeEmail),
+        Card(
+          child: Padding(
+            padding: const EdgeInsets.all(20),
+            child: Row(
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: Text(AppLocalizations.of(context)!.sendMeEmail),
+                    ),
+                    _emailForm(context),
+                  ],
+                ),
+              ],
+            ),
+          ),
         ),
-        _emailForm(context),
       ],
     );
   }
