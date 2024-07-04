@@ -38,7 +38,7 @@ List<ProjectModel> _getProjects(BuildContext context) {
       description: AppLocalizations.of(context)!.investHelperDescription,
       imageUrl: 'assets/images/projects/investhelper.png',
       references: {
-        ProjectReferenceType.preview: 'https://investhelper-2024.web.app',
+        ProjectReferenceType.preview: 'https://investhelper.eduardoazevedo.com',
       },
     ),
     ProjectModel(
@@ -55,7 +55,7 @@ List<ProjectModel> _getProjects(BuildContext context) {
       description: AppLocalizations.of(context)!.myFinancesDescription,
       imageUrl: 'assets/images/projects/my_finances.png',
       references: {
-        ProjectReferenceType.preview: 'https://myfinancesbr.web.app/',
+        ProjectReferenceType.preview: 'https://myfinances.eduardoazevedo.com/',
       },
     ),
     ProjectModel(

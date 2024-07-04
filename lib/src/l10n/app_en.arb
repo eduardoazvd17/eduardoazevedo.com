@@ -30,7 +30,7 @@
   "audioTexter": "AudioTexter",
   "audioTexterDescription": "AudioTexter is an application developed in Flutter that allows you to record audio and transcribe it into text.",
   "myFinances": "My Finances",
-  "myFinancesDescription": "A finance control application that will allow you to control your monthly expenses, investments and save important notes. The project is still under development.",
+  "myFinancesDescription": "A finance control application that will allow you to control your monthly expenses, investments and save important notes.",
   "pokedex": "Pokedex",
   "pokedexDescription": "A Pokémon app developed with flutter. Challenge proposed by the company Guarani Sistemas. The application was developed using flutter and adopting clean code standards, following the Clean architecture with Modular for route management and GetX for state management and dependency injection, obtaining data from the \"pokeapi.com\" API using the http library.",
   "gitf": "GitF",
@@ -46,7 +46,7 @@
   "moviesChallenge": "Movies Challenge",
   "moviesChallengeDescription": "Movies info application using rest api, a challenge proposed by Cubos. The project was developed using modular with mobx and obtaining data from the TMDB api.",
   "investHelper": "InvestHelper",
-  "investHelperDescription": "An app to control your investments and have a complete overview containing all the values needed to control purchases, sales, profits, average prices and purchase and sale prices. In addition to generating reports for easier viewing on the computer. (Under development)",
+  "investHelperDescription": "An app to control your investments and have a complete overview containing all the values needed to control purchases, sales, profits, average prices and purchase and sale prices. In addition to generating reports for easier viewing on the computer.",
   "nutriUtils": "NutriUtils",
   "nutriUtilsDescription": "NutriUtils is the essential tool for nutritionists to create personalized diets and manage their patients efficiently. It simplifies meal planning and tracking patient progress."
 }

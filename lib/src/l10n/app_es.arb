@@ -30,7 +30,7 @@
   "audioTexter": "AudioTexter",
   "audioTexterDescription": "AudioTexter es una aplicación desarrollada en Flutter que te permite grabar audio y transcribirlo a texto.",
   "myFinances": "Mis Finanzas",
-  "myFinancesDescription": "Una aplicación para el control financiero que te permitirá controlar tus gastos mensuales, inversiones y guardar anotaciones importantes. El proyecto aún está en desarrollo.",
+  "myFinancesDescription": "Una aplicación para el control financiero que te permitirá controlar tus gastos mensuales, inversiones y guardar anotaciones importantes.",
   "pokedex": "Pokedex",
   "pokedexDescription": "Una aplicación de Pokémon desarrollada con Flutter. Desafío propuesto por la empresa Guarani Sistemas. La aplicación fue desarrollada utilizando Flutter y adoptando patrones de código limpio, siguiendo la arquitectura Clean con Modular para la gestión de rutas y GetX para la gestión del estado e inyección de dependencias, obteniendo datos de la API \"pokeapi.com\" utilizando la biblioteca http.",
   "gitf": "GitF",
@@ -46,7 +46,7 @@
   "moviesChallenge": "Movies Challenge",
   "moviesChallengeDescription": "Aplicación de información de películas utilizando rest api, desafío propuesto por Cubos. El proyecto fue desarrollado utilizando modular con mobx y obteniendo datos de la api TMDB.",
   "investHelper": "InvestHelper",
-  "investHelperDescription": "Una app para controlar tus inversiones y tener un panorama completo que contiene todos los valores necesarios para controlar compras, ventas, ganancias, precios promedio y precios de compra y venta. Además de generar informes para una mejor visualización en la computadora. (En desarrollo)",
+  "investHelperDescription": "Una app para controlar tus inversiones y tener un panorama completo que contiene todos los valores necesarios para controlar compras, ventas, ganancias, precios promedio y precios de compra y venta. Además de generar informes para una mejor visualización en la computadora.",
   "nutriUtils": "NutriUtils",
   "nutriUtilsDescription": "NutriUtils es la herramienta esencial para que los nutricionistas creen dietas personalizadas y gestionen a sus pacientes de manera eficiente. Simplifica la planificación de comidas y el seguimiento del progreso de los pacientes."
 }

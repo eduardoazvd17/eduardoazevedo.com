@@ -30,7 +30,7 @@
   "audioTexter": "AudioTexter",
   "audioTexterDescription": "AudioTexter é um aplicativo desenvolvido em Flutter que permite gravar áudios e transcrevê-los em texto.",
   "myFinances": "My Finances",
-  "myFinancesDescription": "Um aplicativo para controle de finanças no qual te permitirá controlar seus gastos mensais, investimentos e salvar anotações importantes. O projeto ainda está em desenvolvimento.",
+  "myFinancesDescription": "Um aplicativo para controle de finanças no qual te permitirá controlar seus gastos mensais, investimentos e salvar anotações importantes.",
   "pokedex": "Pokedex",
   "pokedexDescription": "Um app de Pokémon desenvolvido com flutter. Desafio proposto pela empresa Guarani Sistemas. A aplicação foi desenvolvida utilizando flutter e adotando padrões de código limpo, seguindo a arquitetura Clean com Modular para o gerenciamento de rotas e GetX para gerenciamento de estado e injeção de dependencias, obtendo dados da API \"pokeapi.com\" utlizando a biblioteca http.",
   "gitf": "GitF",
@@ -46,7 +46,7 @@
   "moviesChallenge": "Movies Challenge",
   "moviesChallengeDescription": "Aplicativo de informações de filmes utilizando rest api, desafio proposto pela Cubos. O projeto foi desenvolvido utilizando modular com mobx e obtendo dados da api TMDB.",
   "investHelper": "InvestHelper",
-  "investHelperDescription": "Um app para controlar seus investimentos e ter um panorama completo contendo todos os valores necessários para o controle de compra, venda, lucro, preço médio e preço de compra e venda. Além de gerar relatórios para facilitar a visualização pelo computador. (Em desenvolvimento)",
+  "investHelperDescription": "Um app para controlar seus investimentos e ter um panorama completo contendo todos os valores necessários para o controle de compra, venda, lucro, preço médio e preço de compra e venda. Além de gerar relatórios para facilitar a visualização pelo computador.",
   "nutriUtils": "NutriUtils",
   "nutriUtilsDescription": "NutriUtils é a ferramenta essencial para nutricionistas criarem dietas personalizadas e gerenciarem seus pacientes de forma eficiente. Simplifica o planejamento alimentar e o acompanhamento do progresso dos pacientes."
 }
