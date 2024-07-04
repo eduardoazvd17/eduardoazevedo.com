@@ -45328,7 +45328,7 @@ return A.K($async$$0,r)},
 $S:23}
 A.Me.prototype={
 U(a){var s=null,r="assets/images/projects/pub_dev.png",q=t.A,p=t.HU,o=t.N,n=t.Z1
-return A.dq(A.a([new A.bj(B.h6,A.cd(A.aT(a,B.z,q).gyw(),s,s,s,A.a0(a).p2.r,s,s),s),A.dq(A.a5(new A.ad(A.a([new A.ea(A.aT(a,B.z,q).gGk(),A.aT(a,B.z,q).gGl(),"assets/images/projects/investhelper.png",A.at([B.fl,"https://investhelper-2024.web.app"],p,o)),new A.ea(A.aT(a,B.z,q).gEn(),A.aT(a,B.z,q).gEo(),"assets/images/projects/audiotexter.png",A.at([B.cL,"https://github.com/eduardoazvd17/audiotexter"],p,o)),new A.ea(A.aT(a,B.z,q).gGL(),A.aT(a,B.z,q).gGM(),"assets/images/projects/my_finances.png",A.at([B.fl,"https://myfinancesbr.web.app/"],p,o)),new A.ea(A.aT(a,B.z,q).gGQ(),A.aT(a,B.z,q).gGR(),"assets/images/projects/nutriutils.png",A.at([B.fl,"https://nutriutils.eduardoazevedo.com/"],p,o)),new A.ea(A.aT(a,B.z,q).gzR(),A.aT(a,B.z,q).gzS(),"assets/images/projects/gitf.png",A.at([B.a_S,"https://github.com/eduardoazvd17/gitf/releases",B.cL,"https://github.com/eduardoazvd17/gitf"],p,o)),new A.ea(A.aT(a,B.z,q).gEV(),A.aT(a,B.z,q).gEW(),r,A.at([B.fl,"https://pub.dev/packages/credentials_manager",B.cL,"https://github.com/eduardoazvd17/credentials_manager"],p,o)),new A.ea(A.aT(a,B.z,q).gAk(),A.aT(a,B.z,q).gAl(),r,A.at([B.fl,"https://pub.dev/packages/simple_overlay",B.cL,"https://github.com/eduardoazvd17/simple_overlay"],p,o)),new A.ea(A.aT(a,B.z,q).gH8(),A.aT(a,B.z,q).gH9(),"assets/images/projects/pokedex.png",A.at([B.cL,"https://github.com/eduardoazvd17/pokedex"],p,o)),new A.ea(A.aT(a,B.z,q).gFO(),A.aT(a,B.z,q).gFP(),"assets/images/projects/flutter_book.png",A.at([B.cL,"https://github.com/eduardoazvd17/flutter_book"],p,o)),new A.ea(A.aT(a,B.z,q).gGN(),A.aT(a,B.z,q).gGO(),"assets/images/projects/notes_app.png",A.at([B.cL,"https://github.com/eduardoazvd17/notes_app"],p,o)),new A.ea(A.aT(a,B.z,q).gGI(),A.aT(a,B.z,q).gGJ(),"assets/images/projects/movies_challenge.png",A.at([B.cL,"https://github.com/eduardoazvd17/movies_challenge"],p,o))],t.gd),new A.aaV(),n),!0,n.i("aG.E")),B.bC,B.P,B.X)],t.p),B.bC,B.P,B.X)}}
+return A.dq(A.a([new A.bj(B.h6,A.cd(A.aT(a,B.z,q).gyw(),s,s,s,A.a0(a).p2.r,s,s),s),A.dq(A.a5(new A.ad(A.a([new A.ea(A.aT(a,B.z,q).gGk(),A.aT(a,B.z,q).gGl(),"assets/images/projects/investhelper.png",A.at([B.fl,"https://investhelper.eduardoazevedo.com"],p,o)),new A.ea(A.aT(a,B.z,q).gEn(),A.aT(a,B.z,q).gEo(),"assets/images/projects/audiotexter.png",A.at([B.cL,"https://github.com/eduardoazvd17/audiotexter"],p,o)),new A.ea(A.aT(a,B.z,q).gGL(),A.aT(a,B.z,q).gGM(),"assets/images/projects/my_finances.png",A.at([B.fl,"https://myfinances.eduardoazevedo.com/"],p,o)),new A.ea(A.aT(a,B.z,q).gGQ(),A.aT(a,B.z,q).gGR(),"assets/images/projects/nutriutils.png",A.at([B.fl,"https://nutriutils.eduardoazevedo.com/"],p,o)),new A.ea(A.aT(a,B.z,q).gzR(),A.aT(a,B.z,q).gzS(),"assets/images/projects/gitf.png",A.at([B.a_S,"https://github.com/eduardoazvd17/gitf/releases",B.cL,"https://github.com/eduardoazvd17/gitf"],p,o)),new A.ea(A.aT(a,B.z,q).gEV(),A.aT(a,B.z,q).gEW(),r,A.at([B.fl,"https://pub.dev/packages/credentials_manager",B.cL,"https://github.com/eduardoazvd17/credentials_manager"],p,o)),new A.ea(A.aT(a,B.z,q).gAk(),A.aT(a,B.z,q).gAl(),r,A.at([B.fl,"https://pub.dev/packages/simple_overlay",B.cL,"https://github.com/eduardoazvd17/simple_overlay"],p,o)),new A.ea(A.aT(a,B.z,q).gH8(),A.aT(a,B.z,q).gH9(),"assets/images/projects/pokedex.png",A.at([B.cL,"https://github.com/eduardoazvd17/pokedex"],p,o)),new A.ea(A.aT(a,B.z,q).gFO(),A.aT(a,B.z,q).gFP(),"assets/images/projects/flutter_book.png",A.at([B.cL,"https://github.com/eduardoazvd17/flutter_book"],p,o)),new A.ea(A.aT(a,B.z,q).gGN(),A.aT(a,B.z,q).gGO(),"assets/images/projects/notes_app.png",A.at([B.cL,"https://github.com/eduardoazvd17/notes_app"],p,o)),new A.ea(A.aT(a,B.z,q).gGI(),A.aT(a,B.z,q).gGJ(),"assets/images/projects/movies_challenge.png",A.at([B.cL,"https://github.com/eduardoazvd17/movies_challenge"],p,o))],t.gd),new A.aaV(),n),!0,n.i("aG.E")),B.bC,B.P,B.X)],t.p),B.bC,B.P,B.X)}}
 A.aaV.prototype={
 $1(a){return new A.oB(a,null)},
 $S:338}
@@ -82067,7 +82067,7 @@ gFm(){return"Download"},
 gEn(){return"AudioTexter"},
 gEo(){return"AudioTexter is an application developed in Flutter that allows you to record audio and transcribe it into text."},
 gGL(){return"My Finances"},
-gGM(){return"A finance control application that will allow you to control your monthly expenses, investments and save important notes. The project is still under development."},
+gGM(){return"A finance control application that will allow you to control your monthly expenses, investments and save important notes."},
 gH8(){return"Pokedex"},
 gH9(){return'A Pok\xe9mon app developed with flutter. Challenge proposed by the company Guarani Sistemas. The application was developed using flutter and adopting clean code standards, following the Clean architecture with Modular for route management and GetX for state management and dependency injection, obtaining data from the "pokeapi.com" API using the http library.'},
 gzR(){return"GitF"},
@@ -82083,7 +82083,7 @@ gGO(){return"A notes app developed with Flutter. Challenge proposed by the compa
 gGI(){return"Movies Challenge"},
 gGJ(){return"Movies info application using rest api, a challenge proposed by Cubos. The project was developed using modular with mobx and obtaining data from the TMDB api."},
 gGk(){return"InvestHelper"},
-gGl(){return"An app to control your investments and have a complete overview containing all the values needed to control purchases, sales, profits, average prices and purchase and sale prices. In addition to generating reports for easier viewing on the computer. (Under development)"},
+gGl(){return"An app to control your investments and have a complete overview containing all the values needed to control purchases, sales, profits, average prices and purchase and sale prices. In addition to generating reports for easier viewing on the computer."},
 gGQ(){return"NutriUtils"},
 gGR(){return"NutriUtils is the essential tool for nutritionists to create personalized diets and manage their patients efficiently. It simplifies meal planning and tracking patient progress."}}
 A.Fj.prototype={
@@ -82115,7 +82115,7 @@ gFm(){return"Descargar"},
 gEn(){return"AudioTexter"},
 gEo(){return"AudioTexter es una aplicaci\xf3n desarrollada en Flutter que te permite grabar audio y transcribirlo a texto."},
 gGL(){return"Mis Finanzas"},
-gGM(){return"Una aplicaci\xf3n para el control financiero que te permitir\xe1 controlar tus gastos mensuales, inversiones y guardar anotaciones importantes. El proyecto a\xfan est\xe1 en desarrollo."},
+gGM(){return"Una aplicaci\xf3n para el control financiero que te permitir\xe1 controlar tus gastos mensuales, inversiones y guardar anotaciones importantes."},
 gH8(){return"Pokedex"},
 gH9(){return'Una aplicaci\xf3n de Pok\xe9mon desarrollada con Flutter. Desaf\xedo propuesto por la empresa Guarani Sistemas. La aplicaci\xf3n fue desarrollada utilizando Flutter y adoptando patrones de c\xf3digo limpio, siguiendo la arquitectura Clean con Modular para la gesti\xf3n de rutas y GetX para la gesti\xf3n del estado e inyecci\xf3n de dependencias, obteniendo datos de la API "pokeapi.com" utilizando la biblioteca http.'},
 gzR(){return"GitF"},
@@ -82131,7 +82131,7 @@ gGO(){return"Una aplicaci\xf3n de notas desarrollada con Flutter. Desaf\xedo pro
 gGI(){return"Movies Challenge"},
 gGJ(){return"Aplicaci\xf3n de informaci\xf3n de pel\xedculas utilizando rest api, desaf\xedo propuesto por Cubos. El proyecto fue desarrollado utilizando modular con mobx y obteniendo datos de la api TMDB."},
 gGk(){return"InvestHelper"},
-gGl(){return"Una app para controlar tus inversiones y tener un panorama completo que contiene todos los valores necesarios para controlar compras, ventas, ganancias, precios promedio y precios de compra y venta. Adem\xe1s de generar informes para una mejor visualizaci\xf3n en la computadora. (En desarrollo)"},
+gGl(){return"Una app para controlar tus inversiones y tener un panorama completo que contiene todos los valores necesarios para controlar compras, ventas, ganancias, precios promedio y precios de compra y venta. Adem\xe1s de generar informes para una mejor visualizaci\xf3n en la computadora."},
 gGQ(){return"NutriUtils"},
 gGR(){return"NutriUtils es la herramienta esencial para que los nutricionistas creen dietas personalizadas y gestionen a sus pacientes de manera eficiente. Simplifica la planificaci\xf3n de comidas y el seguimiento del progreso de los pacientes."}}
 A.Fk.prototype={
@@ -82163,7 +82163,7 @@ gFm(){return"Baixar"},
 gEn(){return"AudioTexter"},
 gEo(){return"AudioTexter \xe9 um aplicativo desenvolvido em Flutter que permite gravar \xe1udios e transcrev\xea-los em texto."},
 gGL(){return"My Finances"},
-gGM(){return"Um aplicativo para controle de finan\xe7as no qual te permitir\xe1 controlar seus gastos mensais, investimentos e salvar anota\xe7\xf5es importantes. O projeto ainda est\xe1 em desenvolvimento."},
+gGM(){return"Um aplicativo para controle de finan\xe7as no qual te permitir\xe1 controlar seus gastos mensais, investimentos e salvar anota\xe7\xf5es importantes."},
 gH8(){return"Pokedex"},
 gH9(){return'Um app de Pok\xe9mon desenvolvido com flutter. Desafio proposto pela empresa Guarani Sistemas. A aplica\xe7\xe3o foi desenvolvida utilizando flutter e adotando padr\xf5es de c\xf3digo limpo, seguindo a arquitetura Clean com Modular para o gerenciamento de rotas e GetX para gerenciamento de estado e inje\xe7\xe3o de dependencias, obtendo dados da API "pokeapi.com" utlizando a biblioteca http.'},
 gzR(){return"GitF"},
@@ -82179,7 +82179,7 @@ gGO(){return"Um app de notas desenvolvido com Flutter. Desafio proposto pela emp
 gGI(){return"Movies Challenge"},
 gGJ(){return"Aplicativo de informa\xe7\xf5es de filmes utilizando rest api, desafio proposto pela Cubos. O projeto foi desenvolvido utilizando modular com mobx e obtendo dados da api TMDB."},
 gGk(){return"InvestHelper"},
-gGl(){return"Um app para controlar seus investimentos e ter um panorama completo contendo todos os valores necess\xe1rios para o controle de compra, venda, lucro, pre\xe7o m\xe9dio e pre\xe7o de compra e venda. Al\xe9m de gerar relat\xf3rios para facilitar a visualiza\xe7\xe3o pelo computador. (Em desenvolvimento)"},
+gGl(){return"Um app para controlar seus investimentos e ter um panorama completo contendo todos os valores necess\xe1rios para o controle de compra, venda, lucro, pre\xe7o m\xe9dio e pre\xe7o de compra e venda. Al\xe9m de gerar relat\xf3rios para facilitar a visualiza\xe7\xe3o pelo computador."},
 gGQ(){return"NutriUtils"},
 gGR(){return"NutriUtils \xe9 a ferramenta essencial para nutricionistas criarem dietas personalizadas e gerenciarem seus pacientes de forma eficiente. Simplifica o planejamento alimentar e o acompanhamento do progresso dos pacientes."}}
 A.Jq.prototype={$iZ:1}
