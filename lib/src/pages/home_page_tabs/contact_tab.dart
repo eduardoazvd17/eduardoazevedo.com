@@ -209,7 +209,7 @@ class _ContactTabState extends State<ContactTab> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(icon, color: color),
-            const SizedBox(width: 30),
+            const SizedBox(width: 15),
             Text(text, style: TextStyle(color: color)),
           ],
         ),

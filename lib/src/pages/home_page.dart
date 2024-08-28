@@ -177,8 +177,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         )
                       : null,
                   icon: e.icon,
-                  text: isDesktop ? '<' : e.title(context),
+                  text: isDesktop ? '•' : e.title(context),
                   textStyle: TextStyle(
+                    fontSize: isDesktop ? 20 : null,
                     color: Theme.of(context).primaryColor,
                     fontWeight: FontWeight.bold,
                   ),

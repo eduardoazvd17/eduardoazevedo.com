@@ -26,28 +26,32 @@ class ProjectWidget extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 20),
       child: Column(
         children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Flexible(
-                flex: 4,
-                child: _projectImage,
-              ),
-              const SizedBox(width: 10),
-              Flexible(
-                flex: 6,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    _projectName(context),
-                  ],
-                ),
-              ),
-            ],
+          ConstrainedBox(
+            constraints: BoxConstraints(
+              maxWidth: MediaQuery.of(context).size.width * .5,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 20),
+              child: _projectImage,
+            ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: _projectDetails(context),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: _projectName(context),
+            ),
+          ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Padding(
+              padding: const EdgeInsets.only(
+                bottom: 10,
+                left: 10,
+                right: 10,
+              ),
+              child: _projectDetails(context),
+            ),
           ),
           const Divider(),
         ],
