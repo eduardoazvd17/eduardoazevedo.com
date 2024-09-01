@@ -48,5 +48,7 @@
   "investHelper": "InvestHelper",
   "investHelperDescription": "Um app para controlar seus investimentos e ter um panorama completo contendo todos os valores necessários para o controle de compra, venda, lucro, preço médio e preço de compra e venda. Além de gerar relatórios para facilitar a visualização pelo computador.",
   "nutriUtils": "NutriUtils",
-  "nutriUtilsDescription": "NutriUtils é a ferramenta essencial para nutricionistas criarem dietas personalizadas e gerenciarem seus pacientes de forma eficiente. Simplifica o planejamento alimentar e o acompanhamento do progresso dos pacientes."
+  "nutriUtilsDescription": "NutriUtils é a ferramenta essencial para nutricionistas criarem dietas personalizadas e gerenciarem seus pacientes de forma eficiente. Simplifica o planejamento alimentar e o acompanhamento do progresso dos pacientes.",
+  "sliderBarChart": "slider_bar_chart",
+  "sliderBarChartDescription": "Uma forma simplificada de se criar gráficos de barra no Flutter, permitindo scroll na horizontal e algumas opções de customização como cores, textos e tooltips.\n\nEssa lib foi criada com o intuito de resolver um problema, no qual eu precisava de um gráfico de barra para exibir dados de 2 fontes de forma espelhada e que habilitasse scroll.\n\nComo não encontrei nenhuma lib que me atendesse, resolvi criar e contribuir com a comunidade."
 }

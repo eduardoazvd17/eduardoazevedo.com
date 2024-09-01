@@ -36,6 +36,17 @@ class MyProjectsTab extends StatelessWidget {
 List<ProjectModel> _getProjects(BuildContext context) {
   return [
     ProjectModel(
+      name: AppLocalizations.of(context)!.sliderBarChart,
+      description: AppLocalizations.of(context)!.sliderBarChartDescription,
+      imageUrl: 'assets/images/projects/pub_dev.png',
+      references: {
+        ProjectReferenceType.preview:
+            "https://pub.dev/packages/slider_bar_chart",
+        ProjectReferenceType.repository:
+            'https://github.com/eduardoazvd17/slider_bar_chart',
+      },
+    ),
+    ProjectModel(
       name: AppLocalizations.of(context)!.investHelper,
       description: AppLocalizations.of(context)!.investHelperDescription,
       imageUrl: 'assets/images/projects/investhelper.png',
