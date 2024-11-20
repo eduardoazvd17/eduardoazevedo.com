@@ -33,8 +33,8 @@ class AboutMeTab extends StatelessWidget {
       'flutter.png',
       'csharp.png',
       'java.png',
-      'javascript.png',
-      'python.png'
+      'kotlin.png',
+      'swift.png'
     ];
 
     return Row(
