@@ -40,6 +40,7 @@ List<ProjectModel> _getProjects(BuildContext context) {
       description: AppLocalizations.of(context)!.fcryptorDescription,
       imageUrl: 'assets/images/projects/fcryptor.png',
       references: {
+        ProjectReferenceType.preview: "https://fcryptor.eduardoazevedo.com",
         ProjectReferenceType.download:
             "https://github.com/eduardoazvd17/fcryptor/releases",
         ProjectReferenceType.repository:
