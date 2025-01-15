@@ -50,5 +50,7 @@
   "nutriUtils": "NutriUtils",
   "nutriUtilsDescription": "NutriUtils is the essential tool for nutritionists to create personalized diets and manage their patients efficiently. It simplifies meal planning and tracking patient progress.",
   "sliderBarChart": "slider_bar_chart",
-  "sliderBarChartDescription": "A simplified way to create bar charts in Flutter, allowing horizontal scrolling and some customization options such as colors, texts and tooltips.\n\nThis lib was created with the intention of solving a problem, in which I needed a bar chart to display data from 2 sources in a mirrored way and that enabled scrolling.\n\nAs I couldn't find any lib that suited my needs, I decided to create and contribute to the community."
+  "sliderBarChartDescription": "A simplified way to create bar charts in Flutter, allowing horizontal scrolling and some customization options such as colors, texts and tooltips.\n\nThis lib was created with the intention of solving a problem, in which I needed a bar chart to display data from 2 sources in a mirrored way and that enabled scrolling.\n\nAs I couldn't find any lib that suited my needs, I decided to create and contribute to the community.",
+  "fcryptor": "FCryptor",
+  "fcryptorDescription": "FCryptor is a cross-platform file encryption app built with Flutter. Supporting mobile, web, and desktop, it provides a secure and user-friendly way to protect your files with AES-256 encryption."
 }

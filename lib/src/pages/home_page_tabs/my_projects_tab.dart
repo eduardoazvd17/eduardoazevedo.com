@@ -36,6 +36,17 @@ class MyProjectsTab extends StatelessWidget {
 List<ProjectModel> _getProjects(BuildContext context) {
   return [
     ProjectModel(
+      name: AppLocalizations.of(context)!.fcryptor,
+      description: AppLocalizations.of(context)!.fcryptorDescription,
+      imageUrl: 'assets/images/projects/fcryptor.png',
+      references: {
+        ProjectReferenceType.download:
+            "https://github.com/eduardoazvd17/fcryptor/releases",
+        ProjectReferenceType.repository:
+            'https://github.com/eduardoazvd17/fcryptor',
+      },
+    ),
+    ProjectModel(
       name: AppLocalizations.of(context)!.sliderBarChart,
       description: AppLocalizations.of(context)!.sliderBarChartDescription,
       imageUrl: 'assets/images/projects/pub_dev.png',
