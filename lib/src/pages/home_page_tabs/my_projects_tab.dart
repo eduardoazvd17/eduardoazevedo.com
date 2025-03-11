@@ -36,6 +36,15 @@ class MyProjectsTab extends StatelessWidget {
 List<ProjectModel> _getProjects(BuildContext context) {
   return [
     ProjectModel(
+      name: AppLocalizations.of(context)!.investHelper,
+      description: AppLocalizations.of(context)!.investHelperDescription,
+      imageUrl: 'assets/images/projects/investhelper.png',
+      references: {
+        ProjectReferenceType.android:
+            'https://play.google.com/store/apps/details?id=com.eduardoazevedo.investhelper',
+      },
+    ),
+    ProjectModel(
       name: AppLocalizations.of(context)!.fcryptor,
       description: AppLocalizations.of(context)!.fcryptorDescription,
       imageUrl: 'assets/images/projects/fcryptor.png',
@@ -58,15 +67,6 @@ List<ProjectModel> _getProjects(BuildContext context) {
             "https://pub.dev/packages/slider_bar_chart",
         ProjectReferenceType.repository:
             'https://github.com/eduardoazvd17/slider_bar_chart',
-      },
-    ),
-    ProjectModel(
-      name: AppLocalizations.of(context)!.investHelper,
-      description: AppLocalizations.of(context)!.investHelperDescription,
-      imageUrl: 'assets/images/projects/investhelper.png',
-      references: {
-        ProjectReferenceType.android:
-            'https://play.google.com/store/apps/details?id=com.eduardoazevedo.investhelper',
       },
     ),
     ProjectModel(
