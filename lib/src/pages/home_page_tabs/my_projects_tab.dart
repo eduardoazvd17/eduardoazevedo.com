@@ -40,6 +40,8 @@ List<ProjectModel> _getProjects(BuildContext context) {
       description: AppLocalizations.of(context)!.fcryptorDescription,
       imageUrl: 'assets/images/projects/fcryptor.png',
       references: {
+        ProjectReferenceType.android:
+            'https://play.google.com/store/apps/details?id=com.eduardoazevedo.fcryptor',
         ProjectReferenceType.preview: "https://fcryptor.eduardoazevedo.com",
         ProjectReferenceType.download:
             "https://github.com/eduardoazvd17/fcryptor/releases",
@@ -63,7 +65,8 @@ List<ProjectModel> _getProjects(BuildContext context) {
       description: AppLocalizations.of(context)!.investHelperDescription,
       imageUrl: 'assets/images/projects/investhelper.png',
       references: {
-        ProjectReferenceType.preview: 'https://investhelper.eduardoazevedo.com',
+        ProjectReferenceType.android:
+            'https://play.google.com/store/apps/details?id=com.eduardoazevedo.investhelper',
       },
     ),
     ProjectModel(

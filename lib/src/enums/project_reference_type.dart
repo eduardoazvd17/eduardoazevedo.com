@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:flutter/cupertino.dart';
@@ -6,6 +7,8 @@ enum ProjectReferenceType {
   preview,
   repository,
   download,
+  android,
+  ios,
 }
 
 extension ProjectReferenceTypeExtension on ProjectReferenceType {
@@ -13,6 +16,8 @@ extension ProjectReferenceTypeExtension on ProjectReferenceType {
         ProjectReferenceType.preview => CupertinoIcons.globe,
         ProjectReferenceType.repository => CupertinoIcons.archivebox,
         ProjectReferenceType.download => CupertinoIcons.cloud_download,
+        ProjectReferenceType.android => Icons.android,
+        ProjectReferenceType.ios => Icons.apple,
       };
 
   String title(BuildContext context) => switch (this) {
@@ -20,5 +25,7 @@ extension ProjectReferenceTypeExtension on ProjectReferenceType {
         ProjectReferenceType.repository =>
           AppLocalizations.of(context)!.repository,
         ProjectReferenceType.download => AppLocalizations.of(context)!.download,
+        ProjectReferenceType.android => 'Android (Play Store)',
+        ProjectReferenceType.ios => 'iOS (App Store)',
       };
 }
