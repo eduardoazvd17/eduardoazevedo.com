@@ -9,6 +9,7 @@
 .history
 .svn/
 migrate_working_dir/
+*.last_build_id
 
 # IntelliJ related
 *.iml
