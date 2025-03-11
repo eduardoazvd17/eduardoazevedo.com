@@ -1,0 +1,210 @@
+/* 
+ * responsive.css - Estilos responsivos
+ * Portfólio de Eduardo Azevedo
+ */
+
+/* Tablets (768px a 1024px) */
+@media screen and (max-width: 1024px) {
+    html {
+        font-size: 15px;
+    }
+
+    .container {
+        padding: 0 var(--spacing-lg);
+    }
+
+    .profile-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-info h1 {
+        font-size: var(--font-size-xxl);
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+/* Dispositivos móveis (até 767px) */
+@media screen and (max-width: 767px) {
+    html {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+
+    #header {
+        padding: var(--spacing-md) 0;
+    }
+
+    .profile-picture {
+        width: 140px;
+        height: 140px;
+    }
+
+    .profile-info h1 {
+        font-size: var(--font-size-xl);
+    }
+
+    .profile-info h2 {
+        font-size: var(--font-size-base);
+    }
+
+    #nav-menu ul {
+        gap: var(--spacing-sm);
+        flex-wrap: wrap;
+    }
+
+    #nav-menu li a {
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    #nav-menu li a span {
+        display: none;
+    }
+
+    .section-title {
+        font-size: var(--font-size-xl);
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-image {
+        height: 160px;
+    }
+
+    .project-links {
+        justify-content: center;
+    }
+
+    .contact-options {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .settings-fab {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    #fab-main {
+        width: 48px;
+        height: 48px;
+    }
+
+    .fab-options button {
+        width: 36px;
+        height: 36px;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: var(--spacing-lg);
+    }
+
+    .language-options,
+    .theme-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Dispositivos móveis pequenos (até 480px) */
+@media screen and (max-width: 480px) {
+    .profile-picture {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-info h1 {
+        font-size: var(--font-size-lg);
+    }
+
+    .profile-info h2 {
+        font-size: var(--font-size-sm);
+    }
+
+    .social-links {
+        gap: var(--spacing-sm);
+    }
+
+    .social-links a {
+        width: 36px;
+        height: 36px;
+        font-size: var(--font-size-lg);
+    }
+
+    #nav-menu ul {
+        padding: var(--spacing-sm) 0;
+    }
+
+    #nav-menu li a i {
+        font-size: var(--font-size-base);
+    }
+
+    .section-title {
+        font-size: var(--font-size-lg);
+    }
+
+    .skill-item {
+        width: 60px;
+        height: 60px;
+    }
+
+    .skill-item img {
+        max-height: 35px;
+    }
+
+    .project-info h3 {
+        font-size: var(--font-size-lg);
+    }
+
+    .project-info p {
+        font-size: var(--font-size-xs);
+    }
+
+    .contact-card {
+        padding: var(--spacing-lg);
+    }
+
+    .whatsapp-button img {
+        max-width: 150px;
+    }
+}
+
+/* Dispositivos com altura limitada */
+@media screen and (max-height: 600px) {
+    #header {
+        position: static;
+    }
+
+    .settings-fab {
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+/* Para dispositivos que suportam prefers-color-scheme */
+@media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) {
+        color-scheme: dark;
+    }
+}
+
+/* Para dispositivos que preferem menos animações */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
