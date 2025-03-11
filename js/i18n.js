@@ -94,7 +94,9 @@ const translations = {
 
         // Rodapé
         'back_to_top': 'Voltar ao topo',
-        'copyright': 'Todos os direitos reservados.'
+        'copyright': 'Todos os direitos reservados.',
+        'company_name': 'Azevedo Tech Solutions',
+        'company_cnpj': 'CNPJ: 55.705.600/0001-47'
     },
 
     // Inglês
@@ -186,7 +188,9 @@ const translations = {
 
         // Rodapé
         'back_to_top': 'Back to top',
-        'copyright': 'All rights reserved.'
+        'copyright': 'All rights reserved.',
+        'company_name': 'Azevedo Tech Solutions',
+        'company_cnpj': 'CNPJ: 55.705.600/0001-47'
     },
 
     // Espanhol
@@ -278,7 +282,9 @@ const translations = {
 
         // Rodapé
         'back_to_top': 'Volver arriba',
-        'copyright': 'Todos los derechos reservados.'
+        'copyright': 'Todos los derechos reservados.',
+        'company_name': 'Azevedo Tech Solutions',
+        'company_cnpj': 'CNPJ: 55.705.600/0001-47'
     }
 };
 
@@ -462,11 +468,18 @@ function translateSpecificElements(lang) {
     const backToTopBtn = document.getElementById('back-to-top-btn');
     if (backToTopBtn) backToTopBtn.setAttribute('aria-label', translations[lang].back_to_top);
 
+    // Company info
+    const contactCompanyName = document.getElementById('contact-company-name');
+    const contactCompanyCnpj = document.getElementById('contact-company-cnpj');
+    if (contactCompanyName) contactCompanyName.textContent = translations[lang].company_name;
+    if (contactCompanyCnpj) contactCompanyCnpj.textContent = translations[lang].company_cnpj;
+
     // Copyright
-    const copyright = document.querySelector('footer p');
-    if (copyright) {
+    const copyright = document.querySelector('footer p.copyright');
+    const footerCompany = document.getElementById('footer-company');
+    if (copyright && footerCompany) {
         const year = document.getElementById('current-year').textContent;
-        copyright.innerHTML = `&copy; ${year} Eduardo Azevedo. ${translations[lang].copyright}`;
+        footerCompany.innerHTML = `${translations[lang].company_name}. ${translations[lang].copyright}<br>${translations[lang].company_cnpj}`;
     }
 }
 
