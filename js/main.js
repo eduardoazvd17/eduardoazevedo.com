@@ -4,6 +4,9 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Aplicar tema escuro
+    document.body.setAttribute('data-theme', 'dark');
+
     // Definir ano atual no rodapé
     const currentYearEl = document.getElementById('current-year');
     if (currentYearEl) {
@@ -27,6 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Adicionar efeito de flip para a imagem de perfil
     setupProfileImageFlip();
+
+    // Configurar menu móvel fixo
+    setupMobileMenu();
 });
 
 /**
@@ -101,43 +107,16 @@ function setupTabNavigation() {
 }
 
 /**
- * Configurar botão de ação flutuante
+ * Configurar botão de seleção de idioma
  */
 function setupFAB() {
-    const fabMain = document.getElementById('fab-main');
-    const settingsFab = document.querySelector('.settings-fab');
-    const themeToggle = document.getElementById('theme-toggle');
     const languageToggle = document.getElementById('language-toggle');
-    const themeModal = document.getElementById('theme-modal');
     const languageModal = document.getElementById('language-modal');
 
-    if (fabMain && settingsFab) {
-        fabMain.addEventListener('click', () => {
-            settingsFab.classList.toggle('active');
+    if (languageToggle && languageModal) {
+        languageToggle.addEventListener('click', () => {
+            languageModal.classList.add('active');
         });
-
-        // Fechar FAB ao clicar fora
-        document.addEventListener('click', (e) => {
-            if (settingsFab.classList.contains('active') &&
-                !settingsFab.contains(e.target)) {
-                settingsFab.classList.remove('active');
-            }
-        });
-
-        // Configurar botões do FAB
-        if (themeToggle && themeModal) {
-            themeToggle.addEventListener('click', () => {
-                themeModal.classList.add('active');
-                settingsFab.classList.remove('active');
-            });
-        }
-
-        if (languageToggle && languageModal) {
-            languageToggle.addEventListener('click', () => {
-                languageModal.classList.add('active');
-                settingsFab.classList.remove('active');
-            });
-        }
     }
 }
 
@@ -240,5 +219,54 @@ function setupProfileImageFlip() {
         profileImg.addEventListener('mouseleave', () => {
             profileImg.style.transform = 'scaleX(1)';
         });
+    }
+}
+
+/**
+ * Configurar o comportamento do menu para ficar fixo após o scroll
+ * Funciona em todas as resoluções (desktop e mobile)
+ */
+function setupMobileMenu() {
+    const header = document.querySelector('.hero-section');
+    const menu = document.getElementById('nav-menu');
+
+    if (header && menu) {
+        // Obter a altura do menu para adicionar padding ao body
+        const menuHeight = menu.offsetHeight;
+
+        // Função para verificar a posição do scroll
+        function checkScroll() {
+            if (window.pageYOffset > header.offsetHeight) {
+                // Quando rolou além do header, fixar o menu no topo
+                menu.style.position = 'fixed';
+                menu.style.top = '0';
+                menu.style.left = '0';
+                menu.style.width = '100%';
+
+                // Adicionar padding ao body para evitar o "pulo" do conteúdo
+                document.body.style.paddingTop = menuHeight + 'px';
+            } else {
+                // Quando está na posição inicial, remover posição fixa
+                menu.style.position = 'static';
+
+                // Remover padding do body
+                document.body.style.paddingTop = '0';
+            }
+        }
+
+        // Adicionar evento de scroll para verificar a posição
+        window.addEventListener('scroll', checkScroll);
+
+        // Adicionar evento de redimensionamento da janela
+        window.addEventListener('resize', function () {
+            // Recalcular a altura do menu após redimensionamento
+            const updatedMenuHeight = menu.offsetHeight;
+
+            // Verificar a posição do scroll
+            checkScroll();
+        });
+
+        // Verificar já no carregamento da página
+        checkScroll();
     }
 } 

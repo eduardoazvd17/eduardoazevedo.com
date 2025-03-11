@@ -25,7 +25,7 @@ const translations = {
 
         // Projetos
         'projects': 'Meus projetos',
-        'project_preview': 'Preview',
+        'project_preview': 'Website',
         'project_repository': 'Repositório',
         'project_download': 'Download',
         'project_android': 'Android',
@@ -73,7 +73,7 @@ const translations = {
         // Contato
         'contact': 'Contato',
         'contact_intro': 'Fique a vontade para entrar em contato comigo usando uma das opções abaixo:',
-        'contact_whatsapp': 'Entre em contato pelo:',
+        'contact_social': 'Me encontre nas redes:',
         'contact_email': 'Me envie um e-mail:',
         'subject': 'Assunto',
         'message': 'Mensagem',
@@ -117,7 +117,7 @@ const translations = {
 
         // Projetos
         'projects': 'My projects',
-        'project_preview': 'Preview',
+        'project_preview': 'Website',
         'project_repository': 'Repository',
         'project_download': 'Download',
         'project_android': 'Android',
@@ -165,7 +165,7 @@ const translations = {
         // Contato
         'contact': 'Contact',
         'contact_intro': 'Feel free to contact me using one of the options below:',
-        'contact_whatsapp': 'Contact me through:',
+        'contact_social': 'Find me on social media:',
         'contact_email': 'Send me an email:',
         'subject': 'Subject',
         'message': 'Message',
@@ -209,7 +209,7 @@ const translations = {
 
         // Projetos
         'projects': 'Mis proyectos',
-        'project_preview': 'Vista previa',
+        'project_preview': 'Sitio web',
         'project_repository': 'Repositorio',
         'project_download': 'Descargar',
         'project_android': 'Android',
@@ -257,7 +257,7 @@ const translations = {
         // Contato
         'contact': 'Contacto',
         'contact_intro': 'Siéntete libre de contactarme usando una de las opciones a continuación:',
-        'contact_whatsapp': 'Contáctame a través de:',
+        'contact_social': 'Encuéntrame en redes sociales:',
         'contact_email': 'Envíame un correo:',
         'subject': 'Asunto',
         'message': 'Mensaje',
@@ -411,10 +411,10 @@ function translateSpecificElements(lang) {
     const contactIntro = document.querySelector('.contact-intro');
     if (contactIntro) contactIntro.textContent = translations[lang].contact_intro;
 
-    const contactWhatsapp = document.querySelector('.contact-card h3:first-child');
-    if (contactWhatsapp) contactWhatsapp.textContent = translations[lang].contact_whatsapp;
+    const contactSocial = document.querySelector('.contact-social-section h3');
+    if (contactSocial) contactSocial.textContent = translations[lang].contact_social;
 
-    const contactEmail = document.querySelector('.contact-card h3:last-of-type');
+    const contactEmail = document.querySelector('.contact-form-section h3');
     if (contactEmail) contactEmail.textContent = translations[lang].contact_email;
 
     // Formulário de contato

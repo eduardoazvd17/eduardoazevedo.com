@@ -13,17 +13,8 @@
         padding: 0 var(--spacing-lg);
     }
 
-    .profile-section {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .profile-info h1 {
-        font-size: var(--font-size-xxl);
-    }
-
     .projects-grid {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -31,171 +22,228 @@
 @media screen and (max-width: 767px) {
     html {
         font-size: 14px;
+        overflow-x: hidden;
+    }
+
+    body {
+        overflow-x: hidden;
+        width: 100%;
     }
 
     .container {
         padding: 0 var(--spacing-md);
+        width: 100%;
+        box-sizing: border-box;
     }
 
-    #header {
+    /* Header normal (não fixo) */
+    .hero-section {
         padding: var(--spacing-md) 0;
+        background-color: var(--bg-color);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        position: relative;
     }
 
-    .profile-picture {
-        width: 140px;
-        height: 140px;
-    }
-
-    .profile-info h1 {
-        font-size: var(--font-size-xl);
-    }
-
-    .profile-info h2 {
-        font-size: var(--font-size-base);
-    }
-
-    #nav-menu ul {
-        gap: var(--spacing-sm);
-        flex-wrap: wrap;
-    }
-
-    #nav-menu li a {
-        padding: var(--spacing-xs) var(--spacing-sm);
-    }
-
-    #nav-menu li a span {
-        display: none;
-    }
-
-    .section-title {
-        font-size: var(--font-size-xl);
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .project-image {
-        height: 160px;
-    }
-
-    .project-links {
+    /* Profile section layout compacto */
+    .profile-section {
+        flex-direction: row;
+        align-items: center;
         justify-content: center;
+        gap: var(--spacing-sm);
     }
 
-    .contact-options {
-        grid-template-columns: 1fr;
-    }
-
-    .form-actions {
-        flex-direction: column;
-    }
-
-    .settings-fab {
-        bottom: 20px;
-        right: 20px;
-    }
-
-    #fab-main {
-        width: 48px;
-        height: 48px;
-    }
-
-    .fab-options button {
-        width: 36px;
-        height: 36px;
-    }
-
-    .modal-content {
-        width: 95%;
-        padding: var(--spacing-lg);
-    }
-
-    .language-options,
-    .theme-options {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Dispositivos móveis pequenos (até 480px) */
-@media screen and (max-width: 480px) {
     .profile-picture {
-        width: 120px;
-        height: 120px;
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+        margin: 0;
+    }
+
+    .profile-info {
+        flex: 1;
     }
 
     .profile-info h1 {
-        font-size: var(--font-size-lg);
+        font-size: var(--font-size-md);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: center;
     }
 
     .profile-info h2 {
-        font-size: var(--font-size-sm);
+        font-size: var(--font-size-xs);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: center;
     }
 
     .social-links {
-        gap: var(--spacing-sm);
+        justify-content: center;
     }
 
     .social-links a {
-        width: 36px;
-        height: 36px;
-        font-size: var(--font-size-lg);
+        width: 32px;
+        height: 32px;
+    }
+
+    /* Menu de navegação - posição normal inicialmente, JS vai controlar quando fixar */
+    #nav-menu {
+        position: static;
+        /* Posição normal no fluxo do documento */
+        z-index: 1000;
+        background-color: var(--card-bg);
+        border-radius: 0;
+        box-shadow: var(--shadow-md);
+        margin: 0;
+        width: 100%;
+        /* O JavaScript vai alterar a posição para fixed ao rolar */
+    }
+
+    #nav-menu .container {
+        max-height: none;
+        overflow: visible;
+        padding: 0;
     }
 
     #nav-menu ul {
-        padding: var(--spacing-sm) 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--spacing-xs);
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 0;
+        width: 100%;
+    }
+
+    #nav-menu li {
+        flex: 1;
+        text-align: center;
+    }
+
+    #nav-menu li a {
+        padding: var(--spacing-xs);
+        border-radius: var(--border-radius);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: var(--spacing-xs);
+    }
+
+    #nav-menu li a span {
+        font-size: var(--font-size-xs);
+        display: block;
     }
 
     #nav-menu li a i {
-        font-size: var(--font-size-base);
+        margin-right: 0;
+        font-size: var(--font-size-md);
     }
 
-    .section-title {
-        font-size: var(--font-size-lg);
+    .menu-toggle {
+        display: none;
     }
 
-    .skill-item {
-        width: 60px;
-        height: 60px;
+    /* Conteúdo adaptado para mobile */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
     }
 
-    .skill-item img {
-        max-height: 35px;
+    .project-image {
+        max-height: 200px;
+    }
+
+    .project-info {
+        padding: var(--spacing-md);
     }
 
     .project-info h3 {
         font-size: var(--font-size-lg);
     }
 
-    .project-info p {
+    .project-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .section-title {
+        font-size: var(--font-size-xl);
+        margin-bottom: var(--spacing-lg);
+        text-align: left;
+    }
+
+    /* Formulário de contato */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .form-actions {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    /* Alinhamento à esquerda para seções */
+    .section-content,
+    .contact-intro,
+    .contact-card h3 {
+        text-align: left;
+    }
+
+    .contact-social-links {
+        align-items: flex-start;
+    }
+}
+
+/* Dispositivos muito pequenos (até 320px) */
+@media screen and (max-width: 320px) {
+    html {
+        font-size: 13px;
+    }
+
+    .profile-picture {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+    }
+
+    .profile-info h1 {
+        font-size: var(--font-size-sm);
+    }
+
+    .profile-info h2 {
         font-size: var(--font-size-xs);
     }
 
-    .contact-card {
-        padding: var(--spacing-lg);
+    .social-links a {
+        width: 28px;
+        height: 28px;
     }
 
-    .whatsapp-button img {
-        max-width: 150px;
+    #nav-menu li a i {
+        font-size: var(--font-size-base);
+    }
+
+    #nav-menu li a span {
+        font-size: 10px;
     }
 }
 
 /* Dispositivos com altura limitada */
 @media screen and (max-height: 600px) {
-    #header {
-        position: static;
-    }
-
     .settings-fab {
         bottom: 10px;
         right: 10px;
-    }
-}
-
-/* Para dispositivos que suportam prefers-color-scheme */
-@media (prefers-color-scheme: dark) {
-    body:not([data-theme="light"]) {
-        color-scheme: dark;
     }
 }
 
