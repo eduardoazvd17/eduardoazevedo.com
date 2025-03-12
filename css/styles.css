@@ -438,10 +438,6 @@ ul {
     color: var(--secondary-text-color);
     margin-bottom: var(--spacing-lg);
     flex: 1;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
 }
 
 .project-links {
