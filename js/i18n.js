@@ -396,13 +396,31 @@ function translateSpecificElements(lang) {
     document.querySelectorAll('.project-card').forEach(card => {
         const title = card.querySelector('h3');
         const description = card.querySelector('p');
-        const projectId = title.textContent.trim().toLowerCase().replace(/\s+/g, '_');
+
+        if (!title || !description) return;
+
+        let projectId = title.textContent.trim().toLowerCase();
+
+        if (projectId === 'my finances') {
+            projectId = 'myfinances';
+        } else if (projectId === 'audiotext' || projectId === 'audiotexter') {
+            projectId = 'audiotexter';
+        } else if (projectId === 'nutri utils') {
+            projectId = 'nutriutils';
+        } else {
+            projectId = projectId.replace(/\s+/g, '_');
+        }
 
         const titleKey = `${projectId}_title`;
         const descKey = `${projectId}_description`;
 
-        if (translations[lang][titleKey]) title.textContent = translations[lang][titleKey];
-        if (translations[lang][descKey]) description.textContent = translations[lang][descKey];
+        if (translations[lang][titleKey]) {
+            title.textContent = translations[lang][titleKey];
+        }
+
+        if (translations[lang][descKey]) {
+            description.textContent = translations[lang][descKey];
+        }
 
         // Links dos projetos
         card.querySelectorAll('.project-link').forEach(link => {
@@ -511,12 +529,6 @@ function setupLanguageButtons() {
         button.addEventListener('click', () => {
             const lang = button.getAttribute('data-lang');
             applyLanguage(lang);
-
-            // Fechar modal
-            const modal = button.closest('.modal');
-            if (modal) {
-                modal.classList.remove('active');
-            }
         });
     });
 } 

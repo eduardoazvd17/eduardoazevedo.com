@@ -395,6 +395,7 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: var(--spacing-md);
 }
 
 .project-image img {
@@ -404,6 +405,7 @@ ul {
     object-position: center;
     transition: transform var(--transition-normal);
     background-color: var(--card-bg);
+    border-radius: var(--border-radius-md);
 }
 
 /* Adiciona uma hover animation mais suave que preserva a imagem completa */
@@ -787,6 +789,9 @@ ul {
 
 .lang-flag {
     font-size: 1.5rem;
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
 }
 
 .lang-name {
