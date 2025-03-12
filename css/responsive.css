@@ -1,12 +1,7 @@
-/* Tablets (768px a 1024px) */
 @media screen and (max-width: 1024px) {
     .container {
         width: 95%;
         max-width: 95%;
-    }
-
-    .profile-picture {
-        /* Removido margin-right para melhor alinhamento com o texto centralizado */
     }
 
     .project-card {
@@ -14,7 +9,6 @@
     }
 }
 
-/* Dispositivos móveis (até 767px) */
 @media screen and (max-width: 767px) {
     html {
         font-size: 14px;
@@ -120,7 +114,6 @@
     }
 }
 
-/* Dispositivos muito pequenos (até 320px) */
 @media screen and (max-width: 320px) {
     html {
         font-size: 12px;
@@ -151,7 +144,6 @@
     }
 }
 
-/* Dispositivos com altura limitada */
 @media screen and (max-height: 600px) {
     .hero-section {
         padding: var(--spacing-md) 0;
@@ -163,7 +155,6 @@
     }
 }
 
-/* Para dispositivos que preferem menos animações */
 @media (prefers-reduced-motion: reduce) {
 
     *,

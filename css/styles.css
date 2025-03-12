@@ -50,7 +50,6 @@
     --container-max-width: 1200px;
 }
 
-/* Reset e estilos base */
 * {
     margin: 0;
     padding: 0;
@@ -97,7 +96,6 @@ ul {
     padding: 0 var(--spacing-xl);
 }
 
-/* Hero Section - Versão compacta */
 .hero-section {
     width: 100%;
     background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
@@ -105,7 +103,6 @@ ul {
     color: white;
 }
 
-/* Perfil - Layout mais compacto */
 .profile-section {
     display: flex;
     align-items: center;
@@ -152,7 +149,6 @@ ul {
 
 .profile-info h1 {
     font-size: var(--font-size-xl);
-    /* Reduzido de xxxl */
     font-weight: var(--font-weight-bold);
     margin-bottom: var(--spacing-xs);
     color: white;
@@ -160,7 +156,6 @@ ul {
 
 .profile-info h2 {
     font-size: var(--font-size-base);
-    /* Reduzido de lg */
     font-weight: var(--font-weight-medium);
     color: rgba(255, 255, 255, 0.85);
     margin-bottom: var(--spacing-sm);
@@ -178,9 +173,7 @@ ul {
     align-items: center;
     justify-content: center;
     width: 35px;
-    /* Reduzido de 45px */
     height: 35px;
-    /* Reduzido de 45px */
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: var(--border-radius-circle);
     color: white;
@@ -194,10 +187,8 @@ ul {
     transform: translateY(-3px);
 }
 
-/* Navbar - Design refinado */
 #nav-menu {
     position: static;
-    /* Menu fica fixo ao rolar */
     width: 100%;
     background-color: var(--card-bg);
     z-index: 1000;
@@ -251,7 +242,6 @@ ul {
     margin-right: var(--spacing-sm);
 }
 
-/* Conteúdo principal */
 #main-content {
     padding: var(--spacing-xl) 0;
 }
@@ -362,7 +352,6 @@ ul {
     bottom: -30px;
 }
 
-/* Projetos - Layout otimizado */
 .projects-showcase {
     width: 100%;
 }
@@ -393,7 +382,6 @@ ul {
 
 .project-image {
     width: 100%;
-    /* Aspect ratio 1:1 para imagens quadradas */
     aspect-ratio: 1 / 1;
     overflow: hidden;
     position: relative;
@@ -413,7 +401,6 @@ ul {
     border-radius: var(--border-radius-md);
 }
 
-/* Adiciona uma hover animation mais suave que preserva a imagem completa */
 .project-card:hover .project-image img {
     transform: scale(1.03);
 }
@@ -469,7 +456,6 @@ ul {
     margin-right: var(--spacing-sm);
 }
 
-/* Contato */
 .contact-intro {
     font-size: var(--font-size-lg);
     margin-bottom: var(--spacing-xl);
@@ -696,7 +682,6 @@ ul {
     transform: translateY(-2px);
 }
 
-/* FAB (Botão de Ação Flutuante) */
 .settings-fab {
     position: fixed;
     bottom: 30px;
@@ -725,7 +710,6 @@ ul {
     transform: scale(1.1);
 }
 
-/* Modais */
 .modal {
     display: none;
     position: fixed;
@@ -821,7 +805,6 @@ ul {
     background-color: var(--secondary-color);
 }
 
-/* Rodapé */
 footer {
     background-color: var(--card-bg);
     padding: var(--spacing-lg) 0;
@@ -890,7 +873,6 @@ footer p {
     color: var(--secondary-text-color);
 }
 
-/* Animações */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -913,10 +895,8 @@ footer p {
     }
 }
 
-/* Menu Toggle Button - Hidden by default */
 .menu-toggle {
     display: none;
-    /* Ocultar botão de menu hambúrguer em todos os dispositivos */
     background: none;
     border: none;
     color: var(--text-color);
@@ -930,7 +910,6 @@ footer p {
     color: var(--accent-color);
 }
 
-/* Removendo o espaço para compensar o menu fixo */
 body::before {
     display: none;
 }
