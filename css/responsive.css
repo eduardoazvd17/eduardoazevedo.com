@@ -6,7 +6,7 @@
     }
 
     .profile-picture {
-        margin-right: 2rem;
+        /* Removido margin-right para melhor alinhamento com o texto centralizado */
     }
 
     .project-card {
