@@ -114,6 +114,8 @@ ul {
     padding: var(--spacing-md) 0;
     flex-direction: row;
     text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .profile-picture {
@@ -143,6 +145,9 @@ ul {
 .profile-info {
     flex: 1;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .profile-info h1 {
