@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Eduardo Azevedo - Desenvolvedor Mobile especializado em Flutter | Dart | C# | Mobile Developer">
+    <meta name="keywords" content="Eduardo Azevedo, Flutter, Dart, Mobile, Desenvolvedor, Developer, C#, Programação">
+    <meta name="author" content="Eduardo Azevedo">
+    <title>Eduardo Azevedo | Desenvolvedor Mobile</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="icon" href="icons/icon.png" type="image/png">
+</head>
+
+<body>
+    <div class="hero-section">
+        <div class="container">
+            <div class="profile-section">
+                <div class="profile-picture">
+                    <img src="images/profile.jpeg" alt="Eduardo Azevedo" id="profile-img">
+                </div>
+                <div class="profile-info">
+                    <h1>Eduardo Azevedo Regueira</h1>
+                    <h2>Desenvolvedor Mobile | Flutter | Dart | C#</h2>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/eduardoazvd17/" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/eduardoazvd17/" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:eduardoazvd17@gmail.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav id="nav-menu">
+        <div class="container">
+            <ul>
+                <li><a href="#about" class="active" data-section="about"><i class="fas fa-user"></i> <span>Sobre
+                            mim</span></a></li>
+                <li><a href="#projects" data-section="projects"><i class="fas fa-code"></i> <span>Meus
+                            projetos</span></a></li>
+                <li><a href="#contact" data-section="contact"><i class="fas fa-envelope"></i>
+                        <span>Contato</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="settings-fab">
+        <button id="language-toggle" aria-label="Mudar idioma">
+            <i class="fas fa-globe"></i>
+        </button>
+    </div>
+
+    <main id="main-content">
+        <section id="about" class="section active">
+            <div class="container">
+                <h2 class="section-title">Sobre mim</h2>
+                <div class="section-content">
+                    <p class="presentation-text">Sou um desenvolvedor mobile com 5 anos de experiência profissional,
+                        especializado no framework Flutter. Ao longo da minha carreira, tive a oportunidade de liderar
+                        projetos mobile de forma independente, atuar no desenvolvimento de soluções para instituições
+                        financeiras e implementar melhorias significativas que otimizaram a performance de aplicativos.
+                        Sempre com foco na criação de soluções performáticas, inovadoras e escaláveis, com alta
+                        qualidade e melhoria contínua da experiência do usuário.</p>
+                    <p class="presentation-text">Tenho experiência em diversas áreas do Flutter, como
+                        internacionalização, modularização, gerenciamento de estados e rotas, criação de widgets
+                        personalizados, desenvolvimento de packages reutilizáveis, automação de pipelines CI/CD com
+                        Codemagic, publicação de aplicativos nas lojas e realização de testes unitários e de widgets.
+                        Também sigo práticas de gerenciamento eficiente de memória, evitando memory leaks, e adoto os
+                        princípios SOLID e Clean Code para garantir um código limpo, bem estruturado e de fácil
+                        manutenção.</p>
+                    <p class="presentation-text">Prezo por uma boa comunicação e trabalho bem em equipe, sempre buscando
+                        colaborar de forma eficiente e construtiva, com o objetivo de garantir entregas de alta
+                        qualidade e alinhamento entre os times.</p>
+                    <p class="presentation-text">Além disso, possuo conhecimento em linguagens como Java, C#, Kotlin e
+                        Swift, o que me permite resolver problemas e trabalhar com diferentes tecnologias, atendendo a
+                        diversas demandas no desenvolvimento de software.</p>
+
+                    <div class="skills-section">
+                        <h3>Linguagens e Tecnologias</h3>
+                        <div class="skills-container">
+                            <div class="skill-item" data-tooltip="Flutter">
+                                <img src="icons/flutter.png" alt="Flutter">
+                            </div>
+                            <div class="skill-item" data-tooltip="C#">
+                                <img src="icons/csharp.png" alt="C#">
+                            </div>
+                            <div class="skill-item" data-tooltip="Java">
+                                <img src="icons/java.png" alt="Java">
+                            </div>
+                            <div class="skill-item" data-tooltip="Kotlin">
+                                <img src="icons/kotlin.png" alt="Kotlin">
+                            </div>
+                            <div class="skill-item" data-tooltip="Swift">
+                                <img src="icons/swift.png" alt="Swift">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Meus projetos</h2>
+                <div class="section-content">
+                    <div class="projects-showcase">
+                        <div class="projects-grid">
+                            <div class="project-card" data-project="investhelper">
+                                <div class="project-image">
+                                    <img src="images/investhelper.png" alt="InvestHelper App screenshot">
+                                </div>
+                                <div class="project-info">
+                                    <h3>InvestHelper</h3>
+                                    <p>Um app para controlar seus investimentos e ter um panorama completo contendo
+                                        todos
+                                        os valores necessários para o controle de compra, venda, lucro, preço médio e
+                                        preço de compra e venda. Além de gerar relatórios para facilitar a visualização
+                                        pelo computador.</p>
+                                    <div class="project-links">
+                                        <a href="https://play.google.com/store/apps/details?id=com.eduardoazevedo.investhelper"
+                                            class="project-link" data-link-type="android" target="_blank">
+                                            <i class="fab fa-android"></i>
+                                            <span>Android</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project-card" data-project="fcryptor">
+                                <div class="project-image">
+                                    <img src="images/fcryptor.png" alt="FCryptor App screenshot">
+                                </div>
+                                <div class="project-info">
+                                    <h3>FCryptor</h3>
+                                    <p>FCryptor é um aplicativo de criptografia de arquivos multiplataforma desenvolvido
+                                        com Flutter. Com suporte para dispositivos móveis, web e desktop, ele oferece
+                                        uma
+                                        maneira segura e prática de proteger seus arquivos com criptografia AES-256 e
+                                        uma
+                                        interface intuitiva.</p>
+                                    <div class="project-links">
+                                        <a href="https://play.google.com/store/apps/details?id=com.eduardoazevedo.fcryptor"
+                                            class="project-link" data-link-type="android" target="_blank">
+                                            <i class="fab fa-android"></i>
+                                            <span>Android</span>
+                                        </a>
+                                        <a href="https://fcryptor.eduardoazevedo.com" class="project-link"
+                                            data-link-type="preview" target="_blank">
+                                            <i class="fas fa-eye"></i>
+                                            <span>Website</span>
+                                        </a>
+                                        <a href="https://github.com/eduardoazvd17/fcryptor/releases/latest"
+                                            class="project-link" data-link-type="download" target="_blank">
+                                            <i class="fas fa-download"></i>
+                                            <span>Download</span>
+                                        </a>
+                                        <a href="https://github.com/eduardoazvd17/fcryptor" class="project-link"
+                                            data-link-type="repository" target="_blank">
+                                            <i class="fab fa-github"></i>
+                                            <span>Repositório</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project-card" data-project="slider_bar_chart">
+                                <div class="project-image">
+                                    <img src="images/pub_dev.png" alt="slider_bar_chart Library Demo">
+                                </div>
+                                <div class="project-info">
+                                    <h3>slider_bar_chart</h3>
+                                    <p>Uma forma simplificada de se criar gráficos de barra no Flutter, permitindo
+                                        scroll na horizontal e algumas opções de customização como cores, textos e
+                                        tooltips. Essa lib foi criada com o intuito de resolver um problema, no qual eu
+                                        precisava de um gráfico de barra para exibir dados de 2 fontes de forma
+                                        espelhada e que habilitasse scroll.</p>
+                                    <div class="project-links">
+                                        <a href="https://pub.dev/packages/slider_bar_chart" class="project-link"
+                                            data-link-type="preview" target="_blank">
+                                            <i class="fas fa-eye"></i>
+                                            <span>Website</span>
+                                        </a>
+                                        <a href="https://github.com/eduardoazvd17/slider_bar_chart" class="project-link"
+                                            data-link-type="repository" target="_blank">
+                                            <i class="fab fa-github"></i>
+                                            <span>Repositório</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project-card" data-project="audiotexter">
+                                <div class="project-image">
+                                    <img src="images/audiotexter.png" alt="AudioTexter App screenshot">
+                                </div>
+                                <div class="project-info">
+                                    <h3>AudioTexter</h3>
+                                    <p>AudioTexter é um aplicativo desenvolvido em Flutter que permite gravar áudios e
+                                        transcrevê-los em texto.</p>
+                                    <div class="project-links">
+                                        <a href="https://github.com/eduardoazvd17/audiotexter" class="project-link"
+                                            data-link-type="repository" target="_blank">
+                                            <i class="fab fa-github"></i>
+                                            <span>Repositório</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project-card" data-project="myfinances">
+                                <div class="project-image">
+                                    <img src="images/my_finances.png" alt="My Finances App screenshot">
+                                </div>
+                                <div class="project-info">
+                                    <h3>My Finances</h3>
+                                    <p>Um aplicativo para controle de finanças no qual te permitirá controlar seus
+                                        gastos
+                                        mensais, investimentos e salvar anotações importantes.</p>
+                                    <div class="project-links">
+                                        <a href="https://myfinances.eduardoazevedo.com/" class="project-link"
+                                            data-link-type="preview" target="_blank">
+                                            <i class="fas fa-eye"></i>
+                                            <span>Website</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project-card" data-project="gitf">
+                                <div class="project-image">
+                                    <img src="images/flutter.png" alt="GitF App screenshot">
+                                </div>
+                                <div class="project-info">
+                                    <h3>GitF</h3>
+                                    <p>Um gerenciador de repositórios Git para iniciantes. Esse projeto foi criado
+                                        apenas para testar o desenvolvimento de apps desktop com o Flutter.</p>
+                                    <div class="project-links">
+                                        <a href="https://github.com/eduardoazvd17/gitf/releases/latest"
+                                            class="project-link" data-link-type="download" target="_blank">
+                                            <i class="fas fa-download"></i>
+                                            <span>Download</span>
+                                        </a>
+                                        <a href="https://github.com/eduardoazvd17/gitf" class="project-link"
+                                            data-link-type="repository" target="_blank">
+                                            <i class="fab fa-github"></i>
+                                            <span>Repositório</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project-card" data-project="credentials_manager">
+                                <div class="project-image">
+                                    <img src="images/pub_dev.png" alt="credentials_manager Library Demo">
+                                </div>
+                                <div class="project-info">
+                                    <h3>credentials_manager</h3>
+                                    <p>Uma biblioteca para gerenciar de forma fácil as credenciais do seu app Flutter
+                                        localmente, utilizando autenticação biométrica. Ela foi criada com o intuito de
+                                        agilizar a solução de um problema, no qual eu precisava armazenar credenciais de
+                                        forma segura em um dispositivo, permitindo que o usuário fizesse login com essas
+                                        credenciais utilizando a biometria.</p>
+                                    <div class="project-links">
+                                        <a href="https://pub.dev/packages/credentials_manager" class="project-link"
+                                            data-link-type="preview" target="_blank">
+                                            <i class="fas fa-eye"></i>
+                                            <span>Website</span>
+                                        </a>
+                                        <a href="https://github.com/eduardoazvd17/credentials_manager"
+                                            class="project-link" data-link-type="repository" target="_blank">
+                                            <i class="fab fa-github"></i>
+                                            <span>Repositório</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project-card" data-project="simple_overlay">
+                                <div class="project-image">
+                                    <img src="images/pub_dev.png" alt="simple_overlay Library Demo">
+                                </div>
+                                <div class="project-info">
+                                    <h3>simple_overlay</h3>
+                                    <p>Uma biblioteca simples e prática para criar sobreposições de forma fácil no seu
+                                        app Flutter. Com ele, você pode sobrepor um widget personalizado a qualquer
+                                        outro
+                                        widget. O foco deste pacote é agilizar a criação e gerenciamento do ciclo de
+                                        vida
+                                        de um Overlay.</p>
+                                    <div class="project-links">
+                                        <a href="https://pub.dev/packages/simple_overlay" class="project-link"
+                                            data-link-type="preview" target="_blank">
+                                            <i class="fas fa-eye"></i>
+                                            <span>Website</span>
+                                        </a>
+                                        <a href="https://github.com/eduardoazvd17/simple_overlay" class="project-link"
+                                            data-link-type="repository" target="_blank">
+                                            <i class="fab fa-github"></i>
+                                            <span>Repositório</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project-card" data-project="pokedex">
+                                <div class="project-image">
+                                    <img src="images/pokedex.png" alt="Pokedex App screenshot">
+                                </div>
+                                <div class="project-info">
+                                    <h3>Pokedex</h3>
+                                    <p>Um app de Pokémon desenvolvido com flutter. Desafio proposto pela empresa Guarani
+                                        Sistemas. A aplicação foi desenvolvida utilizando flutter e adotando padrões de
+                                        código limpo, seguindo a arquitetura Clean com Modular para o gerenciamento de
+                                        rotas e GetX para gerenciamento de estado e injeção de dependencias, obtendo
+                                        dados da API "pokeapi.com" utlizando a biblioteca http.</p>
+                                    <div class="project-links">
+                                        <a href="https://github.com/eduardoazvd17/pokedex" class="project-link"
+                                            data-link-type="repository" target="_blank">
+                                            <i class="fab fa-github"></i>
+                                            <span>Repositório</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="contact">Contato</h2>
+                <div class="section-content">
+                    <p class="contact-intro" data-i18n="contact_intro">Entre em contato para discutir oportunidades de
+                        trabalho, parcerias ou
+                        tirar dúvidas sobre desenvolvimento mobile:</p>
+
+                    <div class="contact-card">
+                        <div class="contact-section">
+                            <h3 class="contact-subtitle" data-i18n="contactVia">Entre em contato por:</h3>
+                            <div class="social-buttons-row">
+                                <a href="https://wa.me/+5521988542950" target="_blank" class="social-contact-button">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </a>
+                                <a href="https://www.linkedin.com/in/eduardoazvd17/" target="_blank"
+                                    class="social-contact-button">
+                                    <i class="fab fa-linkedin"></i>
+                                    <span>LinkedIn</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="contact-section">
+                            <h3 class="contact-subtitle" data-i18n="sendEmail">Me envie um email:</h3>
+                            <div class="email-container">
+                                <a href="mailto:eduardoazvd17@gmail.com" class="email-box">
+                                    <i class="fas fa-envelope"></i>
+                                    <span class="email-text">eduardoazvd17@gmail.com</span>
+                                </a>
+                                <a href="mailto:azevedotechsolutions@gmail.com" class="email-box">
+                                    <i class="fas fa-envelope"></i>
+                                    <span class="email-text">azevedotechsolutions@gmail.com</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="language-modal" class="modal">
+        <div class="modal-content">
+            <h3>Mudar idioma</h3>
+            <div class="language-options">
+                <button class="lang-option active" data-lang="pt">
+                    <img src="icons/pt.png" alt="Português" class="lang-flag">
+                    <span class="lang-name">Português</span>
+                </button>
+                <button class="lang-option" data-lang="en">
+                    <img src="icons/en.png" alt="English" class="lang-flag">
+                    <span class="lang-name">Inglês</span>
+                </button>
+                <button class="lang-option" data-lang="es">
+                    <img src="icons/es.png" alt="Español" class="lang-flag">
+                    <span class="lang-name">Espanhol</span>
+                </button>
+            </div>
+            <button class="close-modal">Fechar</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="back-to-top">
+                <button id="back-to-top-btn" aria-label="Voltar ao topo">
+                    <i class="fas fa-chevron-up"></i>
+                </button>
+            </div>
+            <div class="footer-content">
+                <p class="copyright">&copy; <span id="current-year"></span> <span id="footer-company"></span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/i18n.js"></script>
+</body>
+
+</html>
