@@ -155,12 +155,26 @@
         gap: var(--spacing-lg);
     }
 
-    .project-image {
+    /* Removing the max-height restriction to maintain the same aspect ratio as desktop */
+    /* .project-image {
         max-height: 200px;
+    } */
+
+    /* Ensuring the project image maintains the same aspect ratio as desktop but slightly smaller */
+    .project-image {
+        width: 80%;
+        margin: 0 auto;
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+        position: relative;
     }
 
+    /* Updating padding to match desktop version */
     .project-info {
-        padding: var(--spacing-md);
+        padding: var(--spacing-lg);
+        flex: 1;
+        display: flex;
+        flex-direction: column;
     }
 
     .project-info h3 {
@@ -169,7 +183,8 @@
 
     .project-links {
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: flex-start;
+        /* Left-aligned like desktop instead of center */
     }
 
     .section-title {
@@ -184,13 +199,16 @@
         gap: var(--spacing-lg);
     }
 
+    /* Keep buttons side by side on mobile */
     .form-actions {
-        flex-direction: column;
+        flex-direction: row;
         gap: var(--spacing-md);
+        justify-content: space-between;
     }
 
     .btn {
-        width: 100%;
+        width: 50%;
+        flex: 1;
     }
 
     /* Alinhamento à esquerda para seções */

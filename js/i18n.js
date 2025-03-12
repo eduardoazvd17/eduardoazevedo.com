@@ -75,6 +75,8 @@ const translations = {
         'contact_intro': 'Fique a vontade para entrar em contato comigo usando uma das opções abaixo:',
         'contact_social': 'Me encontre nas redes:',
         'contact_email': 'Me envie um e-mail:',
+        'contactVia': 'Entre em contato por:',
+        'sendEmail': 'Me envie um email:',
         'subject': 'Assunto',
         'message': 'Mensagem',
         'clear_fields': 'Limpar campos',
@@ -169,6 +171,8 @@ const translations = {
         'contact_intro': 'Feel free to contact me using one of the options below:',
         'contact_social': 'Find me on social media:',
         'contact_email': 'Send me an email:',
+        'contactVia': 'Contact me via:',
+        'sendEmail': 'Send me an email:',
         'subject': 'Subject',
         'message': 'Message',
         'clear_fields': 'Clear fields',
@@ -261,8 +265,10 @@ const translations = {
         // Contato
         'contact': 'Contacto',
         'contact_intro': 'Siéntete libre de contactarme usando una de las opciones a continuación:',
-        'contact_social': 'Encuéntrame en redes sociales:',
-        'contact_email': 'Envíame un correo:',
+        'contact_social': 'Encuéntrame en las redes sociales:',
+        'contact_email': 'Envíame un correo electrónico:',
+        'contactVia': 'Contáctame a través de:',
+        'sendEmail': 'Envíame un email:',
         'subject': 'Asunto',
         'message': 'Mensaje',
         'clear_fields': 'Limpiar campos',
@@ -467,12 +473,6 @@ function translateSpecificElements(lang) {
     // Voltar ao topo
     const backToTopBtn = document.getElementById('back-to-top-btn');
     if (backToTopBtn) backToTopBtn.setAttribute('aria-label', translations[lang].back_to_top);
-
-    // Company info
-    const contactCompanyName = document.getElementById('contact-company-name');
-    const contactCompanyCnpj = document.getElementById('contact-company-cnpj');
-    if (contactCompanyName) contactCompanyName.textContent = translations[lang].company_name;
-    if (contactCompanyCnpj) contactCompanyCnpj.textContent = translations[lang].company_cnpj;
 
     // Copyright
     const copyright = document.querySelector('footer p.copyright');
