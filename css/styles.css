@@ -317,6 +317,7 @@ ul {
     padding: var(--spacing-sm);
     box-shadow: var(--shadow-sm);
     transition: all var(--transition-normal);
+    margin: var(--spacing-xs);
 }
 
 .skill-item:hover {
@@ -326,6 +327,8 @@ ul {
 
 .skill-item img {
     max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 
 .skill-item::after {
