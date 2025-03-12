@@ -1,37 +1,17 @@
-/**
- * main.js - Funcionalidades principais
- * Portfólio de Eduardo Azevedo
- */
-
 document.addEventListener('DOMContentLoaded', () => {
-    // Aplicar tema escuro
     document.body.setAttribute('data-theme', 'dark');
 
-    // Definir ano atual no rodapé
     const currentYearEl = document.getElementById('current-year');
     if (currentYearEl) {
         currentYearEl.textContent = new Date().getFullYear();
     }
 
-    // Navegação por abas
     setupTabNavigation();
-
-    // Configurar FAB (Floating Action Button)
     setupFAB();
-
-    // Configurar modais
     setupModals();
-
-    // Configurar formulário de contato
     setupContactForm();
-
-    // Configurar botão de voltar ao topo
     setupBackToTop();
-
-    // Adicionar efeito de flip para a imagem de perfil
     setupProfileImageFlip();
-
-    // Configurar menu móvel fixo
     setupMobileMenu();
 });
 
@@ -42,7 +22,6 @@ function setupTabNavigation() {
     const navLinks = document.querySelectorAll('#nav-menu a');
     const sections = document.querySelectorAll('.section');
 
-    // Configurar navegação inicial com base na URL
     const hash = window.location.hash;
     if (hash) {
         const targetSection = document.querySelector(hash);
@@ -59,7 +38,6 @@ function setupTabNavigation() {
         }
     }
 
-    // Configurar navegação ao clicar nos links
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -67,17 +45,14 @@ function setupTabNavigation() {
             const targetSection = document.querySelector(targetId);
 
             if (targetSection) {
-                // Atualizar classes ativas
                 sections.forEach(section => section.classList.remove('active'));
                 targetSection.classList.add('active');
 
                 navLinks.forEach(link => link.classList.remove('active'));
                 link.classList.add('active');
 
-                // Atualizar URL sem recarregar a página
                 history.pushState(null, null, targetId);
 
-                // Scroll suave para o topo
                 window.scrollTo({
                     top: 0,
                     behavior: 'smooth'
@@ -86,7 +61,6 @@ function setupTabNavigation() {
         });
     });
 
-    // Lidar com a navegação de volta/avançar do navegador
     window.addEventListener('popstate', () => {
         const hash = window.location.hash;
         if (hash) {
@@ -127,7 +101,6 @@ function setupModals() {
     const modals = document.querySelectorAll('.modal');
     const closeButtons = document.querySelectorAll('.close-modal');
 
-    // Fechar modais ao clicar no botão de fechar
     closeButtons.forEach(button => {
         button.addEventListener('click', () => {
             const modal = button.closest('.modal');
@@ -137,7 +110,6 @@ function setupModals() {
         });
     });
 
-    // Fechar modais ao clicar fora
     modals.forEach(modal => {
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
@@ -146,7 +118,6 @@ function setupModals() {
         });
     });
 
-    // Fechar modais com tecla ESC
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             modals.forEach(modal => {
@@ -231,42 +202,25 @@ function setupMobileMenu() {
     const menu = document.getElementById('nav-menu');
 
     if (header && menu) {
-        // Obter a altura do menu para adicionar padding ao body
         const menuHeight = menu.offsetHeight;
 
-        // Função para verificar a posição do scroll
         function checkScroll() {
             if (window.pageYOffset > header.offsetHeight) {
-                // Quando rolou além do header, fixar o menu no topo
                 menu.style.position = 'fixed';
                 menu.style.top = '0';
                 menu.style.left = '0';
                 menu.style.width = '100%';
 
-                // Adicionar padding ao body para evitar o "pulo" do conteúdo
                 document.body.style.paddingTop = menuHeight + 'px';
             } else {
-                // Quando está na posição inicial, remover posição fixa
                 menu.style.position = 'static';
-
-                // Remover padding do body
                 document.body.style.paddingTop = '0';
             }
         }
 
-        // Adicionar evento de scroll para verificar a posição
         window.addEventListener('scroll', checkScroll);
+        window.addEventListener('resize', checkScroll);
 
-        // Adicionar evento de redimensionamento da janela
-        window.addEventListener('resize', function () {
-            // Recalcular a altura do menu após redimensionamento
-            const updatedMenuHeight = menu.offsetHeight;
-
-            // Verificar a posição do scroll
-            checkScroll();
-        });
-
-        // Verificar já no carregamento da página
         checkScroll();
     }
 } 
