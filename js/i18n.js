@@ -30,6 +30,11 @@ const translations = {
         'project_download': 'Download',
         'project_android': 'Android',
 
+        // More Projects
+        'more_projects_title': 'Conheça mais projetos',
+        'more_projects_description': 'Quer conhecer mais projetos em que trabalhei? Visite meu perfil no GitHub para descobrir outros repositórios, contribuições e projetos em desenvolvimento.',
+        'more_projects_link': 'Ver mais projetos',
+
         // Investhelper
         'investhelper_title': 'InvestHelper',
         'investhelper_description': 'Um app para controlar seus investimentos e ter um panorama completo contendo todos os valores necessários para o controle de compra, venda, lucro, preço médio e preço de compra e venda. Além de gerar relatórios para facilitar a visualização pelo computador.',
@@ -126,6 +131,11 @@ const translations = {
         'project_download': 'Download',
         'project_android': 'Android',
 
+        // More Projects
+        'more_projects_title': 'Explore more projects',
+        'more_projects_description': 'Want to know more about the projects I worked on? Visit my GitHub profile to discover other repositories, contributions, and projects in development.',
+        'more_projects_link': 'See more projects',
+
         // Investhelper
         'investhelper_title': 'InvestHelper',
         'investhelper_description': 'An app to control your investments and have a complete overview containing all the necessary values for controlling purchases, sales, profits, average price, and buy/sell prices. It also generates reports to facilitate visualization on the computer.',
@@ -221,6 +231,11 @@ const translations = {
         'project_repository': 'Repositorio',
         'project_download': 'Descargar',
         'project_android': 'Android',
+
+        // More Projects
+        'more_projects_title': 'Explora más proyectos',
+        'more_projects_description': '¿Quieres conocer más proyectos en los que trabajé? Visita mi perfil en GitHub para descubrir otros repositorios, contribuciones y proyectos en desarrollo.',
+        'more_projects_link': 'Ver más proyectos',
 
         // Investhelper
         'investhelper_title': 'InvestHelper',
