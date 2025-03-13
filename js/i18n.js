@@ -312,6 +312,14 @@ function initLanguage() {
     const urlParams = new URLSearchParams(window.location.search);
     const urlLang = urlParams.get('lang');
 
+    // Se não houver parâmetro 'page', adiciona com o valor padrão 'aboutMe'
+    if (!urlParams.has('page')) {
+        // Atualiza a URL sem recarregar a página
+        const url = new URL(window.location.href);
+        url.searchParams.set('page', 'aboutMe');
+        window.history.replaceState({}, '', url.toString());
+    }
+
     if (urlLang && translations[urlLang]) {
         applyLanguage(urlLang);
     } else if (urlLang && !translations[urlLang]) {
@@ -338,6 +346,9 @@ function applyLanguage(lang) {
     localStorage.setItem('language', lang);
     updateLanguageButtons(lang);
 
+    // Atualiza o parâmetro 'lang' na URL, mantendo o parâmetro 'page'
+    updateURLWithLanguage(lang);
+
     const elements = document.querySelectorAll('[data-i18n]');
     elements.forEach(element => {
         const key = element.getAttribute('data-i18n');
@@ -348,6 +359,28 @@ function applyLanguage(lang) {
 
     document.documentElement.lang = lang;
     translateSpecificElements(lang);
+}
+
+/**
+ * Atualiza a URL com o idioma selecionado, mantendo outros parâmetros
+ * @param {string} lang - O código do idioma
+ */
+function updateURLWithLanguage(lang) {
+    const url = new URL(window.location.href);
+    const urlParams = url.searchParams;
+
+    // Salva o valor atual da página, se existir
+    const currentPage = urlParams.get('page');
+
+    urlParams.set('lang', lang);
+
+    // Se não houver parâmetro 'page', adiciona com o valor padrão 'aboutMe'
+    if (!currentPage) {
+        urlParams.set('page', 'aboutMe');
+    }
+
+    // Atualiza a URL sem recarregar a página
+    window.history.pushState({}, '', url.toString());
 }
 
 /**

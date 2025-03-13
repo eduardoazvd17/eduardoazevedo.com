@@ -15,74 +15,83 @@ document.addEventListener('DOMContentLoaded', () => {
     setupMobileMenu();
 });
 
-/**
- * Configura a navegação por abas
- */
+const sectionToPageMap = {
+    'about': 'aboutMe',
+    'projects': 'myProjects',
+    'contact': 'contact'
+};
+
+const pageToSectionMap = {
+    'aboutMe': 'about',
+    'myProjects': 'projects',
+    'contact': 'contact'
+};
+
 function setupTabNavigation() {
     const navLinks = document.querySelectorAll('#nav-menu a');
     const sections = document.querySelectorAll('.section');
 
-    const hash = window.location.hash;
-    if (hash) {
-        const targetSection = document.querySelector(hash);
-        if (targetSection) {
-            sections.forEach(section => section.classList.remove('active'));
-            targetSection.classList.add('active');
+    const urlParams = new URLSearchParams(window.location.search);
+    const pageParam = urlParams.get('page');
 
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === hash) {
-                    link.classList.add('active');
-                }
-            });
-        }
+    let targetSectionId;
+
+    if (pageParam && pageToSectionMap[pageParam]) {
+        targetSectionId = pageToSectionMap[pageParam];
+    } else {
+        targetSectionId = 'about';
+
+        updateURLParameter('page', 'aboutMe');
+    }
+
+    const targetSection = document.getElementById(targetSectionId);
+
+    if (targetSection) {
+        sections.forEach(section => section.classList.remove('active'));
+        targetSection.classList.add('active');
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${targetSectionId}`) {
+                link.classList.add('active');
+            }
+        });
     }
 
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            const targetId = link.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
+            const targetId = link.getAttribute('href').substring(1); // Remove o # do início
+            const targetSection = document.getElementById(targetId);
 
             if (targetSection) {
                 sections.forEach(section => section.classList.remove('active'));
                 targetSection.classList.add('active');
 
-                navLinks.forEach(link => link.classList.remove('active'));
+                navLinks.forEach(navLink => navLink.classList.remove('active'));
                 link.classList.add('active');
 
-                history.pushState(null, null, targetId);
-
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
+                const pageValue = sectionToPageMap[targetId] || 'aboutMe';
+                updateURLParameter('page', pageValue);
             }
         });
     });
+}
 
-    window.addEventListener('popstate', () => {
-        const hash = window.location.hash;
-        if (hash) {
-            const targetSection = document.querySelector(hash);
-            if (targetSection) {
-                sections.forEach(section => section.classList.remove('active'));
-                targetSection.classList.add('active');
+function updateURLParameter(key, value) {
+    const url = new URL(window.location.href);
+    const urlParams = url.searchParams;
 
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === hash) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-        }
+    urlParams.set(key, value);
+
+    window.history.pushState({}, '', url.toString());
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
     });
 }
 
-/**
- * Configurar botão de seleção de idioma
- */
 function setupFAB() {
     const languageToggle = document.getElementById('language-toggle');
     const languageModal = document.getElementById('language-modal');
@@ -94,9 +103,6 @@ function setupFAB() {
     }
 }
 
-/**
- * Configurar modais
- */
 function setupModals() {
     const modals = document.querySelectorAll('.modal');
     const closeButtons = document.querySelectorAll('.close-modal');
@@ -127,9 +133,6 @@ function setupModals() {
     });
 }
 
-/**
- * Configurar formulário de contato
- */
 function setupContactForm() {
     const contactForm = document.getElementById('contact-form');
     const clearFormButton = document.getElementById('clear-form');
@@ -160,9 +163,6 @@ function setupContactForm() {
     }
 }
 
-/**
- * Configurar botão de voltar ao topo
- */
 function setupBackToTop() {
     const backToTopBtn = document.getElementById('back-to-top-btn');
 
@@ -176,9 +176,6 @@ function setupBackToTop() {
     }
 }
 
-/**
- * Configurar efeito de flip para a imagem de perfil
- */
 function setupProfileImageFlip() {
     const profileImg = document.getElementById('profile-img');
 
@@ -193,10 +190,6 @@ function setupProfileImageFlip() {
     }
 }
 
-/**
- * Configurar o comportamento do menu para ficar fixo após o scroll
- * Funciona em todas as resoluções (desktop e mobile)
- */
 function setupMobileMenu() {
     const header = document.querySelector('.hero-section');
     const menu = document.getElementById('nav-menu');
