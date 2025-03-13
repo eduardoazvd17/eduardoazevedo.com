@@ -1,9 +1,3 @@
-/**
- * i18n.js - Internacionalização
- * Portfólio de Eduardo Azevedo
- */
-
-// Traduções disponíveis
 const translations = {
     // Português (padrão)
     'pt': {
@@ -310,48 +304,40 @@ const translations = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Inicializar idioma
     initLanguage();
-
-    // Configurar eventos dos botões de idioma
     setupLanguageButtons();
 });
 
-/**
- * Inicializa o idioma com base na preferência salva ou navegador
- */
 function initLanguage() {
-    // Verificar se há idioma salvo
-    const savedLang = localStorage.getItem('language');
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
 
-    if (savedLang && translations[savedLang]) {
-        applyLanguage(savedLang);
+    if (urlLang && translations[urlLang]) {
+        applyLanguage(urlLang);
+    } else if (urlLang && !translations[urlLang]) {
+        applyLanguage('en');
     } else {
-        // Se não houver idioma salvo, detectar do navegador
-        const browserLang = navigator.language.split('-')[0];
-        const lang = translations[browserLang] ? browserLang : 'pt'; // Padrão: português
-        applyLanguage(lang);
+        const savedLang = localStorage.getItem('language');
+
+        if (savedLang && translations[savedLang]) {
+            applyLanguage(savedLang);
+        } else {
+            const browserLang = navigator.language.split('-')[0];
+            const lang = translations[browserLang] ? browserLang : 'pt';
+            applyLanguage(lang);
+        }
     }
 }
 
-/**
- * Aplica um idioma específico
- * @param {string} lang - O código do idioma ('pt', 'en', 'es')
- */
 function applyLanguage(lang) {
-    // Verificar se o idioma existe
     if (!translations[lang]) {
         console.error(`Idioma '${lang}' não suportado. Usando o padrão (pt).`);
         lang = 'pt';
     }
 
-    // Salvar no localStorage
     localStorage.setItem('language', lang);
-
-    // Atualizar os botões de idioma na modal
     updateLanguageButtons(lang);
 
-    // Aplicar traduções
     const elements = document.querySelectorAll('[data-i18n]');
     elements.forEach(element => {
         const key = element.getAttribute('data-i18n');
@@ -360,10 +346,7 @@ function applyLanguage(lang) {
         }
     });
 
-    // Atualizar atributos de idioma
     document.documentElement.lang = lang;
-
-    // Traduzir elementos específicos que não usam data-i18n
     translateSpecificElements(lang);
 }
 
@@ -372,9 +355,6 @@ function applyLanguage(lang) {
  * @param {string} lang - O código do idioma
  */
 function translateSpecificElements(lang) {
-    // Traduções que precisam ser aplicadas manualmente
-
-    // Navegação
     document.querySelectorAll('#nav-menu a span').forEach(element => {
         const section = element.parentElement.getAttribute('data-section');
         if (section === 'about') element.textContent = translations[lang].nav_about;
@@ -382,7 +362,6 @@ function translateSpecificElements(lang) {
         if (section === 'contact') element.textContent = translations[lang].nav_contact;
     });
 
-    // Títulos de seção
     document.querySelectorAll('.section-title').forEach(element => {
         const section = element.closest('.section').id;
         if (section === 'about') element.textContent = translations[lang].about;
@@ -390,7 +369,6 @@ function translateSpecificElements(lang) {
         if (section === 'contact') element.textContent = translations[lang].contact;
     });
 
-    // Textos de apresentação
     const presentationTexts = document.querySelectorAll('.presentation-text');
     if (presentationTexts.length >= 4) {
         presentationTexts[0].textContent = translations[lang].presentation_text_1;
@@ -399,15 +377,12 @@ function translateSpecificElements(lang) {
         presentationTexts[3].textContent = translations[lang].presentation_text_4;
     }
 
-    // Habilidades
     const skillsTitle = document.querySelector('.skills-section h3');
     if (skillsTitle) skillsTitle.textContent = translations[lang].skills_title;
 
-    // Perfil
     const profileTitle = document.querySelector('.profile-info h2');
     if (profileTitle) profileTitle.textContent = translations[lang].profile_title;
 
-    // Projetos
     document.querySelectorAll('.project-card').forEach(card => {
         const title = card.querySelector('h3');
         const description = card.querySelector('p');
@@ -437,7 +412,6 @@ function translateSpecificElements(lang) {
             description.textContent = translations[lang][descKey];
         }
 
-        // Links dos projetos
         card.querySelectorAll('.project-link').forEach(link => {
             const linkText = link.textContent.trim();
             if (linkText.includes('Preview')) {
@@ -452,7 +426,6 @@ function translateSpecificElements(lang) {
         });
     });
 
-    // Contato
     const contactIntro = document.querySelector('.contact-intro');
     if (contactIntro) contactIntro.textContent = translations[lang].contact_intro;
 
@@ -462,7 +435,6 @@ function translateSpecificElements(lang) {
     const contactEmail = document.querySelector('.contact-form-section h3');
     if (contactEmail) contactEmail.textContent = translations[lang].contact_email;
 
-    // Formulário de contato
     const subjectLabel = document.querySelector('label[for="subject"]');
     if (subjectLabel) subjectLabel.textContent = translations[lang].subject;
 
@@ -475,14 +447,12 @@ function translateSpecificElements(lang) {
     const sendButton = document.querySelector('.btn-send');
     if (sendButton) sendButton.innerHTML = `<i class="fas fa-paper-plane"></i> ${translations[lang].send}`;
 
-    // Modais
     const themeTitle = document.querySelector('#theme-modal h3');
     if (themeTitle) themeTitle.textContent = translations[lang].change_theme;
 
     const languageTitle = document.querySelector('#language-modal h3');
     if (languageTitle) languageTitle.textContent = translations[lang].change_language;
 
-    // Opções de tema
     document.querySelectorAll('.theme-option span').forEach(span => {
         const theme = span.parentElement.getAttribute('data-theme');
         if (theme === 'system') span.textContent = translations[lang].theme_system;
@@ -490,7 +460,6 @@ function translateSpecificElements(lang) {
         if (theme === 'dark') span.textContent = translations[lang].theme_dark;
     });
 
-    // Opções de idioma
     document.querySelectorAll('.lang-option .lang-name').forEach(span => {
         const langCode = span.parentElement.getAttribute('data-lang');
         if (langCode === 'pt') span.textContent = translations[lang].language_pt;
@@ -498,16 +467,13 @@ function translateSpecificElements(lang) {
         if (langCode === 'es') span.textContent = translations[lang].language_es;
     });
 
-    // Botões de fechar modal
     document.querySelectorAll('.close-modal').forEach(button => {
         button.textContent = translations[lang].close;
     });
 
-    // Voltar ao topo
     const backToTopBtn = document.getElementById('back-to-top-btn');
     if (backToTopBtn) backToTopBtn.setAttribute('aria-label', translations[lang].back_to_top);
 
-    // Copyright
     const copyright = document.querySelector('footer p.copyright');
     const footerCompany = document.getElementById('footer-company');
     if (copyright && footerCompany) {
@@ -516,10 +482,6 @@ function translateSpecificElements(lang) {
     }
 }
 
-/**
- * Atualiza os botões de idioma na modal
- * @param {string} activeLang - O idioma ativo
- */
 function updateLanguageButtons(activeLang) {
     const langButtons = document.querySelectorAll('.lang-option');
 
@@ -534,9 +496,6 @@ function updateLanguageButtons(activeLang) {
     });
 }
 
-/**
- * Configura os eventos dos botões de idioma
- */
 function setupLanguageButtons() {
     const langButtons = document.querySelectorAll('.lang-option');
 
