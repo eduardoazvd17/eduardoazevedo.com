@@ -7,7 +7,7 @@ const translations = {
         'nav_contact': 'Contato',
 
         // Cabeçalho
-        'profile_title': 'Analista Desenvolvedor Mobile | Cross-Platform | Full Stack - Especializado em Flutter',
+        'profile_title': 'Analista Desenvolvedor Mobile | Cross-Platform | Full Stack - Especializado em Flutter/Dart',
 
         // Sobre mim
         'about': 'Sobre mim',
@@ -108,7 +108,7 @@ const translations = {
         'nav_contact': 'Contact',
 
         // Cabeçalho
-        'profile_title': 'Mobile Developer Analyst | Cross-Platform | Full Stack - Specialized in Flutter',
+        'profile_title': 'Mobile Developer Analyst | Cross-Platform | Full Stack - Specialized in Flutter/Dart',
 
         // Sobre mim
         'about': 'About me',
@@ -209,7 +209,7 @@ const translations = {
         'nav_contact': 'Contacto',
 
         // Cabeçalho
-        'profile_title': 'Analista Desarrollador Móvil | Cross-Platform | Full Stack - Especializado en Flutter',
+        'profile_title': 'Analista Desarrollador Móvil | Cross-Platform | Full Stack - Especializado en Flutter/Dart',
 
         // Sobre mim
         'about': 'Sobre mí',
