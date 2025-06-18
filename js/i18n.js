@@ -97,7 +97,11 @@ const translations = {
         'back_to_top': 'Voltar ao topo',
         'copyright': 'Todos os direitos reservados.',
         'company_name': 'Azevedo Tech Solutions',
-        'company_cnpj': 'CNPJ: 55.705.600/0001-47'
+        'company_cnpj': 'CNPJ: 55.705.600/0001-47',
+
+        // AutoCarefy
+        'autocarefy_title': 'AutoCarefy',
+        'autocarefy_description': 'App para consulta de valores de referência da tabela FIPE, apresentando informações atualizadas sobre preços de veículos.',
     },
 
     // Inglês
@@ -198,7 +202,11 @@ const translations = {
         'back_to_top': 'Back to top',
         'copyright': 'All rights reserved.',
         'company_name': 'Azevedo Tech Solutions',
-        'company_cnpj': 'CNPJ: 55.705.600/0001-47'
+        'company_cnpj': 'CNPJ: 55.705.600/0001-47',
+
+        // AutoCarefy
+        'autocarefy_title': 'AutoCarefy',
+        'autocarefy_description': 'App for consulting reference values from the FIPE table, presenting updated information about vehicle prices.',
     },
 
     // Espanhol
@@ -299,7 +307,11 @@ const translations = {
         'back_to_top': 'Volver arriba',
         'copyright': 'Todos los derechos reservados.',
         'company_name': 'Azevedo Tech Solutions',
-        'company_cnpj': 'CNPJ: 55.705.600/0001-47'
+        'company_cnpj': 'CNPJ: 55.705.600/0001-47',
+
+        // AutoCarefy
+        'autocarefy_title': 'AutoCarefy',
+        'autocarefy_description': 'App para consulta de valores de referencia de la tabla FIPE, presentando información actualizada sobre precios de vehículos.',
     }
 };
 
