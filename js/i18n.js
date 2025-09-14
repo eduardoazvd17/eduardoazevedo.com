@@ -99,6 +99,10 @@ const translations = {
         'company_name': 'Azevedo Tech Solutions',
         'company_cnpj': 'CNPJ: 55.705.600/0001-47',
 
+        // StackBudget
+        'stackbudget_title': 'StackBudget',
+        'stackbudget_description': 'Um aplicativo de planejamento financeiro que permite aos usuários acompanhar seus gastos mensais de forma organizada e eficiente. Com interface intuitiva e ferramentas para controle de orçamento, ajudando na gestão financeira pessoal.',
+
         // AutoCarefy
         'autocarefy_title': 'AutoCarefy',
         'autocarefy_description': 'App para consulta de valores de referência da tabela FIPE, apresentando informações atualizadas sobre preços de veículos.',
@@ -204,6 +208,10 @@ const translations = {
         'company_name': 'Azevedo Tech Solutions',
         'company_cnpj': 'CNPJ: 55.705.600/0001-47',
 
+        // StackBudget
+        'stackbudget_title': 'StackBudget',
+        'stackbudget_description': 'A financial planning application that allows users to track their monthly expenses in an organized and efficient way. With an intuitive interface and budget control tools, helping with personal financial management.',
+
         // AutoCarefy
         'autocarefy_title': 'AutoCarefy',
         'autocarefy_description': 'App for consulting reference values from the FIPE table, presenting updated information about vehicle prices.',
@@ -308,6 +316,10 @@ const translations = {
         'copyright': 'Todos los derechos reservados.',
         'company_name': 'Azevedo Tech Solutions',
         'company_cnpj': 'CNPJ: 55.705.600/0001-47',
+
+        // StackBudget
+        'stackbudget_title': 'StackBudget',
+        'stackbudget_description': 'Una aplicación de planificación financiera que permite a los usuarios controlar sus gastos mensuales de manera organizada y eficiente. Con interfaz intuitiva y herramientas para control de presupuesto, ayudando en la gestión financiera personal.',
 
         // AutoCarefy
         'autocarefy_title': 'AutoCarefy',
