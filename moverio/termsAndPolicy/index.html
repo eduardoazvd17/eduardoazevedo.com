@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	<link rel="shortcut icon" href="../../icons/moverio.png" type="image/x-icon">
+	<meta name="description" content="MoveRio - Terms of Use and Privacy Policy">
+
+	<title>MoveRio - Terms of Use and Privacy Policy</title>
+
+	<!-- Bootstrap CSS CDN -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800;900&display=swap"
+		rel="stylesheet">
+
+	<style>
+		body {
+			background: linear-gradient(180deg, #2196F3 0%, #ffffff 100%);
+			min-height: 100vh;
+			margin: 0;
+			padding: 20px;
+			font-family: 'Inter Tight', sans-serif;
+			color: #2C3E50;
+			line-height: 1.6;
+		}
+
+		.card {
+			background: rgba(255, 255, 255, 0.97);
+			border-radius: 20px;
+			box-shadow: 0 8px 20px rgba(33, 150, 243, 0.15);
+			margin-top: 60px;
+			border: none;
+		}
+
+		.card-title {
+			font-family: 'Inter Tight', sans-serif;
+			color: #2196F3;
+			font-weight: 900;
+			font-size: 2.75rem;
+			letter-spacing: -0.5px;
+			margin-bottom: 1.5rem;
+			position: relative;
+			padding-bottom: 1rem;
+			text-transform: uppercase;
+		}
+
+		.card-title:after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 100px;
+			height: 4px;
+			background: linear-gradient(90deg, #2196F3, #1976D2);
+			border-radius: 2px;
+		}
+
+		h2.h5 {
+			font-family: 'Inter Tight', sans-serif;
+			color: #2196F3;
+			font-weight: 700;
+			margin-top: 2rem;
+			font-size: 1.25rem;
+			letter-spacing: 0.3px;
+		}
+
+		.card-body {
+			padding: 2.5rem;
+		}
+
+		.text-center strong {
+			color: #2196F3;
+		}
+
+		p {
+			margin-bottom: 1rem;
+			font-weight: 400;
+		}
+
+		.contact-section {
+			background: rgba(33, 150, 243, 0.03);
+			padding: 2rem;
+			border-radius: 15px;
+			margin-top: 3rem;
+		}
+
+		.last-updated {
+			font-weight: 500;
+			color: #666;
+			letter-spacing: 0.5px;
+		}
+
+		.language-selector {
+			position: absolute;
+			top: 20px;
+			right: 30px;
+			z-index: 1000;
+		}
+
+		.language-selector select {
+			background-color: rgba(255, 255, 255, 0.9);
+			border: 2px solid #2196F3;
+			border-radius: 8px;
+			padding: 5px 10px;
+			color: #2196F3;
+			font-weight: 500;
+			cursor: pointer;
+		}
+
+		.language-selector select:focus {
+			outline: none;
+			box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
+		}
+
+		[lang] {
+			display: none;
+		}
+
+		[lang].active {
+			display: block;
+		}
+
+		/* Adding styles for the app icon */
+		.app-icon {
+			text-align: center;
+			margin-bottom: 1.5rem;
+		}
+
+		.app-icon img {
+			width: 80px;
+			height: auto;
+			border-radius: 16px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="language-selector">
+		<select id="languageSelect" onchange="changeLanguage(this.value)">
+			<option value="en">English</option>
+			<option value="pt">Português</option>
+		</select>
+	</div>
+
+	<section class="container">
+		<div class="row justify-content-center">
+			<div class="col-12 col-md-12 col-lg-8">
+				<div class="card">
+					<div class="card-body">
+						<!-- English Version -->
+						<div lang="en">
+							<div class="app-icon">
+								<img src="../../icons/moverio.png" alt="MoveRio Logo">
+							</div>
+							<h1 class="card-title text-center">Terms of Use and<br>Privacy Policy</h1>
+							<div class="card-text">
+								<p class="text-center mb-4 last-updated"><strong>Last Updated: October 1, 2025</strong>
+								</p>
+
+								<p>Welcome to MoveRio!</p>
+
+								<p>By using our application, you agree to the following terms and conditions:</p>
+
+								<h2 class="h5">1. Application Purpose</h2>
+								<p>MoveRio is a free mobile application designed to facilitate urban mobility in Rio de
+									Janeiro city. The app allows users to consult bus lines, view complete and updated
+									routes, find nearby bus stops, set destinations, and track their route in real-time
+									using their device's location.</p>
+
+								<h2 class="h5">2. Data Collection and Usage</h2>
+								<p>MoveRio does not collect, store, or transmit any personal information or user data.
+									The application does not require user registration or login to use its features.
+									All features are available without any user identification.</p>
+
+								<h2 class="h5">3. Permissions and Sensors</h2>
+								<p>The application requires access to the following device features:</p>
+								<p><strong>Location:</strong> Used exclusively to display your current position on the
+									map, help you find nearby bus stops, and enable real-time route tracking to your
+									destination. Location data is only used during app usage and is never stored or
+									transmitted to external servers.</p>
+								<p><strong>Device Rotation Sensor:</strong> Used to orient the map according to your
+									device's position for better navigation and improved user experience. This data is
+									only used locally and never leaves your device.</p>
+
+								<h2 class="h5">4. Third-Party Services</h2>
+								<p>MoveRio integrates with external mapping services (such as Google Maps and native
+									system maps) to provide route directions to bus stops. When you use these features,
+									you will be redirected to the respective third-party application, which operates
+									under its own terms of use and privacy policy.</p>
+
+								<h2 class="h5">5. Advertising</h2>
+								<p>MoveRio displays advertisements to support the free availability of the application.
+									These ads are provided by third-party advertising networks that may collect certain
+									information in accordance with their own privacy policies.</p>
+
+								<h2 class="h5">6. No Warranty</h2>
+								<p>MoveRio is provided "as is" without warranty of any kind, either expressed or
+									implied. We strive to provide accurate and up-to-date information about public
+									transportation, but we cannot guarantee the accuracy, completeness, or timeliness
+									of the information provided.</p>
+
+								<h2 class="h5">7. User Responsibility</h2>
+								<p>Users are responsible for complying with all local laws and regulations when using
+									the application. MoveRio is not responsible for any decisions made based on the
+									information provided by the application.</p>
+
+								<h2 class="h5">8. User Consent</h2>
+								<p>By using MoveRio, you consent to the terms outlined in this document and grant
+									permission for the application to access your device's location and rotation sensor
+									during app usage.</p>
+
+								<h2 class="h5">9. Updates to Terms of Use and Privacy Policy</h2>
+								<p>We may revise and update these terms of use and our privacy policy periodically. We
+									will notify users of any significant changes through the application or our website.
+								</p>
+
+								<p class="mt-4">By using the application, you agree to these terms of use and our
+									privacy policy. If you do not agree to these terms, please do not use MoveRio.</p>
+
+								<div class="text-center contact-section">
+									<p><strong>Contact</strong></p>
+									<p>For questions about the Terms of Use or Privacy Policy, please contact us at:</p>
+									<p><strong>azevedotechsolutions@gmail.com</strong></p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Portuguese Version -->
+						<div lang="pt">
+							<div class="app-icon">
+								<img src="../../icons/moverio.png" alt="MoveRio Logo">
+							</div>
+							<h1 class="card-title text-center">Termos de Uso e<br>Política de Privacidade</h1>
+							<div class="card-text">
+								<p class="text-center mb-4 last-updated"><strong>Última Atualização: 1 de outubro de
+										2025</strong></p>
+
+								<p>Bem-vindo ao MoveRio!</p>
+
+								<p>Ao utilizar nosso aplicativo, você concorda com os seguintes termos e condições:</p>
+
+								<h2 class="h5">1. Propósito do Aplicativo</h2>
+								<p>O MoveRio é um aplicativo mobile gratuito projetado para facilitar a mobilidade
+									urbana na cidade do Rio de Janeiro. O app permite aos usuários consultar linhas de
+									ônibus, visualizar itinerários completos e atualizados, encontrar pontos de parada
+									próximos, definir destinos e acompanhar o trajeto em tempo real usando a localização
+									do dispositivo.</p>
+
+								<h2 class="h5">2. Coleta e Uso de Dados</h2>
+								<p>O MoveRio não coleta, armazena ou transmite qualquer informação pessoal ou dados do
+									usuário. O aplicativo não requer registro de usuário ou login para usar seus
+									recursos. Todas as funcionalidades estão disponíveis sem qualquer identificação do
+									usuário.</p>
+
+								<h2 class="h5">3. Permissões e Sensores</h2>
+								<p>O aplicativo requer acesso aos seguintes recursos do dispositivo:</p>
+								<p><strong>Localização:</strong> Usada exclusivamente para exibir sua posição atual no
+									mapa, ajudá-lo a encontrar pontos de ônibus próximos e habilitar o rastreamento em
+									tempo real da rota até seu destino. Os dados de localização são usados apenas
+									durante o uso do app e nunca são armazenados ou transmitidos para servidores
+									externos.</p>
+								<p><strong>Sensor de Rotação do Dispositivo:</strong> Usado para orientar o mapa de
+									acordo com a posição do seu dispositivo para melhor navegação e experiência de uso
+									aprimorada. Esses dados são usados apenas localmente e nunca saem do seu
+									dispositivo.</p>
+
+								<h2 class="h5">4. Serviços de Terceiros</h2>
+								<p>O MoveRio integra-se com serviços externos de mapas (como Google Maps e mapas
+									nativos do sistema) para fornecer direções de rota até os pontos de ônibus. Ao usar
+									essas funcionalidades, você será redirecionado para o respectivo aplicativo de
+									terceiros, que opera sob seus próprios termos de uso e política de privacidade.</p>
+
+								<h2 class="h5">5. Publicidade</h2>
+								<p>O MoveRio exibe anúncios para apoiar a disponibilidade gratuita do aplicativo. Esses
+									anúncios são fornecidos por redes de publicidade de terceiros que podem coletar
+									certas informações de acordo com suas próprias políticas de privacidade.</p>
+
+								<h2 class="h5">6. Sem Garantia</h2>
+								<p>O MoveRio é fornecido "como está", sem garantia de qualquer tipo, expressa ou
+									implícita. Nos esforçamos para fornecer informações precisas e atualizadas sobre
+									transporte público, mas não podemos garantir a precisão, completude ou atualidade
+									das informações fornecidas.</p>
+
+								<h2 class="h5">7. Responsabilidade do Usuário</h2>
+								<p>Os usuários são responsáveis por cumprir todas as leis e regulamentos locais ao usar
+									o aplicativo. O MoveRio não é responsável por quaisquer decisões tomadas com base
+									nas informações fornecidas pelo aplicativo.</p>
+
+								<h2 class="h5">8. Consentimento do Usuário</h2>
+								<p>Ao utilizar o MoveRio, você consente com os termos descritos neste documento e
+									concede permissão para que o aplicativo acesse a localização e o sensor de rotação
+									do seu dispositivo durante o uso do app.</p>
+
+								<h2 class="h5">9. Atualizações dos Termos de Uso e Política de Privacidade</h2>
+								<p>Podemos revisar e atualizar estes termos de uso e nossa política de privacidade
+									periodicamente. Notificaremos os usuários sobre quaisquer alterações significativas
+									por meio do aplicativo ou do nosso site.</p>
+
+								<p class="mt-4">Ao utilizar o aplicativo, você concorda com estes termos de uso e nossa
+									política de privacidade. Se você não concorda com estes termos, por favor, não use o
+									MoveRio.</p>
+
+								<div class="text-center contact-section">
+									<p><strong>Contato</strong></p>
+									<p>Para questões sobre os Termos de Uso ou Política de Privacidade, entre em contato
+										conosco em:</p>
+									<p><strong>azevedotechsolutions@gmail.com</strong></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Bootstrap JS CDN -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+	<script>
+		function changeLanguage(lang) {
+			// Validate language parameter - only accept 'en' or 'pt'
+			if (lang !== 'en' && lang !== 'pt') {
+				lang = 'en';
+			}
+
+			// Hide all language versions
+			document.querySelectorAll('[lang]').forEach(elem => {
+				elem.classList.remove('active');
+			});
+
+			// Show selected language version
+			document.querySelector(`[lang="${lang}"]`).classList.add('active');
+
+			// Update URL with language parameter
+			const url = new URL(window.location.href);
+			url.searchParams.set('lang', lang);
+			window.history.replaceState({}, '', url);
+		}
+
+		// Function to get URL parameter
+		function getUrlParameter(name) {
+			const urlParams = new URLSearchParams(window.location.search);
+			return urlParams.get(name);
+		}
+
+		// Set initial language based on URL parameter or default to English
+		document.addEventListener('DOMContentLoaded', function () {
+			let lang = getUrlParameter('lang') || 'en';
+			// Validate language parameter - only accept 'en' or 'pt'
+			if (lang !== 'en' && lang !== 'pt') {
+				lang = 'en';
+			}
+			document.getElementById('languageSelect').value = lang;
+			changeLanguage(lang);
+		});
+	</script>
+</body>
+
+</html>
