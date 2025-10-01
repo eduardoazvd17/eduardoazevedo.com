@@ -99,6 +99,10 @@ const translations = {
         'company_name': 'Azevedo Tech Solutions',
         'company_cnpj': 'CNPJ: 55.705.600/0001-47',
 
+        // MoveRio
+        'moverio_title': 'MoveRio',
+        'moverio_description': 'Aplicativo gratuito que facilita sua mobilidade no Rio de Janeiro. Consulte linhas de ônibus, visualize itinerários completos, encontre pontos de parada próximos, abra rotas no app de mapas do seu dispositivo e acompanhe seu trajeto em tempo real usando a localização do seu dispositivo. Ideal para o dia a dia de quem depende do transporte público.',
+
         // StackBudget
         'stackbudget_title': 'StackBudget',
         'stackbudget_description': 'Um aplicativo de planejamento financeiro que permite aos usuários acompanhar seus gastos mensais de forma organizada e eficiente. Com interface intuitiva e ferramentas para controle de orçamento, ajudando na gestão financeira pessoal.',
@@ -208,6 +212,10 @@ const translations = {
         'company_name': 'Azevedo Tech Solutions',
         'company_cnpj': 'CNPJ: 55.705.600/0001-47',
 
+        // MoveRio
+        'moverio_title': 'MoveRio',
+        'moverio_description': 'Free app that facilitates your mobility in Rio de Janeiro. Check bus lines, view complete itineraries, find nearby bus stops, open routes on your device\'s map app, and track your route in real-time using your device\'s location. Ideal for everyday use by those who depend on public transportation.',
+
         // StackBudget
         'stackbudget_title': 'StackBudget',
         'stackbudget_description': 'A financial planning application that allows users to track their monthly expenses in an organized and efficient way. With an intuitive interface and budget control tools, helping with personal financial management.',
@@ -316,6 +324,10 @@ const translations = {
         'copyright': 'Todos los derechos reservados.',
         'company_name': 'Azevedo Tech Solutions',
         'company_cnpj': 'CNPJ: 55.705.600/0001-47',
+
+        // MoveRio
+        'moverio_title': 'MoveRio',
+        'moverio_description': 'Aplicación gratuita que facilita tu movilidad en Río de Janeiro. Consulta líneas de autobús, visualiza itinerarios completos, encuentra paradas cercanas, abre rutas en la app de mapas de tu dispositivo y acompaña tu trayecto en tiempo real usando la ubicación de tu dispositivo. Ideal para el día a día de quienes dependen del transporte público.',
 
         // StackBudget
         'stackbudget_title': 'StackBudget',
