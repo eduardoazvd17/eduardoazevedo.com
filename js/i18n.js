@@ -7,11 +7,11 @@ const translations = {
         'nav_contact': 'Contato',
 
         // Cabeçalho
-        'profile_title': 'Analista Desenvolvedor Mobile | Cross-Platform | Full Stack - Especializado em Flutter/Dart',
+        'profile_title': 'Engenheiro Mobile | Cross-Platform | Full Stack | Especialista em Flutter',
 
         // Sobre mim
         'about': 'Sobre mim',
-        'presentation_text_1': 'Sou um desenvolvedor mobile com 6 anos de experiência profissional, especializado no framework Flutter. Ao longo da minha carreira, tive a oportunidade de liderar projetos mobile de forma independente, atuar no desenvolvimento de soluções para instituições financeiras e implementar melhorias significativas que otimizaram a performance de aplicativos. Sempre com foco na criação de soluções performáticas, inovadoras e escaláveis, com alta qualidade e melhoria contínua da experiência do usuário.',
+        'presentation_text_1': 'Sou um desenvolvedor mobile com 7 anos de experiência profissional, especializado no framework Flutter. Ao longo da minha carreira, tive a oportunidade de liderar projetos mobile de forma independente, atuar no desenvolvimento de soluções para instituições financeiras e implementar melhorias significativas que otimizaram a performance de aplicativos. Sempre com foco na criação de soluções performáticas, inovadoras e escaláveis, com alta qualidade e melhoria contínua da experiência do usuário.',
         'presentation_text_2': 'Tenho experiência em diversas áreas do Flutter, como internacionalização, modularização, gerenciamento de estados e rotas, criação de widgets personalizados, desenvolvimento de packages reutilizáveis, automação de pipelines CI/CD com Codemagic, publicação de aplicativos nas lojas e realização de testes unitários e de widgets. Também sigo práticas de gerenciamento eficiente de memória, evitando memory leaks, e adoto os princípios SOLID e Clean Code para garantir um código limpo, bem estruturado e de fácil manutenção.',
         'presentation_text_3': 'Prezo por uma boa comunicação e trabalho bem em equipe, sempre buscando colaborar de forma eficiente e construtiva, com o objetivo de garantir entregas de alta qualidade e alinhamento entre os times.',
         'presentation_text_4': 'Além disso, possuo conhecimento em linguagens como Java, C#, Kotlin e Swift, o que me permite resolver problemas e trabalhar com diferentes tecnologias, atendendo a diversas demandas no desenvolvimento de software.',
@@ -120,11 +120,11 @@ const translations = {
         'nav_contact': 'Contact',
 
         // Cabeçalho
-        'profile_title': 'Mobile Developer Analyst | Cross-Platform | Full Stack - Specialized in Flutter/Dart',
+        'profile_title': 'Mobile Engineer | Cross-Platform | Full Stack | Flutter Specialist',
 
         // Sobre mim
         'about': 'About me',
-        'presentation_text_1': 'I am a mobile developer with 6 years of professional experience, specialized in the Flutter framework. Throughout my career, I had the opportunity to lead mobile projects independently, work on developing solutions for financial institutions, and implement significant improvements that optimized app performance. Always focusing on creating high-performance, innovative, and scalable solutions, with high quality and continuous improvement of the user experience.',
+        'presentation_text_1': 'I am a mobile developer with 7 years of professional experience, specialized in the Flutter framework. Throughout my career, I had the opportunity to lead mobile projects independently, work on developing solutions for financial institutions, and implement significant improvements that optimized app performance. Always focusing on creating high-performance, innovative, and scalable solutions, with high quality and continuous improvement of the user experience.',
         'presentation_text_2': 'I have experience in various areas of Flutter, such as internationalization, modularization, state and route management, creation of custom widgets, development of reusable packages, automation of CI/CD pipelines with Codemagic, publishing applications to stores, and conducting unit and widget tests. I also follow efficient memory management practices, avoiding memory leaks, and adopt SOLID principles and Clean Code to ensure clean, well-structured, and easily maintainable code.',
         'presentation_text_3': 'I value good communication and work well in teams, always seeking to collaborate efficiently and constructively, with the goal of ensuring high-quality deliveries and alignment between teams.',
         'presentation_text_4': 'Additionally, I have knowledge in languages such as Java, C#, Kotlin, and Swift, which allows me to solve problems and work with different technologies, meeting various demands in software development.',
@@ -233,11 +233,11 @@ const translations = {
         'nav_contact': 'Contacto',
 
         // Cabeçalho
-        'profile_title': 'Analista Desarrollador Móvil | Cross-Platform | Full Stack - Especializado en Flutter/Dart',
+        'profile_title': 'Ingeniero Móvil | Multiplataforma | Full Stack | Especialista en Flutter',
 
         // Sobre mim
         'about': 'Sobre mí',
-        'presentation_text_1': 'Soy un desarrollador móvil con 6 años de experiencia profesional, especializado en el framework Flutter. A lo largo de mi carrera, tuve la oportunidad de liderar proyectos móviles de forma independiente, trabajar en el desarrollo de soluciones para instituciones financieras e implementar mejoras significativas que optimizaron el rendimiento de las aplicaciones. Siempre enfocado en crear soluciones performantes, innovadoras y escalables, con alta calidad y mejora continua de la experiencia del usuario.',
+        'presentation_text_1': 'Soy un desarrollador móvil con 7 años de experiencia profesional, especializado en el framework Flutter. A lo largo de mi carrera, tuve la oportunidad de liderar proyectos móviles de forma independiente, trabajar en el desarrollo de soluciones para instituciones financieras e implementar mejoras significativas que optimizaron el rendimiento de las aplicaciones. Siempre enfocado en crear soluciones performantes, innovadoras y escalables, con alta calidad y mejora continua de la experiencia del usuario.',
         'presentation_text_2': 'Tengo experiencia en diversas áreas de Flutter, como internacionalización, modularización, gestión de estados y rutas, creación de widgets personalizados, desarrollo de paquetes reutilizables, automatización de pipelines CI/CD con Codemagic, publicación de aplicaciones en tiendas y realización de pruebas unitarias y de widgets. También sigo prácticas de gestión eficiente de memoria, evitando fugas de memoria, y adopto los principios SOLID y Clean Code para garantizar un código limpio, bien estructurado y de fácil mantenimiento.',
         'presentation_text_3': 'Valoro la buena comunicación y trabajo bien en equipo, siempre buscando colaborar de manera eficiente y constructiva, con el objetivo de garantizar entregas de alta calidad y alineamiento entre los equipos.',
         'presentation_text_4': 'Además, tengo conocimientos en lenguajes como Java, C#, Kotlin y Swift, lo que me permite resolver problemas y trabajar con diferentes tecnologías, atendiendo a diversas demandas en el desarrollo de software.',
