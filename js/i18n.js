@@ -103,6 +103,10 @@ const translations = {
         'moverio_title': 'MoveRio',
         'moverio_description': 'Aplicativo gratuito que facilita sua mobilidade no Rio de Janeiro. Consulte linhas de ônibus, visualize itinerários completos, encontre pontos de parada próximos, abra rotas no app de mapas do seu dispositivo e acompanhe seu trajeto em tempo real usando a localização do seu dispositivo. Ideal para o dia a dia de quem depende do transporte público.',
 
+        // easy_binding
+        'easy_binding_title': 'easy_binding',
+        'easy_binding_description': 'Um pacote Flutter leve para gerenciar o ciclo de vida de dependências em rotas. Inspirado nos bindings do GetX, mas agnóstico de framework - funciona com qualquer solução de injeção de dependências como GetIt, Provider ou Riverpod.',
+
         // StackBudget
         'stackbudget_title': 'StackBudget',
         'stackbudget_description': 'Um aplicativo de planejamento financeiro que permite aos usuários acompanhar seus gastos mensais de forma organizada e eficiente. Com interface intuitiva e ferramentas para controle de orçamento, ajudando na gestão financeira pessoal.',
@@ -216,6 +220,10 @@ const translations = {
         'moverio_title': 'MoveRio',
         'moverio_description': 'Free app that facilitates your mobility in Rio de Janeiro. Check bus lines, view complete itineraries, find nearby bus stops, open routes on your device\'s map app, and track your route in real-time using your device\'s location. Ideal for everyday use by those who depend on public transportation.',
 
+        // easy_binding
+        'easy_binding_title': 'easy_binding',
+        'easy_binding_description': 'A lightweight Flutter package for managing dependencies lifecycle in routes. Inspired by GetX bindings but framework-agnostic - works with any dependency injection solution like GetIt, Provider, or Riverpod.',
+
         // StackBudget
         'stackbudget_title': 'StackBudget',
         'stackbudget_description': 'A financial planning application that allows users to track their monthly expenses in an organized and efficient way. With an intuitive interface and budget control tools, helping with personal financial management.',
@@ -328,6 +336,10 @@ const translations = {
         // MoveRio
         'moverio_title': 'MoveRio',
         'moverio_description': 'Aplicación gratuita que facilita tu movilidad en Río de Janeiro. Consulta líneas de autobús, visualiza itinerarios completos, encuentra paradas cercanas, abre rutas en la app de mapas de tu dispositivo y acompaña tu trayecto en tiempo real usando la ubicación de tu dispositivo. Ideal para el día a día de quienes dependen del transporte público.',
+
+        // easy_binding
+        'easy_binding_title': 'easy_binding',
+        'easy_binding_description': 'Un paquete Flutter ligero para gestionar el ciclo de vida de dependencias en rutas. Inspirado en los bindings de GetX, pero agnóstico de framework - funciona con cualquier solución de inyección de dependencias como GetIt, Provider o Riverpod.',
 
         // StackBudget
         'stackbudget_title': 'StackBudget',
