@@ -1,130 +1,77 @@
 document.addEventListener('DOMContentLoaded', () => {
-    document.body.setAttribute('data-theme', 'dark');
-
     const currentYearEl = document.getElementById('current-year');
     if (currentYearEl) {
         currentYearEl.textContent = new Date().getFullYear();
     }
 
-    setupTabNavigation();
-    setupContactForm();
+    setupScrollSpy();
+    setupScrollReveal();
     setupBackToTop();
-    setupProfileImageFlip();
-    setupMobileMenu();
     setupCopyEmailButtons();
 });
 
-const sectionToPageMap = {
-    'about': 'aboutMe',
-    'projects': 'myProjects',
-    'contact': 'contact'
-};
+function setupScrollSpy() {
+    const navLinks = document.querySelectorAll('#nav-menu a[data-section]');
+    const sections = document.querySelectorAll('main .section');
 
-const pageToSectionMap = {
-    'aboutMe': 'about',
-    'myProjects': 'projects',
-    'contact': 'contact'
-};
+    if (!navLinks.length || !sections.length) return;
 
-function setupTabNavigation() {
-    const navLinks = document.querySelectorAll('#nav-menu a');
-    const sections = document.querySelectorAll('.section');
+    const linkBySection = {};
+    navLinks.forEach(link => {
+        linkBySection[link.getAttribute('data-section')] = link;
+    });
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const pageParam = urlParams.get('page');
-
-    let targetSectionId;
-
-    if (pageParam && pageToSectionMap[pageParam]) {
-        targetSectionId = pageToSectionMap[pageParam];
-    } else {
-        targetSectionId = 'about';
-
-        updateURLParameter('page', 'aboutMe');
+    function setActiveLink(link) {
+        navLinks.forEach(navLink => navLink.classList.remove('active'));
+        link.classList.add('active');
     }
 
-    const targetSection = document.getElementById(targetSectionId);
-
-    if (targetSection) {
-        sections.forEach(section => section.classList.remove('active'));
-        targetSection.classList.add('active');
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${targetSectionId}`) {
-                link.classList.add('active');
-            }
-        });
-    }
+    // Ao clicar, o link ativo muda na hora; o observer fica suspenso
+    // enquanto o scroll suave até a seção ainda está em andamento.
+    let suppressUntil = 0;
 
     navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href').substring(1); // Remove o # do início
-            const targetSection = document.getElementById(targetId);
-
-            if (targetSection) {
-                sections.forEach(section => section.classList.remove('active'));
-                targetSection.classList.add('active');
-
-                navLinks.forEach(navLink => navLink.classList.remove('active'));
-                link.classList.add('active');
-
-                const pageValue = sectionToPageMap[targetId] || 'aboutMe';
-                updateURLParameter('page', pageValue);
-                scrollToContentTop();
-            }
+        link.addEventListener('click', () => {
+            setActiveLink(link);
+            suppressUntil = Date.now() + 1000;
         });
     });
-}
 
-function updateURLParameter(key, value) {
-    const url = new URL(window.location.href);
-    const urlParams = url.searchParams;
+    const observer = new IntersectionObserver((entries) => {
+        if (Date.now() < suppressUntil) return;
 
-    urlParams.set(key, value);
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
 
-    window.history.pushState({}, '', url.toString());
-}
+            const activeLink = linkBySection[entry.target.id];
+            if (!activeLink) return;
 
-function scrollToContentTop() {
-    const hero = document.querySelector('.hero-section');
-    const stickyPoint = hero ? hero.offsetHeight : 0;
-
-    window.scrollTo({
-        top: stickyPoint,
-        behavior: 'smooth'
+            setActiveLink(activeLink);
+        });
+    }, {
+        rootMargin: '-45% 0px -45% 0px',
+        threshold: 0
     });
+
+    sections.forEach(section => observer.observe(section));
 }
 
-function setupContactForm() {
-    const contactForm = document.getElementById('contact-form');
-    const clearFormButton = document.getElementById('clear-form');
-    const subjectInput = document.getElementById('subject');
-    const messageInput = document.getElementById('message');
+function setupScrollReveal() {
+    const revealElements = document.querySelectorAll('.animate-on-scroll');
+    if (!revealElements.length) return;
 
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const subject = subjectInput.value.trim();
-            const message = messageInput.value.trim();
-
-            if (subject && message) {
-                const mailtoLink = `mailto:eduardoazvd17@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
-                window.location.href = mailtoLink;
-                clearForm();
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
             }
         });
-    }
+    }, {
+        threshold: 0.15
+    });
 
-    if (clearFormButton) {
-        clearFormButton.addEventListener('click', clearForm);
-    }
-
-    function clearForm() {
-        if (subjectInput) subjectInput.value = '';
-        if (messageInput) messageInput.value = '';
-    }
+    revealElements.forEach(element => observer.observe(element));
 }
 
 function setupBackToTop() {
@@ -138,92 +85,61 @@ function setupBackToTop() {
             });
         });
     }
-}
 
-function setupProfileImageFlip() {
-    // Animação de flip removida por preferência do usuário
-}
+    const brandLink = document.getElementById('nav-brand-link');
 
-function setupMobileMenu() {
-    const header = document.querySelector('.hero-section');
-    const menu = document.getElementById('nav-menu');
-
-    if (header && menu) {
-        const menuHeight = menu.offsetHeight;
-
-        function checkScroll() {
-            if (window.pageYOffset > header.offsetHeight) {
-                menu.style.position = 'fixed';
-                menu.style.top = '0';
-                menu.style.left = '0';
-                menu.style.width = '100%';
-
-                document.body.style.paddingTop = menuHeight + 'px';
-            } else {
-                menu.style.position = 'static';
-                document.body.style.paddingTop = '0';
-            }
-        }
-
-        window.addEventListener('scroll', checkScroll);
-        window.addEventListener('resize', checkScroll);
-
-        checkScroll();
+    if (brandLink) {
+        brandLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
     }
 }
 
 function setupCopyEmailButtons() {
     const copyButtons = document.querySelectorAll('.copy-email-btn');
-    
+
     copyButtons.forEach(button => {
         button.addEventListener('click', async () => {
             const email = button.getAttribute('data-email');
             const icon = button.querySelector('i');
-            
+
             try {
                 await navigator.clipboard.writeText(email);
-                
-                // Feedback visual
-                const originalClass = icon.className;
-                button.classList.add('copied');
-                icon.className = 'fas fa-check';
-                
-                // Restaurar após 2 segundos
-                setTimeout(() => {
-                    button.classList.remove('copied');
-                    icon.className = originalClass;
-                }, 2000);
-                
+                showCopiedFeedback(button, icon);
             } catch (err) {
                 console.error('Erro ao copiar email:', err);
-                
-                // Fallback para navegadores mais antigos
+
                 const textArea = document.createElement('textarea');
                 textArea.value = email;
                 textArea.style.position = 'fixed';
                 textArea.style.left = '-999999px';
                 document.body.appendChild(textArea);
                 textArea.select();
-                
+
                 try {
                     document.execCommand('copy');
-                    
-                    // Feedback visual
-                    const originalClass = icon.className;
-                    button.classList.add('copied');
-                    icon.className = 'fas fa-check';
-                    
-                    setTimeout(() => {
-                        button.classList.remove('copied');
-                        icon.className = originalClass;
-                    }, 2000);
-                    
-                } catch (err) {
-                    console.error('Erro ao copiar email (fallback):', err);
+                    showCopiedFeedback(button, icon);
+                } catch (fallbackErr) {
+                    console.error('Erro ao copiar email (fallback):', fallbackErr);
                 }
-                
+
                 document.body.removeChild(textArea);
             }
         });
     });
-} 
+}
+
+function showCopiedFeedback(button, icon) {
+    const originalClass = icon.className;
+    button.classList.add('copied');
+    icon.className = 'fas fa-check';
+
+    setTimeout(() => {
+        button.classList.remove('copied');
+        icon.className = originalClass;
+    }, 2000);
+}

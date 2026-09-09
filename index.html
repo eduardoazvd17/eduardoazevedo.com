@@ -14,8 +14,10 @@
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
     <link rel="icon" href="icons/icon.png" type="image/png">
     <link rel="apple-touch-icon" href="icons/icon.png" type="image/png">
 </head>
@@ -28,7 +30,6 @@
                     <img src="images/profile.jpeg" alt="Eduardo Azevedo" id="profile-img">
                 </div>
                 <div class="profile-info">
-                    <span class="hero-kicker">Azevedo Tech Solutions</span>
                     <h1>Eduardo Azevedo Regueira</h1>
                     <h2>Engenheiro de Software | Cross-Platform | Full Stack | Especialista em Flutter</h2>
                     <p class="hero-tagline" data-i18n="hero_tagline">Soluções mobile e software sob medida, do MVP à
@@ -61,7 +62,7 @@
 
     <nav id="nav-menu">
         <div class="container nav-container">
-            <a href="#about" class="nav-brand" aria-label="Azevedo Tech Solutions">
+            <a href="#" id="nav-brand-link" class="nav-brand" aria-label="Azevedo Tech Solutions">
                 <span class="nav-brand-mark"><i class="fas fa-code"></i></span>
                 <span class="nav-brand-name">Azevedo Tech Solutions</span>
             </a>
@@ -81,7 +82,7 @@
     </nav>
 
     <main id="main-content">
-        <section id="about" class="section active">
+        <section id="about" class="section">
             <div class="container">
                 <span class="section-eyebrow" data-i18n="eyebrow_about">Sobre</span>
                 <h2 class="section-title">Sobre mim</h2>
@@ -170,7 +171,7 @@
                 <div class="section-content">
                     <div class="projects-showcase">
                         <div class="projects-grid">
-                            <div class="project-card" data-project="autohub">
+                            <div class="project-card animate-on-scroll" data-project="autohub">
                                 <div class="project-image">
                                     <img src="images/autohub.png" alt="AutoHub App screenshot">
                                 </div>
@@ -197,7 +198,7 @@
                                 </div>
                             </div>
 
-                            <div class="project-card" data-project="moverio">
+                            <div class="project-card animate-on-scroll" data-project="moverio">
                                 <div class="project-image">
                                     <img src="icons/moverio.png" alt="MoveRio App screenshot">
                                 </div>
@@ -225,7 +226,7 @@
                                 </div>
                             </div>
 
-                            <div class="project-card" data-project="easy_binding">
+                            <div class="project-card animate-on-scroll" data-project="easy_binding">
                                 <div class="project-image">
                                     <img src="images/pub_dev.png" alt="easy_binding Library Demo">
                                 </div>
@@ -252,7 +253,7 @@
                                 </div>
                             </div>
 
-                            <div class="project-card" data-project="stackbudget">
+                            <div class="project-card animate-on-scroll" data-project="stackbudget">
                                 <div class="project-image">
                                     <img src="images/stackbudget.png" alt="StackBudget App screenshot">
                                 </div>
@@ -274,7 +275,7 @@
                                 </div>
                             </div>
 
-                            <div class="project-card" data-project="investhelper">
+                            <div class="project-card animate-on-scroll" data-project="investhelper">
                                 <div class="project-image">
                                     <img src="images/investhelper.png" alt="InvestHelper App screenshot">
                                 </div>
@@ -296,7 +297,7 @@
                                 </div>
                             </div>
 
-                            <div class="project-card" data-project="fcryptor">
+                            <div class="project-card animate-on-scroll" data-project="fcryptor">
                                 <div class="project-image">
                                     <img src="images/fcryptor.png" alt="FCryptor App screenshot">
                                 </div>
@@ -324,7 +325,7 @@
                                 </div>
                             </div>
 
-                            <div class="project-card" data-project="slider_bar_chart">
+                            <div class="project-card animate-on-scroll" data-project="slider_bar_chart">
                                 <div class="project-image">
                                     <img src="images/pub_dev.png" alt="slider_bar_chart Library Demo">
                                 </div>
@@ -351,7 +352,7 @@
                                 </div>
                             </div>
 
-                            <div class="project-card" data-project="audiotexter">
+                            <div class="project-card animate-on-scroll" data-project="audiotexter">
                                 <div class="project-image">
                                     <img src="images/audiotexter.png" alt="AudioTexter App screenshot">
                                 </div>
@@ -370,7 +371,7 @@
                                 </div>
                             </div>
 
-                            <div class="project-card" data-project="myfinances">
+                            <div class="project-card animate-on-scroll" data-project="myfinances">
                                 <div class="project-image">
                                     <img src="images/my_finances.png" alt="My Finances App screenshot">
                                 </div>
@@ -390,7 +391,7 @@
                                 </div>
                             </div>
 
-                            <div class="project-card" data-project="gitf">
+                            <div class="project-card animate-on-scroll" data-project="gitf">
                                 <div class="project-image">
                                     <img src="images/flutter.png" alt="GitF App screenshot">
                                 </div>
@@ -414,7 +415,7 @@
                                 </div>
                             </div>
 
-                            <div class="project-card" data-project="credentials_manager">
+                            <div class="project-card animate-on-scroll" data-project="credentials_manager">
                                 <div class="project-image">
                                     <img src="images/pub_dev.png" alt="credentials_manager Library Demo">
                                 </div>
@@ -441,7 +442,7 @@
                                 </div>
                             </div>
 
-                            <div class="project-card" data-project="simple_overlay">
+                            <div class="project-card animate-on-scroll" data-project="simple_overlay">
                                 <div class="project-image">
                                     <img src="images/pub_dev.png" alt="simple_overlay Library Demo">
                                 </div>
@@ -469,7 +470,7 @@
                                 </div>
                             </div>
 
-                            <div class="project-card" data-project="more-projects">
+                            <div class="project-card animate-on-scroll" data-project="more-projects">
                                 <div class="project-image">
                                     <img src="images/github.png" alt="GitHub Logo">
                                 </div>
@@ -493,18 +494,15 @@
             </div>
         </section>
 
-        <section id="contact" class="section">
+        <section id="contact" class="section section--dark">
             <div class="container">
                 <span class="section-eyebrow" data-i18n="eyebrow_contact">Contato</span>
                 <h2 class="section-title" data-i18n="contact">Contato</h2>
                 <div class="section-content">
-                    <p class="contact-intro" data-i18n="contact_intro">Entre em contato para discutir oportunidades de
-                        trabalho, parcerias ou
-                        tirar dúvidas sobre desenvolvimento mobile:</p>
-
                     <div class="contact-card">
                         <div class="contact-section">
-                            <h3 class="contact-subtitle" data-i18n="contactVia">Entre em contato por:</h3>
+                            <h3 class="contact-subtitle" data-i18n="contact_intro">Fique à vontade para entrar em
+                                contato comigo usando uma das opções abaixo:</h3>
                             <div class="social-buttons-row">
                                 <a href="https://wa.me/+5521988542950" target="_blank" class="social-contact-button">
                                     <i class="fab fa-whatsapp"></i>

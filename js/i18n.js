@@ -82,7 +82,6 @@ const translations = {
         'contact_intro': 'Fique a vontade para entrar em contato comigo usando uma das opções abaixo:',
         'contact_social': 'Me encontre nas redes:',
         'contact_email': 'Me envie um e-mail:',
-        'contactVia': 'Entre em contato por:',
         'sendEmail': 'Me envie um email:',
         'subject': 'Assunto',
         'message': 'Mensagem',
@@ -195,7 +194,6 @@ const translations = {
         'contact_intro': 'Feel free to contact me using one of the options below:',
         'contact_social': 'Find me on social media:',
         'contact_email': 'Send me an email:',
-        'contactVia': 'Contact me via:',
         'sendEmail': 'Send me an email:',
         'subject': 'Subject',
         'message': 'Message',
@@ -234,14 +232,6 @@ document.addEventListener('DOMContentLoaded', () => {
 function initLanguage() {
     const urlParams = new URLSearchParams(window.location.search);
     const urlLang = urlParams.get('lang');
-
-    // Se não houver parâmetro 'page', adiciona com o valor padrão 'aboutMe'
-    if (!urlParams.has('page')) {
-        // Atualiza a URL sem recarregar a página
-        const url = new URL(window.location.href);
-        url.searchParams.set('page', 'aboutMe');
-        window.history.replaceState({}, '', url.toString());
-    }
 
     if (urlLang && translations[urlLang]) {
         applyLanguage(urlLang);
@@ -290,17 +280,7 @@ function applyLanguage(lang) {
  */
 function updateURLWithLanguage(lang) {
     const url = new URL(window.location.href);
-    const urlParams = url.searchParams;
-
-    // Salva o valor atual da página, se existir
-    const currentPage = urlParams.get('page');
-
-    urlParams.set('lang', lang);
-
-    // Se não houver parâmetro 'page', adiciona com o valor padrão 'aboutMe'
-    if (!currentPage) {
-        urlParams.set('page', 'aboutMe');
-    }
+    url.searchParams.set('lang', lang);
 
     // Atualiza a URL sem recarregar a página
     window.history.pushState({}, '', url.toString());
@@ -381,9 +361,6 @@ function translateSpecificElements(lang) {
             }
         });
     });
-
-    const contactIntro = document.querySelector('.contact-intro');
-    if (contactIntro) contactIntro.textContent = translations[lang].contact_intro;
 
     const contactSocial = document.querySelector('.contact-social-section h3');
     if (contactSocial) contactSocial.textContent = translations[lang].contact_social;
