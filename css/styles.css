@@ -404,6 +404,7 @@ ul {
 
 .skill-item {
     position: relative;
+    z-index: 1;
     width: 64px;
     height: 64px;
     background: var(--bg-elevated);
@@ -418,6 +419,7 @@ ul {
 }
 
 .skill-item:hover {
+    z-index: 2;
     transform: translateY(-3px);
     box-shadow: var(--shadow-md);
     border-color: var(--border-strong);
